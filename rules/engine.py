@@ -93,10 +93,37 @@ def amount_from_text(amount_text: Optional[str]) -> Optional[float]:
     return num * mult
 
 
+_MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+def date_from_text(text: Optional[str]) -> Optional[str]:
+    """Deterministic fallback when the model copies the date words but leaves the ISO date empty:
+    '9 October 2026', 'October 2026', '02.11.2026', '2/11/2026' -> YYYY-MM-DD (month-only -> day 1)."""
+    if not text:
+        return None
+    m = re.search(r"\b(\d{1,2})[./-](\d{1,2})[./-](\d{4})\b", text)
+    if m:
+        d, mo, y = map(int, m.groups())
+    else:
+        m = re.search(r"(?i)\b(?:(\d{1,2})(?:st|nd|rd|th)?\s+)?([a-z]{3})[a-z]*\.?,?\s+(\d{4})\b", text)
+        if not m or m.group(2).lower() not in _MONTHS:
+            return None
+        d, mo, y = int(m.group(1) or 1), _MONTHS[m.group(2).lower()], int(m.group(3))
+    try:
+        return date(y, mo, d).isoformat()
+    except ValueError:
+        return None
+
+
 def checked_facts(facts: CaseFacts, user_text: str) -> tuple[CaseFacts, list[str]]:
     """Drop amounts/dates the user never said. Returns cleaned facts + notes for the run log."""
     notes = []
     f = facts.model_copy(deep=True)
+    if not f.due_date and span_ok(f.due_date_text, user_text):
+        f.due_date = date_from_text(f.due_date_text)
+    for e in f.events:
+        if not e.date and span_ok(e.date_text, user_text):
+            e.date = date_from_text(e.date_text)
     if f.amount is not None:
         parsed = amount_from_text(f.amount_text) if span_ok(f.amount_text, user_text) else None
         if parsed is None or abs(parsed - f.amount) > 0.5:

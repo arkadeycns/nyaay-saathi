@@ -1,5 +1,7 @@
 # Nyaay Saathi: an honest AI legal helper for everyday problems in India
 
+**Code:** github.com/arkadeycns/nyaay-saathi · **App:** APP_URL · **Raw outputs:** `eval/outputs/` in the repo · **Video:** VIDEO_URL
+
 ## 1. The problem I picked, and why
 **Problem 2, the AI lawyer.** Most people never get legal help for small, common problems: wages not paid, a refund that never came, a client or friend who won't pay, a notice they don't understand. The hard part isn't generating fluent text. It's being **trustworthy** for someone who can't tell a real section from an invented one. I picked this problem because that gap is real, and the engineering question it poses is: how do you let a model help without letting it make up law?
 
@@ -34,13 +36,23 @@ A claim that fails verification triggers one regeneration with the problems fed 
 
 ## 4. How it would scale
 - **More law:** adding an Act means adding a PDF, a layout rule and a line in `sources.yaml`. The verbatim test and the rules validator stop paraphrased law from entering. State rent law would be the next pack, one state at a time.
-- **More users:** retrieval is local (ONNX embeddings, committed index), so the only per-user cost is LLM tokens. Measured: TOKENS_PER_SESSION tokens per advisor session (4–7 calls), about COST_PER_SESSION at paid Groq rates (prices TODO_USER_VERIFY). The free tier allows about 1–2 sessions a minute; the paid tier removes the waits.
+- **More users:** retrieval is local (ONNX embeddings, committed index), so the only per-user cost is LLM tokens. Measured: ~12,300 tokens per advisor session (4–7 calls), about $0.003 (≈₹0.25) at an assumed $0.15/$0.60 per million input/output tokens (TODO_USER_VERIFY against Groq's price page). The free tier allows about 1–2 sessions a minute; the paid tier removes the waits.
 - **Quality at scale:** each answer stores its verifier log, so failures can be sampled. The eval runs on any provider with one flag, and LangSmith traces dev and eval runs (opt-in only, because traces contain case text).
 - **Next steps with budget:** a paralegal review queue for drafts, DLSA partnerships for hand-offs, saved case files with consent, more languages.
 
 ## 5. How I know it's good, and where it fails
-- **Corpus:** `tests/test_corpus.py` proves all 654 chunks are word-for-word from the source PDFs. `rules.validate` proves every legal line in the rules quotes the corpus exactly. **55 tests** cover the deterministic code.
+- **Corpus:** `tests/test_corpus.py` proves all 654 chunks are word-for-word from the source PDFs. `rules.validate` proves every legal line in the rules quotes the corpus exactly. **61 tests** cover the deterministic code.
 - **Retrieval:** right section in the top 5 for 30/30 rewritten queries; the gate blocks 5 of 6 out-of-scope queries (the 6th, cheque bounce, is caught earlier by escalation rules).
-- **End-to-end eval:** 42 of my own cases (realistic, hallucination bait, escalation, messy input, simulator, Hindi), with raw unedited outputs in `eval/outputs/`. METRICS_TABLE
-- **Where it fails:** FAILURES_SUMMARY. Known limits: the Contract Act copy is a state transcription with typos; CPA 2019 is as enacted; whether a household counts as an "establishment" under the Code on Wages isn't settled by the text, so the tool says so and sends the person to the DLSA; free models rate-limit, so answers take 20–60 s; the verifier sometimes drops true statements (safer, but shorter answers); voice is untested on real recordings.
+- **End-to-end eval:** 42 of my own cases (realistic, hallucination bait, escalation, messy input, simulator, Hindi), with raw unedited outputs in `eval/outputs/`. Interim results (9 of 42 cases done; the full table is in `eval/outputs/<run>/summary.md`):
+
+| Metric | Value |
+|---|---|
+| Cases passing all checks | 7 / 9 |
+| Citation validity (law claims with an existing cite + verbatim quote) | 0.91 (22 law claims) |
+| Claims the verifier marked partial/unsupported that still shipped (flagged in UI) | 0.19 |
+| Context fit (no "HR"/"salary slip" etc. for informal workers) | 1.00 |
+| Category / outcome accuracy | 1.00 / 1.00 |
+| Repealed-Act detection (notice cites CPA 1986, Payment of Wages Act) | 1.00 |
+| Latency p50 / p95 | 41 s / 63 s (free tier, incl. rate-limit waits) |
+- **Where it fails:** A05 (online refund): the model copied "9 October 2026" but left the date field empty, so no deadline was shown. Fixed with a deterministic date parser (+6 tests), not re-run yet. A08: my own test expected "running" for a deadline that had actually passed, a test-design error; the code was right. About 19% of claims ship flagged "partially supported"; they are shown with a warning rather than hidden. Known limits: the Contract Act copy is a state transcription with typos; CPA 2019 is as enacted; whether a household counts as an "establishment" under the Code on Wages isn't settled by the text, so the tool says so and sends the person to the DLSA; free models rate-limit, so answers take 20–60 s; the verifier sometimes drops true statements (safer, but shorter answers); voice is untested on real recordings.
 - **Where AI tools failed while I built it** (`docs/build_log.md`): the first corpus was paraphrased from memory; a rank-based retrieval gate passed nonsense queries; retired Gemini model IDs; hidden reasoning tokens used up the output budget; a verifier model returned the wrong JSON key; and the advice was addressed to the employer instead of the worker.

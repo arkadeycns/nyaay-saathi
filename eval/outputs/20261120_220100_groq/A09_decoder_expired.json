@@ -1,0 +1,224 @@
+{
+  "case_id": "A09_decoder_expired",
+  "bucket": "A",
+  "flow": "decoder",
+  "started": "2026-11-20T22:07:59.024006",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 16.12,
+  "llm_calls": [
+    {
+      "ts": 1795192679.329,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 300.3,
+      "note": "429, waiting 3.0s"
+    },
+    {
+      "ts": 1795192684.321,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 853,
+      "completion_tokens": 502,
+      "latency_ms": 1986.6,
+      "note": ""
+    },
+    {
+      "ts": 1795192684.499,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 135.0,
+      "note": "429, waiting 3.0s"
+    },
+    {
+      "ts": 1795192689.302,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 862,
+      "completion_tokens": 436,
+      "latency_ms": 1799.7,
+      "note": ""
+    },
+    {
+      "ts": 1795192689.399,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 93.3,
+      "note": "429, waiting 4.5s"
+    },
+    {
+      "ts": 1795192695.138,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 904,
+      "completion_tokens": 359,
+      "latency_ms": 1233.3,
+      "note": ""
+    }
+  ],
+  "state": {
+    "notice_text": "Dear Sir,\nThis is to inform you that an amount of Rs 8,750 is outstanding towards your broadband service account no. 77812 for the period Jan–Mar 2026. You are requested to clear the dues within 30 days of receipt of this letter, failing which the matter will be referred to our legal team.\nAccounts Department, FastNet Broadband Pvt Ltd. Dated 25 May 2026\n",
+    "received_date": "2026-06-01",
+    "audit": [],
+    "notice": {
+      "sender_type": "company_or_bank",
+      "sender": {
+        "value": "Accounts Department, FastNet Broadband Pvt Ltd.",
+        "snippet": "Accounts Department, FastNet Broadband Pvt Ltd."
+      },
+      "recipient": {
+        "value": "Sir",
+        "snippet": "Dear Sir,"
+      },
+      "notice_date": {
+        "value": "25 May 2026",
+        "snippet": "Dated 25 May 2026"
+      },
+      "demand_amount": {
+        "value": "Rs 8,750",
+        "snippet": "an amount of Rs 8,750 is outstanding"
+      },
+      "demand_action": {
+        "value": "clear the dues",
+        "snippet": "You are requested to clear the dues"
+      },
+      "deadline": {
+        "value": "within 30 days of receipt of this letter",
+        "snippet": "within 30 days of receipt of this letter"
+      },
+      "deadline_days": 30,
+      "threatened_consequences": [
+        {
+          "value": "matter will be referred to our legal team",
+          "snippet": "failing which the matter will be referred to our legal team."
+        }
+      ],
+      "provisions": [],
+      "subject": "money_demand",
+      "plain_summary": "The notice demands payment of Rs 8,750 for the broadband service for Jan–Mar 2026. It asks the recipient to clear the dues within 30 days or the matter will be referred to the legal team."
+    },
+    "span_issues": [],
+    "outcome": null,
+    "triage": {
+      "cleared": true
+    },
+    "provisions": [],
+    "sources": {},
+    "explanation": {
+      "plain_summary": "FastNet Broadband Pvt Ltd. is asking you to pay Rs 8,750 for broadband services used between January and March 2026. They want the amount cleared within 30 days of receiving this letter, otherwise they will involve their legal team.",
+      "claims": [
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Do not panic; note the date you actually received the notice (not the date written on it). Gather any bills, payment receipts, or correspondence related to the broadband service.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "If you cannot pay the amount, consider contacting the company to discuss a possible settlement or payment plan, and seek free legal aid from a local legal services authority or consumer forum.",
+          "cites": [],
+          "quote": null
+        }
+      ],
+      "cannot_assess": [
+        "Whether the amount claimed is correct or legally enforceable, because no legal provisions or source material were provided."
+      ],
+      "lawyer_needed_when": [
+        "You are unsure about the correctness of the demand amount or need help negotiating with the company.",
+        "The company proceeds with legal action and you receive a court notice or summons."
+      ]
+    },
+    "verifier_log": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "issues": [
+          "claim 0: legal/procedure statement without a citation",
+          "claim 1: legal/procedure statement without a citation"
+        ],
+        "verdicts": []
+      },
+      {
+        "attempt": 2,
+        "passed": true,
+        "issues": [],
+        "verdicts": []
+      }
+    ],
+    "dropped_claims": 0,
+    "result": {
+      "kind": {
+        "is": "A demand or recovery letter from a company, bank or lender.",
+        "is_not": [
+          "It is not a court order.",
+          "Its threats of 'legal action' describe what they say they may do, not what has happened."
+        ]
+      },
+      "deadline": {
+        "status": "expired",
+        "days": 30,
+        "due": "2026-07-01",
+        "days_left": -142
+      },
+      "options": [
+        {
+          "id": "ignore",
+          "name": "Ignore it",
+          "risk": "Silence can be read as not disputing their claims, and you lose track of any deadline they set. Not recommended without advice."
+        },
+        {
+          "id": "reply",
+          "name": "Send a short factual reply",
+          "risk": "Anything you write can be used later. Stick to facts, deny what is wrong, admit nothing you are unsure of."
+        },
+        {
+          "id": "negotiate",
+          "name": "Negotiate / ask for documents",
+          "risk": "Asking for the documents they rely on costs little and buys time, but note their deadline."
+        },
+        {
+          "id": "pay",
+          "name": "Pay what they ask",
+          "risk": "Ends the dispute fast but may mean paying something not owed. Get it in writing as full and final settlement."
+        },
+        {
+          "id": "get_help",
+          "name": "Get free legal help first (DLSA / NALSA 15100)",
+          "risk": "Takes a little time; do it well before their deadline."
+        }
+      ],
+      "reply_warning": "A reply to a legal notice can create admissions. Keep it short and factual, do not apologise for things you did not do, and have an advocate or the DLSA check it if the amount matters to you.",
+      "threats": [
+        "failing which the matter will be referred to our legal team."
+      ],
+      "gather": [
+        "The notice and its envelope / courier slip (proves when it reached you)",
+        "Any agreement, bill, invoice or messages the notice refers to",
+        "Proof of any payments you already made",
+        "A note of the date you received it and how (post, courier, WhatsApp, email)"
+      ]
+    }
+  }
+}

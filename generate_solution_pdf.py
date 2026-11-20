@@ -27,6 +27,7 @@ CELL = ParagraphStyle("c", parent=BODY, fontSize=6.8, leading=8.2)
 
 def inline(text: str) -> str:
     text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    text = text.replace("₹", "Rs ")  # base-14 PDF fonts have no rupee glyph
     text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
     text = re.sub(r"`(.+?)`", r"<font face='Courier'>\1</font>", text)
     return text

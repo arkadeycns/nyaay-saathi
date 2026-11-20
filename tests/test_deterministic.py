@@ -223,3 +223,14 @@ def test_non_company_workers_never_get_hr(et):
     assert "hr_escalation" not in [p["id"] for p in engine.pathways_for("wages", ctx["id"])]
     ev = " ".join(e["item"] + e["how_to_get"] for e in engine.evidence_for("wages", ctx["id"], []))
     assert "HR" not in ev and "salary slip" not in ev.lower()
+
+
+@pytest.mark.parametrize("s,v", [("9 October 2026", "2026-10-09"), ("October 2026", "2026-10-01"), ("02.11.2026", "2026-11-02"),
+                                 ("since Aug 2026", "2026-08-01"), ("last month", None)])
+def test_date_from_text(s, v):
+    assert engine.date_from_text(s) == v
+
+
+def test_due_date_filled_from_text():
+    f, _ = engine.checked_facts(facts(category="consumer", due_date_text="9 October 2026"), "picked up on 9 October 2026")
+    assert f.due_date == "2026-10-09"
