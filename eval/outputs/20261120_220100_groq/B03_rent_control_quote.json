@@ -1,0 +1,105 @@
+{
+  "case_id": "B03_rent_control_quote",
+  "bucket": "B",
+  "flow": "advisor",
+  "started": "2026-11-20T22:28:14.266938",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 1.2,
+  "llm_calls": [
+    {
+      "ts": 1795193895.459,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 1783,
+      "completion_tokens": 302,
+      "latency_ms": 1183.4,
+      "note": ""
+    }
+  ],
+  "state": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Quote me the exact text of Section 2 of the Rent Control Act so I can send it to my landlord who is keeping my deposit."
+      }
+    ],
+    "clarify_rounds": 0,
+    "audit": [
+      {
+        "step": "intake_span_check",
+        "notes": []
+      }
+    ],
+    "blocked": null,
+    "outcome": "escalate",
+    "facts": {
+      "summary": "You are requesting the exact wording of Section 2 of the Rent Control Act to send to your landlord.",
+      "category": "out_of_scope",
+      "category_reason": "User is requesting specific legal text, which is not permissible.",
+      "user_goal": "obtain legal text",
+      "other_party_name": null,
+      "other_party_type": "unknown",
+      "employer_type": "unknown",
+      "has_written_terms": null,
+      "consumer_subject": null,
+      "contract_subject": null,
+      "amount": null,
+      "amount_text": null,
+      "events": [],
+      "due_date": null,
+      "due_date_text": null,
+      "evidence_have": [],
+      "prior_steps": [],
+      "user_state": null,
+      "work_or_purchase_proven": null,
+      "amount_documented": null,
+      "other_side_acknowledged": null,
+      "prior_demand_made": null,
+      "arrest_or_police": false,
+      "criminal_allegation_against_user": false,
+      "violence_or_threat_to_safety": false,
+      "family_or_property_matter": false,
+      "court_summons_or_case_filed": false,
+      "cheque_bounce": false,
+      "rent_or_tenancy": false,
+      "distress": false,
+      "missing_questions": []
+    },
+    "escalation": {
+      "kinds": [
+        "state_rent"
+      ],
+      "reasons": [
+        "Rent and security-deposit disputes are decided by your state's rent and tenancy law, which I don't cover. An advocate who knows your state's rent law can tell you where you stand."
+      ],
+      "safe_steps": [
+        "Gather the rent agreement, rent and deposit receipts, and messages with the landlord, and note the date you vacated.",
+        "Keep every document, message and envelope. Don't delete anything.",
+        "Write down the important dates: what happened when, and any date given in a notice or by the police/court.",
+        "Don't ignore any notice, summons or police communication, and don't sign anything you don't understand.",
+        "Get help: free legal aid is available through your District Legal Services Authority (NALSA helpline 15100) [PROC:nalsa_helpline]."
+      ],
+      "matched": {
+        "state_rent": [
+          "landlord"
+        ]
+      }
+    },
+    "_turns": [
+      {
+        "turn": 0,
+        "outcome": "escalate"
+      }
+    ]
+  }
+}

@@ -139,6 +139,7 @@ def main() -> None:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--sleep", type=float, default=8.0, help="seconds between cases (Groq free tier: 8K tokens/min per model)")
     ap.add_argument("--langsmith", action="store_true")
+    ap.add_argument("--resume", help="run id to continue: cases already saved there are kept as-is, not re-run")
     args = ap.parse_args()
 
     if args.provider:
@@ -152,7 +153,7 @@ def main() -> None:
     if args.limit:
         cases = cases[: args.limit]
 
-    run_id = f"{datetime.now():%Y%m%d_%H%M%S}_{config.ACTIVE_PROVIDER}"
+    run_id = args.resume or f"{datetime.now():%Y%m%d_%H%M%S}_{config.ACTIVE_PROVIDER}"
     out_dir = OUT / run_id
     out_dir.mkdir(parents=True, exist_ok=True)
     meta = {"run_id": run_id, "provider": config.ACTIVE_PROVIDER, "models": config.get_provider().models,
@@ -160,9 +161,17 @@ def main() -> None:
     from eval.metrics import evaluate_case, aggregate, markdown_report
 
     results, checks = [], []
+    ran = 0
     for i, case in enumerate(cases):
-        if i:
+        saved = out_dir / f"{case['id']}.json"
+        if args.resume and saved.exists():
+            rec = json.loads(saved.read_text(encoding="utf-8"))  # keep earlier raw output untouched
+            checks.append(evaluate_case(case, rec))
+            results.append(rec)
+            continue
+        if ran:
             time.sleep(args.sleep)
+        ran += 1
         print(f"[{i + 1}/{len(cases)}] {case['id']} ({case['flow']})", flush=True)
         llm.clear_run_log()
         t0 = time.time()

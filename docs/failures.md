@@ -2,11 +2,16 @@
 
 Kept as found. Cases are not edited to pass.
 
-## Eval failures (run `20261120_220100_groq`, interim)
+## Eval failures (run `20261120_220100_groq`: 15 of 42 cases)
+
+The run was stopped after 15 cases because of time constraints and the Groq free tier's daily token cap (shared with the live app). Cases 16–42 have no outputs.
+
 | Case | What failed | Cause | Status |
 |---|---|---|---|
 | A05_online_refund | No deadline shown | Intake model copied the date words ("9 October 2026") but left the ISO date null | Fixed: deterministic `engine.date_from_text` fallback + tests; needs re-run |
 | A08_decoder_repealed_section | expected `running`, got `expired` | Test-design error: received 12 Nov + 7 days = 19 Nov, which is before today (20 Nov). The code's arithmetic is right | Case expectation is time-dependent; to fix in the next suite version |
+| B01_supreme_court_case | escalated instead of helping with the refund | Intake marked the whole message out_of_scope because it asked for case law | Fixed after the run: intake keeps the underlying problem; not re-run |
+| A10, B02 | error | Groq rate limit still active after 7 retries (daily/minute cap) | Infrastructure limit, not a wrong answer |
 | A01 (smoke run) | Error | Groq 429 still throttled after 5 retries during the verifier's regeneration | Retries now wait max(retry-after, exponential); 7 attempts |
 | A03 (smoke run) | "HR", "salary slip" in output for a shop helper | Shop worker without stated written terms fell through to the formal-employee context | Fixed: contexts keyed on employer type; catch-all is informal; regression tests |
 

@@ -1,0 +1,174 @@
+{
+  "case_id": "A10_decoder_vague_threat",
+  "bucket": "A",
+  "flow": "decoder",
+  "started": "2026-11-20T22:08:23.146735",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 730.63,
+  "llm_calls": [
+    {
+      "ts": 1795192705.89,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 817,
+      "completion_tokens": 380,
+      "latency_ms": 2738.3,
+      "note": ""
+    },
+    {
+      "ts": 1795192706.103,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 179.8,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795192766.388,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 279.6,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795192828.251,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 1855.6,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795192888.682,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 423.1,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795192949.017,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 327.1,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795193011.271,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 1324,
+      "completion_tokens": 828,
+      "latency_ms": 2250.5,
+      "note": ""
+    },
+    {
+      "ts": 1795193011.834,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 381,
+      "completion_tokens": 71,
+      "latency_ms": 554.6,
+      "note": ""
+    },
+    {
+      "ts": 1795193011.954,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 117.5,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795193072.27,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 309.6,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795193132.552,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 275.5,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795193192.797,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 238.0,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795193253.133,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 332.3,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795193313.399,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 258.1,
+      "note": "429, waiting 60.0s"
+    },
+    {
+      "ts": 1795193373.75,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 343.6,
+      "note": "429, waiting 60.0s"
+    }
+  ],
+  "state": {
+    "outcome": "error",
+    "error": "LLMError: groq rate limit: still throttled after 7 retries. Try again in a minute.",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/eval/run_eval.py\", line 171, in main\n    state = RUNNERS[case[\"flow\"]](case)\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/eval/run_eval.py\", line 67, in run_decoder\n    return run(decoder_graph(), {\"notice_text\": case[\"input\"], \"received_date\": case.get(\"received_date\"), \"audit\": []})\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/graph.py\", line 127, in run\n    for update in graph.stream(state, stream_mode=\"updates\"):\n                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/langgraph/pregel/__init__.py\", line 2436, in stream\n    for _ in runner.tick(\n             ~~~~~~~~~~~^\n        [t for t in loop.tasks.values() if not t.writes],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<2 lines>...\n        schedule_task=loop.accept_push,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ):\n    ^\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/nodes_decoder.py\", line 157, in verify_node\n    adv = Advice(**explain(state, feedback=as_feedback(rep))[\"explanation\"])\n                   ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/nodes_decoder.py\", line 146, in explain\n    adv = get_llm().complete(_EXPLAIN, [{\"role\": \"user\", \"content\": content}], role=\"generator\", schema=Advice, max_tokens=2200)\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/llm.py\", line 107, in complete\n    raw = self._call(role, model, msgs, **kwargs)\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/llm.py\", line 155, in _call\n    raise LLMError(f\"{self.cfg.name} rate limit: still throttled after {_MAX_RETRIES} retries. Try again in a minute.\")\nllm.LLMError: groq rate limit: still throttled after 7 retries. Try again in a minute.\nDuring task with name 'verify' and id '44258490-095a-b94c-f6a1-7b6d13135c3d'\n"
+  }
+}

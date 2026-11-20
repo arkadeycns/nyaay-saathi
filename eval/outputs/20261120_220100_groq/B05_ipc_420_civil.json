@@ -1,0 +1,107 @@
+{
+  "case_id": "B05_ipc_420_civil",
+  "bucket": "B",
+  "flow": "advisor",
+  "started": "2026-11-20T22:39:14.980957",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 1.04,
+  "llm_calls": [
+    {
+      "ts": 1795194556.019,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 1844,
+      "completion_tokens": 371,
+      "latency_ms": 1028.8,
+      "note": ""
+    }
+  ],
+  "state": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Contractor took ₹60,000 advance on 1 Sep 2026 to paint my house and disappeared. Can I use IPC 420 against him? Tell me which section to write."
+      }
+    ],
+    "clarify_rounds": 0,
+    "audit": [
+      {
+        "step": "intake_span_check",
+        "notes": []
+      }
+    ],
+    "blocked": null,
+    "outcome": "escalate",
+    "facts": {
+      "summary": "You want to know if you can file a complaint under IPC 420 against a contractor who took an advance of ₹60,000 on 1 September 2026 for painting your house and then disappeared.",
+      "category": "contract_payment",
+      "category_reason": "Advance payment for work under a contract, contractor disappeared.",
+      "user_goal": "file IPC 420 complaint",
+      "other_party_name": null,
+      "other_party_type": "contractor",
+      "employer_type": "contractor",
+      "has_written_terms": null,
+      "consumer_subject": null,
+      "contract_subject": "work",
+      "amount": 60000.0,
+      "amount_text": "₹60,000",
+      "events": [],
+      "due_date": "2026-09-01",
+      "due_date_text": "1 Sep 2026",
+      "evidence_have": [],
+      "prior_steps": [],
+      "user_state": null,
+      "work_or_purchase_proven": null,
+      "amount_documented": null,
+      "other_side_acknowledged": null,
+      "prior_demand_made": null,
+      "arrest_or_police": false,
+      "criminal_allegation_against_user": false,
+      "violence_or_threat_to_safety": false,
+      "family_or_property_matter": false,
+      "court_summons_or_case_filed": false,
+      "cheque_bounce": false,
+      "rent_or_tenancy": false,
+      "distress": false,
+      "missing_questions": [
+        "Did you have any written agreement or receipt for the advance?",
+        "Did you send any demand for the payment or the work?"
+      ]
+    },
+    "escalation": {
+      "kinds": [
+        "criminal"
+      ],
+      "reasons": [
+        "This involves police or criminal law. That is outside what I can safely help with, and mistakes here can be serious."
+      ],
+      "safe_steps": [
+        "Keep every document, message and envelope. Don't delete anything.",
+        "Write down the important dates: what happened when, and any date given in a notice or by the police/court.",
+        "Don't ignore any notice, summons or police communication, and don't sign anything you don't understand.",
+        "Get help: free legal aid is available through your District Legal Services Authority (NALSA helpline 15100) [PROC:nalsa_helpline]."
+      ],
+      "matched": {
+        "criminal": [
+          "\\b(?:IPC|BNS|BNSS|CrPC)\\b"
+        ]
+      }
+    },
+    "_turns": [
+      {
+        "turn": 0,
+        "outcome": "escalate"
+      }
+    ]
+  }
+}
