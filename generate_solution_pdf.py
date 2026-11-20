@@ -22,6 +22,7 @@ ss = getSampleStyleSheet()
 BODY = ParagraphStyle("b", parent=ss["BodyText"], fontSize=7.6, leading=9.4, spaceAfter=1.5)
 H1 = ParagraphStyle("h1", parent=ss["Title"], fontSize=12.5, leading=15, spaceAfter=3)
 H2 = ParagraphStyle("h2", parent=ss["Heading2"], fontSize=9, leading=11, spaceBefore=4, spaceAfter=1.5, textColor=colors.HexColor("#1f3b57"))
+SUB = ParagraphStyle("sub", parent=BODY, leftIndent=12)
 CELL = ParagraphStyle("c", parent=BODY, fontSize=6.8, leading=8.2)
 
 
@@ -29,7 +30,9 @@ def inline(text: str) -> str:
     text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     text = text.replace("₹", "Rs ")  # base-14 PDF fonts have no rupee glyph
     text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
+    text = re.sub(r"(?<!\*)\*([^*\s][^*]*?)\*(?!\*)", r"<i>\1</i>", text)
     text = re.sub(r"`(.+?)`", r"<font face='Courier'>\1</font>", text)
+    text = re.sub(r"\[(.+?)\]\((https?://[^)]+)\)", r"<link href='\2' color='#1f5fa8'><u>\1</u></link>", text)
     return text
 
 
@@ -53,6 +56,8 @@ def build() -> None:
             flow.append(Paragraph(inline(line[2:]), H1))
         elif line.startswith("## "):
             flow.append(Paragraph(inline(line[3:]), H2))
+        elif line.startswith("  - "):
+            flow.append(Paragraph("– " + inline(line[4:]), SUB))
         elif line.startswith("- "):
             flow.append(Paragraph("• " + inline(line[2:]), BODY))
         elif line.strip():
