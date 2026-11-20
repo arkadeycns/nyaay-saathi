@@ -1,6 +1,6 @@
 # Nyaay Saathi: an honest AI legal helper for everyday problems in India
 
-**Code:** github.com/arkadeycns/nyaay-saathi · **App:** APP_URL · **Raw outputs:** `eval/outputs/` in the repo · **Video:** VIDEO_URL
+**Code:** github.com/arkadeycns/nyaay-saathi · **App:** https://nyaay-saathi-ckvuzcn6rdrrsmwsqdkazm.streamlit.app · **Raw outputs:** `eval/outputs/` in the repo · **Video:** VIDEO_URL
 
 ## 1. The problem I picked, and why
 **Problem 2, the AI lawyer.** Most people never get legal help for small, common problems: wages not paid, a refund that never came, a client or friend who won't pay, a notice they don't understand. The hard part isn't generating fluent text. It's being **trustworthy** for someone who can't tell a real section from an invented one. I picked this problem because that gap is real, and the engineering question it poses is: how do you let a model help without letting it make up law?

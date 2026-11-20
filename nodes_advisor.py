@@ -51,6 +51,8 @@ and fill a case file. Rules:
 - distress: true only if they express hopelessness or self-harm.
 - category: consumer (bought goods/services), wages (pay for work as an employee/worker), contract_payment (money owed
   under an agreement, freelance work, a loan to someone), notice_received (they got a legal notice), out_of_scope, or unclear.
+- If the person also asks for court cases/precedents or a guaranteed result, still categorise their underlying problem;
+  the app explains separately that it does not cite case law. Use out_of_scope only when no in-scope problem is described.
 - missing_questions: at most 2 short, kind questions whose answers would change the advice (e.g. when the pay stopped,
   how much is owed). Ask nothing if the facts are enough."""
 

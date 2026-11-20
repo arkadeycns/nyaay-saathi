@@ -1,5 +1,7 @@
 # Nyaay Saathi: an honest AI legal helper for everyday problems in India
 
+**Live app:** https://nyaay-saathi-ckvuzcn6rdrrsmwsqdkazm.streamlit.app  ·  **Code:** https://github.com/arkadeycns/nyaay-saathi
+
 A prototype that ordinary people can talk to (English, Hindi or Hinglish, by text or voice) about an unpaid salary, a refund that never came, money a client or friend owes, or a legal notice they don't understand.
 
 > **Information, not legal advice.** It covers five central Acts (plus the consumer-commission jurisdiction rules) as a fixed snapshot. It says "I can't ground this" and "see an advocate" readily.
