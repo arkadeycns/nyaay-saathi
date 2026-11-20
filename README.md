@@ -36,7 +36,7 @@ docs/               build_log.md, failures.md, solution_outline.md
 
 ## Run it
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 ```bash
 cp .env.example .env

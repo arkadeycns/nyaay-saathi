@@ -1,0 +1,5 @@
+# Not needed by the deployed app (keeps the Streamlit Cloud build small and avoids
+# reportlab's old Pillow pin, which has no wheel for Python 3.14).
+-r requirements.txt
+reportlab==5.1.0           # builds docs/solution.pdf
+pytest==9.1.1              # tests for deterministic code

@@ -11,5 +11,3 @@ chromadb==0.6.3            # persistent vector index (committed in corpus/index)
 fastembed==0.5.1           # ONNX embeddings (bge-small-en-v1.5), no PyTorch
 pypdf==5.9.0               # text-PDF extraction (corpus build, notice upload)
 python-dotenv==1.2.4       # .env loading
-reportlab==5.1.0           # builds docs/solution.pdf
-pytest==9.1.1              # tests for deterministic code
