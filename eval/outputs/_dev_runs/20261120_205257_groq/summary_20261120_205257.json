@@ -1,0 +1,196 @@
+{
+  "timestamp": "20261120_205257",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "as_of": "2026-11-01",
+  "corpus_hash": "47c1a1fac5dd4a55",
+  "total_cases": 1,
+  "results": [
+    {
+      "case_id": "consumer_refund_ecommerce",
+      "case_name": "E-commerce refund not received",
+      "type": "advisor",
+      "input": "Maine Amazon se ek phone order kiya tha 15,000 ka, October 2026 mein.\nPhone screen mein defect tha. Maine return request kiya, unhone pickup\nbhi kar liya, par refund abhi tak nahi aaya. 3 hafte ho gaye. Customer\ncare bol raha hai wait karo. Mujhe kya karna chahiye?\n",
+      "elapsed_seconds": 37.45,
+      "response": "**## Where You Stand**  \n**Strength: Weak** – The main difficulty is the lack of documentary proof (invoice, payment receipt, and communication with Amazon). Without these, it will be harder to demonstrate that you purchased the phone, that a defect existed, and that you asked for a refund. The consumer‑protection law does recognise you as a consumer ([CPA2019:s2]), but the evidence gap lowers the persuasiveness of any complaint.  \n\n---\n\n**## Case Timeline**  \n| Date (approx.) | Event |\n|----------------|-------|\n| October 2026 | Placed order for a phone costing ₹15,000 (order confirmation sent by Amazon). |\n| After receipt | Noticed screen defect; raised a return request through the Amazon app/website. |\n| ~3 weeks later | Amazon arranged pickup of the returned phone; refund has not been received. |\n| Since pickup | Customer‑care has asked you to continue waiting. |\n\n*(Exact dates are not available; you should note the specific dates when you obtain the missing documents.)*\n\n---\n\n**## Evidence Checklist**  \n\n| Item | Have ✅ / Need ⬜ | How to obtain |\n|------|-------------------|----------------|\n| Invoice or order confirmation | ⬜ | Screenshot from the Amazon app/website or the order‑confirmation email. |\n| Payment proof (UPI, bank or card statement) | ⬜ | Download the relevant statement from your banking app or request a printed copy from the bank. |\n| Communication with Amazon (chat logs, emails, call recordings) | ⬜ | Take screenshots of the chat, forward email threads, note call dates & reference numbers. |\n| Photos / video of the defect | ⬜ | Capture clear images or a short video showing the screen problem. |\n| Return‑pickup receipt or acknowledgment | ⬜ | Look for the SMS/email Amazon sends after scheduling a pickup; request a copy if not saved. |\n| Grievance / complaint reference number (if any) | ⬜ | Check the “Your Orders” section or any email from Amazon’s “Customer Care”. |\n\n*Collecting these will strengthen any legal step you take.*\n\n---\n\n**## Your Options**\n\n| Pathway | What it is | Approx. cost | Time needed | Emotional cost | Risks / notes | Tags |\n|--------|------------|--------------|------------|----------------|---------------|------|\n| **1. Direct written demand** (registered post or email) | Send a clear demand letter to Amazon’s corporate address stating the order details, defect, return‑pickup date, and that you expect the ₹15,000 refund within 7‑10 days. | ₹0‑100 (post fee) | 1–2 weeks to draft & send; up to 2 weeks for response | Low‑moderate (may feel uncomfortable writing a formal letter) | May prompt refund quickly; if ignored, you still have other routes. | [Practical estimate] |\n| **2. Legal notice through an advocate** | Have a lawyer draft a formal notice invoking your rights under the Consumer Protection Act, 2019. | Typically ₹2,000‑₹10,000 (varies by city) | 1–2 weeks to prepare; 15‑30 days for Amazon’s reply | Moderate (involves lawyer interaction) | A notice often accelerates settlement; still no guarantee of refund. | [Law] / [Practical estimate] |\n| **3. File a complaint with the District Consumer Disputes Redressal Commission** | Submit a consumer‑complaint form (online via e‑Daakhil or in person) for a claim up to ₹50 lakhs. Include all evidence you can gather. | Nominal filing fee (as per CPA 2019 rules) | Filing: immediate online; hearing: may take several months to a year | Moderate‑high (court‑like process) | The commission can order a refund plus compensation; but success depends on evidence. | [Law] / [Official procedure] |\n| **4. Seek settlement through Lok Adalat** | Apply for pre‑litigation settlement; Lok Adalat can render a binding award without court fees. | ₹0 (if eligible for free legal aid) | Depends on the next scheduled Lok Adalat (typically a few weeks to months) | Low‑moderate (informal setting) | Award is final and enforceable; however, you still need proof of purchase & defect. | [Law] / [Official procedure] |\n| **5. Apply for free legal aid** (if you meet eligibility) | Under the Legal Services Authorities Act, you may get a lawyer at no cost if you are a woman, SC/ST, low‑income, etc. | ₹0 | Varies (usually a few weeks to get a lawyer assigned) | Low (support from a public lawyer) | Helps with drafting notices or filing the consumer complaint. | [Practical estimate] |\n| **6. Do nothing** | Wait for Amazon to process the refund on its own. | ₹0 | Uncertain; may continue indefinitely | Low (no effort) | Refund may never arrive; you lose the chance to claim statutory compensation. | [Practical estimate] |\n\n---\n\n**## Deadline Status**  \n- Under Section 69 of the Consumer Protection Act, 2019, a consumer complaint must be filed **within 2 years** from the date the cause of action arose ([CPA2019:s69]). The cause of action here is the date you returned the phone and were promised a refund (approximately October 2026). You are therefore well within the limitation period.  \n\n---\n\n**## Drafts Available**  \n- **Demand‑letter template** (plain‑language letter to Amazon).  \n- **Legal‑notice template** (to be reviewed by an advocate).  \n- **Consumer‑complaint filing checklist** (guidance for e‑Daakhil).  \n\n*(You can request any of the above; I will generate the document in Hindi or English as you prefer.)*\n\n---\n\n**## When You Need a Real Lawyer**  \n1. **Before sending a legal notice** – to ensure the wording correctly invokes the Consumer Protection Act and to avoid any procedural missteps.  \n2. **If you decide to file a consumer‑complaint** – a lawyer can help you compile the petition, attach the necessary annexures, and represent you at the hearing.  \n3. **If Amazon disputes the defect or refuses refund** – legal representation will be essential to argue the case before the Consumer Commission or Lok Adalat.  \n4. **If you qualify for legal aid** – a lawyer appointed under the Legal Services Authorities Act can assist you at no cost.  \n\n---  \n\n**Next Steps (quick win)**  \n1. Gather the missing documents listed in the Evidence Checklist.  \n2. Send a polite but firm written demand (registered post or email) referencing your order number, defect, return‑pickup date, and request the ₹15,000 refund within 7 days.  \n3. If no response, consider a legal notice or filing a consumer complaint, using the templates you can request now.  \n\nFeel free to ask for any of the draft documents or clarification on any step. Good luck!\n\n---\n📋 *This is AI-generated guidance based on central Indian law as of 2026-11-01. It is not legal advice. For matters involving significant money, court proceedings, or personal safety, please consult an advocate.*",
+      "escalation_message": "",
+      "escalated": false,
+      "case_file": {
+        "category": "consumer",
+        "user_goal": "refund",
+        "parties": {
+          "user": {
+            "name": "User"
+          },
+          "other_side": {
+            "name": "Amazon",
+            "type": "company"
+          }
+        },
+        "amount_in_dispute": 15000.0,
+        "timeline": [
+          {
+            "date": null,
+            "event": "Placed order for phone costing ₹15,000 in October 2026",
+            "source": "user_said",
+            "certainty": "exact"
+          },
+          {
+            "date": null,
+            "event": "Returned phone, pickup done, refund pending after 3 weeks",
+            "source": "user_said",
+            "certainty": "approx"
+          }
+        ],
+        "evidence": [
+          {
+            "item": "Invoice or order confirmation",
+            "status": "dont_have",
+            "how_to_get": "Screenshot from app/website, or email search for order confirmation",
+            "why_it_matters": "Proves the transaction happened and the amount"
+          },
+          {
+            "item": "Payment proof (UPI/bank statement/card statement)",
+            "status": "dont_have",
+            "how_to_get": "Download from banking app or request bank statement",
+            "why_it_matters": "Proves you paid"
+          },
+          {
+            "item": "Communication with seller (emails, chats, call recordings)",
+            "status": "dont_have",
+            "how_to_get": "Screenshot chat/email threads; note dates",
+            "why_it_matters": "Shows what was promised and what you complained about"
+          },
+          {
+            "item": "Photos or video of defect",
+            "status": "dont_have",
+            "how_to_get": "Take clear photos/video showing the problem",
+            "why_it_matters": "Visual proof of the defect or deficiency"
+          },
+          {
+            "item": "Warranty card or guarantee document",
+            "status": "dont_have",
+            "how_to_get": "Check product box, email, or seller's website",
+            "why_it_matters": "Shows what the seller promised to fix and for how long"
+          },
+          {
+            "item": "Grievance/complaint reference numbers",
+            "status": "dont_have",
+            "how_to_get": "Check emails or the company's grievance portal",
+            "why_it_matters": "Shows you already tried to resolve it with the seller"
+          }
+        ],
+        "evidence_gaps": [
+          "Invoice or order confirmation",
+          "Payment proof (UPI/bank statement/card statement)",
+          "Communication with seller (emails, chats, call recordings)"
+        ],
+        "prior_steps": [
+          "Made return request",
+          "Contacted customer care who advised to wait",
+          "Amazon arranged pickup of returned phone"
+        ],
+        "limitation": null,
+        "escalation_flags": [],
+        "strength_inputs": {
+          "key_evidence_present": false,
+          "within_limitation": true,
+          "prior_demand_made": true
+        },
+        "strength_band": "weak"
+      },
+      "clarifying_questions": [
+        "Did you receive any confirmation email or reference number for the return?",
+        "Have you checked your bank account for the refund?"
+      ],
+      "verifier_log": [
+        {
+          "layer_a": [],
+          "layer_b": [
+            "unsupported: can be used as proof of “prior demand” required before filing a consumer complai — The cited chunk details how to file, jurisdiction, limitation, and fees, but does not state that a prior demand letter is a legal prerequisite for filing a complaint."
+          ],
+          "passed": false,
+          "retry": {
+            "layer_a": [],
+            "layer_b": [],
+            "passed": true
+          }
+        }
+      ],
+      "drafts_available": [
+        "legal_notice",
+        "consumer_complaint",
+        "legal_aid_application"
+      ],
+      "run_log": [
+        {
+          "ts": 1795188179.171526,
+          "role": "openai/gpt-oss-20b",
+          "model": "openai/gpt-oss-20b",
+          "prompt_tokens": 529,
+          "completion_tokens": 813,
+          "latency_ms": 1834.4
+        },
+        {
+          "ts": 1795188179.755667,
+          "role": "openai/gpt-oss-20b",
+          "model": "openai/gpt-oss-20b",
+          "prompt_tokens": 261,
+          "completion_tokens": 205,
+          "latency_ms": 558.7
+        },
+        {
+          "ts": 1795188185.846428,
+          "role": "openai/gpt-oss-120b",
+          "model": "openai/gpt-oss-120b",
+          "prompt_tokens": 2209,
+          "completion_tokens": 2056,
+          "latency_ms": 4902.9
+        },
+        {
+          "ts": 1795188187.740526,
+          "role": "qwen/qwen3.8-27b",
+          "model": "qwen/qwen3.8-27b",
+          "prompt_tokens": 2781,
+          "completion_tokens": 694,
+          "latency_ms": 1877.9
+        },
+        {
+          "ts": 1795188191.729632,
+          "role": "openai/gpt-oss-120b",
+          "model": "openai/gpt-oss-120b",
+          "prompt_tokens": 2291,
+          "completion_tokens": 1679,
+          "latency_ms": 3979.9
+        },
+        {
+          "ts": 1795188214.761943,
+          "role": "qwen/qwen3.8-27b",
+          "model": "qwen/qwen3.8-27b",
+          "prompt_tokens": 2713,
+          "completion_tokens": 684,
+          "latency_ms": 23025.1
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "case_id": "consumer_refund_ecommerce",
+      "escalation_correct": true,
+      "category_correct": true,
+      "actual_category": "consumer",
+      "content_coverage": "3/3",
+      "content_all_found": true,
+      "content_missing": [],
+      "no_violations": true,
+      "verifier_passed": false,
+      "layer_a_issue_count": 0,
+      "elapsed_seconds": 37.45
+    }
+  ]
+}

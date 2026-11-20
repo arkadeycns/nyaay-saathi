@@ -1,0 +1,29 @@
+DRAFT — CHECK EVERY FACT BEFORE SENDING. Remove anything that is not true or that you cannot prove.
+
+Date: {{ today }}
+
+To,
+{{ other_name or "[Name of the person / company]" }}
+{{ other_address or "[Their address]" }}
+
+From,
+{{ user_name or "[Your name]" }}
+{{ user_address or "[Your address / phone]" }}
+
+Subject: Request for payment of {{ "₹" ~ amount if amount else "[amount]" }} {{ subject or "" }}
+
+{{ other_name or "Sir/Madam" }},
+
+{{ facts or "[Write 2-3 lines in your own words: what happened, when, and what is unpaid or wrong]" }}
+
+The amount of {{ "₹" ~ amount if amount else "[amount]" }} is still unpaid{% if since %} since {{ since }}{% endif %}. I request you to pay this amount by {{ pay_by or "[date]" }}.
+{% if pay_mode %}You can pay by {{ pay_mode }}.{% endif %}
+
+If it is not paid by that date, I will take the matter further through the proper forum, including free legal aid services.
+{% if legal_points %}
+For your information:
+{% for p in legal_points %}- {{ p }}
+{% endfor %}{% endif %}
+I am keeping a copy of this letter.
+
+{{ user_name or "[Your name]" }}

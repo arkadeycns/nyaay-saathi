@@ -1,0 +1,214 @@
+{
+  "case_id": "contract_deposit_not_returned",
+  "case_name": "Security deposit not returned",
+  "type": "advisor",
+  "input": "I rented a flat for 2 years and moved out properly in July 2026.\nLandlord took ₹1 lakh as security deposit. He's not returning it,\nsaying there was \"damage\" but the flat was fine. I have photos\nfrom when I moved in and out. How do I get my deposit back?\n",
+  "elapsed_seconds": 0.01,
+  "response": "",
+  "escalation_message": "This type of problem is outside what I can help with. Please consult an advocate or your District Legal Services Authority.",
+  "escalated": true,
+  "case_file": {
+    "category": "out_of_scope",
+    "user_goal": "payment",
+    "parties": {
+      "user": {
+        "name": "User"
+      },
+      "other_side": {
+        "name": "Opposite Party",
+        "type": "individual"
+      }
+    },
+    "amount_in_dispute": 100000.0,
+    "timeline": [
+      {
+        "date": "2026-10-01",
+        "event": "Disputed transaction/notice",
+        "source": "user_said",
+        "certainty": "approx"
+      }
+    ],
+    "evidence": [],
+    "evidence_gaps": [],
+    "prior_steps": [
+      "Direct communication with customer support / HR"
+    ],
+    "limitation": null,
+    "escalation_flags": [],
+    "strength_inputs": {},
+    "strength_band": "cannot_assess"
+  },
+  "clarifying_questions": [],
+  "verifier_log": [],
+  "drafts_available": [],
+  "run_log": [
+    {
+      "ts": 1795185763.7837381,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.3
+    },
+    {
+      "ts": 1795185763.793956,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.966478,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9700449,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9709928,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.979423,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9982238,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9992042,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0000908,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0086012,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.023255,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0241659,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.024966,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0332968,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048003,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048943,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.05022,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.1
+    },
+    {
+      "ts": 1795185765.0593212,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.072947,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0738418,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.074666,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    }
+  ]
+}

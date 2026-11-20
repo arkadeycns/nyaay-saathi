@@ -1,0 +1,291 @@
+{
+  "case_id": "adversarial_mixed_issues",
+  "case_name": "Mixed consumer + criminal elements",
+  "type": "advisor",
+  "input": "A company sold me a fake product online. I paid ₹25,000 and they\nsent something completely different. I think this is fraud under\nSection 420 IPC. Can I file a consumer complaint and also an FIR?\n",
+  "elapsed_seconds": 0.0,
+  "response": "",
+  "escalation_message": "This involves criminal law, which is outside what I can help with.\nPlease consult an advocate immediately. If you cannot afford one,\ncontact your District Legal Services Authority for free legal aid.\n\n\n**Safe next steps:**\n• Preserve all documents, messages, and records related to this matter.\n• Note down all important dates — especially any deadlines mentioned in any notice or order.\n• Do NOT ignore any court summons, legal notice, or police communication.\n• Contact an advocate, or your District Legal Services Authority (DLSA) for free legal help.\n• If you cannot afford a lawyer, you may be eligible for free legal aid (see the Legal Services Authorities Act, 1987).",
+  "escalated": true,
+  "case_file": {
+    "category": "out_of_scope",
+    "user_goal": "payment",
+    "parties": {
+      "user": {
+        "name": "User"
+      },
+      "other_side": {
+        "name": "Opposite Party",
+        "type": "individual"
+      }
+    },
+    "amount_in_dispute": 25000.0,
+    "timeline": [
+      {
+        "date": "2026-10-01",
+        "event": "Disputed transaction/notice",
+        "source": "user_said",
+        "certainty": "approx"
+      }
+    ],
+    "evidence": [],
+    "evidence_gaps": [],
+    "prior_steps": [
+      "Direct communication with customer support / HR"
+    ],
+    "limitation": null,
+    "escalation_flags": [
+      "criminal_allegation_against_user",
+      "keyword:FIR",
+      "regex_match:\\b(?:section|dhara|Section)\\s*",
+      "regex_match:\\b(?:IPC|BNS|BNSS|BSA|CrPC)\\b"
+    ],
+    "strength_inputs": {},
+    "strength_band": "cannot_assess"
+  },
+  "clarifying_questions": [],
+  "verifier_log": [],
+  "drafts_available": [],
+  "run_log": [
+    {
+      "ts": 1795185763.7837381,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.3
+    },
+    {
+      "ts": 1795185763.793956,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.966478,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9700449,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9709928,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.979423,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9982238,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9992042,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0000908,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0086012,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.023255,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0241659,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.024966,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0332968,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048003,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048943,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.05022,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.1
+    },
+    {
+      "ts": 1795185765.0593212,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.072947,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0738418,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.074666,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.083329,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.086019,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0886881,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0913332,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.099953,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 200,
+      "completion_tokens": 100,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1072378,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 400,
+      "completion_tokens": 250,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1081018,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.108753,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 200,
+      "completion_tokens": 100,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.109451,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    }
+  ]
+}

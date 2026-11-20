@@ -1,0 +1,169 @@
+# ROUTING + CONTEXT RULES (deterministic; read by advisor.py)
+#
+# The intake LLM fills case facets (see schemas.CaseFacts). Code picks a *context*
+# from those facets, and the context decides which evidence items, which pathways
+# and which words are appropriate. This is what stops a household worker being
+# told to "ask HR for your salary slips".
+#
+# Any line that states law carries `ref` (a corpus chunk ID) and `quote` (an exact
+# substring of that chunk). `python -m rules.validate` fails if a quote is not found.
+# Everything else is tagged Practical: experience-based, not law.
+
+contexts:
+  # Evaluated top to bottom; first match wins. `when` keys are CaseFacts fields.
+  - id: household_worker
+    category: wages
+    when: {employer_type: [household, individual]}
+    label: "domestic / household worker paid by a family"
+  - id: informal_worker
+    category: wages
+    when: {employer_type: [small_business, shop, contractor]}
+    label: "worker without written terms (shop, site, small business)"
+  - id: gig_worker
+    category: wages
+    when: {employer_type: [platform]}
+    label: "app/platform-based worker"
+  - id: formal_employee
+    category: wages
+    when: {employer_type: [company, government]}
+    label: "employee of a company or organisation"
+  - id: unknown_employer
+    category: wages
+    when: {}
+    label: "worker whose employer type is not clear (treated like informal work)"
+  - id: online_purchase
+    category: consumer
+    when: {other_party_type: [online_platform]}
+    label: "online purchase"
+  - id: service_consumer
+    category: consumer
+    when: {consumer_subject: [service]}
+    label: "service (repair, travel, telecom, coaching, etc.)"
+  - id: shop_purchase
+    category: consumer
+    when: {}
+    label: "purchase from a shop or company"
+  - id: freelancer_client
+    category: contract_payment
+    when: {other_party_type: [company, individual, small_business, online_platform]}
+    label: "freelance / service work not paid"
+  - id: personal_loan
+    category: contract_payment
+    when: {contract_subject: [loan]}
+    label: "money lent to someone"
+  - id: general_contract
+    category: contract_payment
+    when: {}
+    label: "money owed under an agreement"
+
+# Words the advisor must NOT use for a context (checked in code after generation;
+# a hit triggers one regeneration, then the line is removed).
+avoid_terms:
+  household_worker: ["HR", "human resources", "HR department", "salary slip", "payslip", "pay slip", "appointment letter", "offer letter", "HR portal", "company policy", "grievance cell", "PF account"]
+  informal_worker: ["HR department", "HR portal", "salary slip", "payslip", "offer letter"]
+  gig_worker: ["HR department", "appointment letter"]
+  unknown_employer: ["HR department", "HR portal", "salary slip", "payslip", "offer letter"]
+
+evidence:
+  wages:
+    common:
+      - {item: "A written note of the work: start date, what work, hours/days, agreed pay", required: true,
+         how_to_get: "Write it down today in your own words, with dates. Keep it simple and honest.",
+         why: "Your own record made early is useful if the other side later disputes the facts."}
+      - {item: "Proof of payments you DID receive (UPI history, bank passbook, cash notes)", required: true,
+         how_to_get: "Screenshot UPI history or get the passbook updated. For cash, note dates and amounts.",
+         why: "Shows the pattern of pay and the gap in the months that were not paid."}
+      - {item: "Messages or calls about the unpaid money", required: true,
+         how_to_get: "Screenshot WhatsApp/SMS. Note dates of calls and what was said.",
+         why: "Shows you asked for the money and what the other side replied."}
+    household_worker:
+      - {item: "Employer's full name, house address and phone number", required: true,
+         how_to_get: "Write down the address exactly as it appears at the building/society.",
+         why: "Any complaint or notice needs to name and reach the person who owes you."}
+      - {item: "Anyone who saw you working there (watchman, neighbour, other workers)", required: false,
+         how_to_get: "Note their names and phone numbers. Do not pressure anyone.",
+         why: "Without written terms, people who saw you work can support your account."}
+      - {item: "Society / building entry records or ID card, if any", required: false,
+         how_to_get: "Ask the security desk whether visitor or staff registers exist.",
+         why: "Shows you came to work there on particular dates."}
+    informal_worker:
+      - {item: "Name and address of the shop/site/business and the person who hired you", required: true,
+         how_to_get: "Note the board name, address and owner's phone number.",
+         why: "Needed to identify who owes you."}
+      - {item: "Co-workers who can confirm your work and pay", required: false,
+         how_to_get: "Note names and numbers of co-workers or the contractor/munshi.",
+         why: "Supports your account when nothing is in writing."}
+      - {item: "Attendance register, gate pass, photos of you at work", required: false,
+         how_to_get: "Ask whether a register is kept; keep any photos with dates.",
+         why: "Shows the days you worked."}
+    unknown_employer:
+      - {item: "Name and address of the person/business who hired you", required: true,
+         how_to_get: "Note the name, address and phone number.", why: "Needed to identify who owes you."}
+      - {item: "Co-workers or others who saw you working", required: false,
+         how_to_get: "Note names and phone numbers.", why: "Supports your account when nothing is in writing."}
+    gig_worker:
+      - {item: "Screenshots of your earnings and payout history in the app", required: true,
+         how_to_get: "Take screenshots now; apps can change or remove history.",
+         why: "Shows what was earned and what was not paid out."}
+      - {item: "In-app support tickets and their ticket numbers", required: true,
+         how_to_get: "Open the help section and screenshot each ticket.",
+         why: "Shows you raised the issue with the platform."}
+    formal_employee:
+      - {item: "Offer / appointment letter or email confirming salary", required: true,
+         how_to_get: "Search your email; ask HR in writing for a copy.",
+         why: "Shows the agreed salary."}
+      - {item: "Salary slips and bank statements showing salary credits", required: true,
+         how_to_get: "Download from the HR portal / bank app.",
+         why: "Shows what was paid and what is missing."}
+      - {item: "Resignation / termination email and relieving letter", required: false,
+         how_to_get: "Keep the email thread; request the letter in writing.",
+         why: "Fixes the date your final dues became payable."}
+  consumer:
+    common:
+      - {item: "Invoice or order confirmation", required: true, how_to_get: "Email, app order history, or the shop bill.", why: "Proves the purchase, date and price."}
+      - {item: "Payment proof (UPI/card/bank)", required: true, how_to_get: "Bank or UPI app history.", why: "Proves you paid."}
+      - {item: "Complaint messages, ticket numbers and replies", required: true, how_to_get: "Screenshot chats/emails; note call dates.", why: "Shows you complained and how they responded."}
+      - {item: "Photos/video of the defect or problem", required: false, how_to_get: "Take clear dated photos/video now.", why: "Shows the defect or deficiency."}
+    online_purchase:
+      - {item: "Return/pickup confirmation and refund status screenshots", required: true, how_to_get: "Order page → return details; screenshot every status.", why: "Shows the item went back and the refund is pending."}
+      - {item: "Seller name as shown on the invoice (not just the platform)", required: false, how_to_get: "Invoice PDF in the order page.", why: "The seller and the platform may be different parties."}
+    service_consumer:
+      - {item: "Booking, job card, or service agreement", required: true, how_to_get: "Email/SMS confirmations, job card copy.", why: "Shows what service was promised."}
+    shop_purchase:
+      - {item: "Warranty card / guarantee terms", required: false, how_to_get: "Product box, email, manufacturer site.", why: "Shows what was promised and for how long."}
+  contract_payment:
+    common:
+      - {item: "The agreement in any form (contract, email, WhatsApp chat agreeing terms)", required: true, how_to_get: "Export the chat or email thread.", why: "Shows what was agreed."}
+      - {item: "Proof of the work done or money given", required: true, how_to_get: "Deliverables, invoices, bank/UPI records.", why: "Shows you performed your side."}
+      - {item: "Messages where they accept they owe you", required: false, how_to_get: "Screenshot them with dates.", why: "An acknowledgment strengthens your position and can matter for time limits."}
+      - {item: "Your written demand for payment", required: false, how_to_get: "Send one by email/WhatsApp if you have not.", why: "Shows you asked before taking any formal step."}
+
+# Honest coverage notes shown when a context applies. Law lines quote the corpus;
+# the conclusion is deliberately "not settled by this text".
+coverage_notes:
+  household_worker:
+    - {tag: Law, ref: "COW2019:s2(k)", quote: "employed on wages by an establishment",
+       text: "The Code on Wages defines an employee as a person \"employed on wages by an establishment\"."}
+    - {tag: Law, ref: "COW2019:s2(m)", quote: "any place where any industry, trade, business, manufacture or occupation is carried on",
+       text: "An \"establishment\" is \"any place where any industry, trade, business, manufacture or occupation is carried on\"."}
+    - {tag: Practical, text: "Whether a private home counts as an establishment is not settled by this text, and state rules may add to it. Ask the District Legal Services Authority (free) or the local labour office whether your claim can go to the wages authority. Separately, unpaid agreed pay can also be claimed as money owed under an agreement."}
+  informal_worker:
+    - {tag: Law, ref: "COW2019:s2(z)", quote: "whether the terms of employment be express or implied",
+       text: "Under the Code on Wages a \"worker\" can be employed \"whether the terms of employment be express or implied\", so no written contract is needed to be covered as a worker."}
+  gig_worker:
+    - {tag: Practical, text: "Whether app-based work is employment under the Code on Wages depends on facts this tool cannot assess. Treat any claim as uncertain and get advice from the DLSA or an advocate."}
+
+# Strength band (computed in code from booleans the intake extracts).
+strength:
+  inputs: [work_or_purchase_proven, amount_documented, other_side_acknowledged, prior_demand_made, within_limitation]
+  bands:   # first matching rule wins
+    - {band: cannot_assess, when: "known < 3"}
+    - {band: strong, when: "true >= 4 and within_limitation"}
+    - {band: moderate, when: "true >= 3 and within_limitation"}
+    - {band: weak, when: "true"}
+  explain:
+    work_or_purchase_proven: "proof that you did the work / made the purchase"
+    amount_documented: "the amount owed is written down somewhere"
+    other_side_acknowledged: "the other side has accepted (in any message) that they owe you"
+    prior_demand_made: "you have already asked for the money in writing"
+    within_limitation: "you appear to be within the time limit"

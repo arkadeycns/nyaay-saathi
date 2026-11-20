@@ -1,0 +1,39 @@
+# PLAYBOOK — Practical guidance (never law) and blocked tactics.
+
+blocked_tactics:   # checked in code against the user's message and the model's output
+  - id: fir_as_leverage
+    pattern: "(?i)(fir|police (complaint|case)|criminal (case|complaint)|thane|420).{0,60}(pressure|leverage|dabav|darr|scare|so (he|she|they) pay|paisa nikal|make (him|her|them) pay)|(pressure|dabav|scare).{0,40}(fir|police|criminal)"
+    message: |
+      I won't help use a police complaint or FIR as pressure to get money back. If the facts are a civil dispute (unpaid money), a criminal complaint made to pressure someone can backfire badly: it can be seen as misuse of the process and can expose you to legal risk. If you genuinely believe a crime happened, report it honestly; for the money itself, use the civil options below.
+  - id: intimidation
+    pattern: "(?i)(threaten|dhamki|scare|harass|expose).{0,40}(him|her|them|family|social media|office)"
+    message: |
+      I can't help with threats or harassment. They usually weaken your position and can create legal trouble for you. A calm written demand and the formal options below work better.
+
+notice_kinds:   # what the decoder says a notice is / is not, by sender type (Practical)
+  advocate_or_party:
+    is: "A letter from the other side (often through their lawyer) stating what they want."
+    is_not:
+      - "It is not a court order or a judgment. A court has not decided anything because of this letter."
+      - "It does not by itself mean a case has been filed."
+      - "What it says about the law is their version; it may be right, exaggerated or wrong."
+  company_or_bank:
+    is: "A demand or recovery letter from a company, bank or lender."
+    is_not:
+      - "It is not a court order."
+      - "Its threats of 'legal action' describe what they say they may do, not what has happened."
+  employer:
+    is: "A letter from an employer (warning, termination, recovery, or reply to your claim)."
+    is_not:
+      - "It is not a decision by a labour authority or court."
+
+notice_options:   # option -> Practical risk text (decoder)
+  - {id: ignore, name: "Ignore it", risk: "Silence can be read as not disputing their claims, and you lose track of any deadline they set. Not recommended without advice."}
+  - {id: reply, name: "Send a short factual reply", risk: "Anything you write can be used later. Stick to facts, deny what is wrong, admit nothing you are unsure of."}
+  - {id: negotiate, name: "Negotiate / ask for documents", risk: "Asking for the documents they rely on costs little and buys time, but note their deadline."}
+  - {id: pay, name: "Pay what they ask", risk: "Ends the dispute fast but may mean paying something not owed. Get it in writing as full and final settlement."}
+  - {id: get_help, name: "Get free legal help first (DLSA / NALSA 15100)", risk: "Takes a little time; do it well before their deadline."}
+
+reply_warning: "A reply to a legal notice can create admissions. Keep it short and factual, do not apologise for things you did not do, and have an advocate or the DLSA check it if the amount matters to you."
+
+disclaimer: "General legal information about central Indian law (snapshot), not legal advice. For anything involving significant money, a court, police or your safety, talk to an advocate or the District Legal Services Authority (free)."

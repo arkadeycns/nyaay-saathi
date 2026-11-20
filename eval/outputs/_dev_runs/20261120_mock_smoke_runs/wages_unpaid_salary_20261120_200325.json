@@ -1,0 +1,191 @@
+{
+  "case_id": "wages_unpaid_salary",
+  "case_name": "3 months unpaid salary",
+  "type": "advisor",
+  "input": "Meri company ne 3 mahine se salary nahi di. Main IT company mein\nkaam karta tha, September mein resign kiya. October, November,\nDecember ka paisa pending hai — total 2.4 lakh. HR reply nahi\nkar raha. Mere paas offer letter hai aur bank statement mein\npichle salary credits dikhai dete hain.\n",
+  "elapsed_seconds": 0.02,
+  "response": "## Where You Stand\nBased on your case file and evidence, you have an actionable dispute under applicable central law [Law]. Your strength band is assessed deterministically from your documentary proof.\n\n## Case Timeline\n• Initial transaction or service order confirmed by communication records.\n• Dispute arose and informal demands made to the opposite party.\n• Current dispute pending without resolution.\n\n## Evidence Checklist\n• Invoice, order receipt, or payment proof [Practical estimate]\n• Written correspondence and complaint reference numbers [Practical estimate]\n\n## Your Options\n1. Direct negotiation: Send a structured written demand before formal action [Practical estimate].\n2. Send a legal notice through an advocate to signal formal intent [Practical estimate].\n3. Approach the appropriate statutory forum:\n   - Consumer Commission: File a complaint under Section 35 [CPA2019:s35] [Official procedure] [PROC:consumer_filing].\n   - Wage Authority: File a claim application under Section 45 [COW2019:s45] [Official procedure] [PROC:wages_claim].\n   - Contract claims: Claim compensation for breach under Section 73 [ICA1872:s73] [Law].\n4. Free Legal Aid / Lok Adalat: Free legal services available through the District Legal Services Authority (DLSA) under Section 12 and Section 19 of the Legal Services Authorities Act, 1987 [LSAA1987:s12] [PROC:dlsa_aid] [Official procedure].\n\n## Deadline Status\nStatutory limitation period applies from the date the cause of action arose [Law].\n\n## Drafts Available\n• Legal Notice draft\n• Complaint / Claim Application draft\n• Free Legal Aid Application draft\n\n## When You Need a Real Lawyer\nYou should consult an advocate immediately if the other side initiates court action, if criminal allegations or state tenancy matters arise, or if limitation deadlines are nearing.\n\n---\n📋 *This is AI-generated guidance based on central Indian law as of 2026-11-01. It is not legal advice. For matters involving significant money, court proceedings, or personal safety, please consult an advocate.*\n\n⚠️ *The Code on Wages, 2019 is in force from 21 Nov 2025. Subordinate state rules may vary. Verify the applicable rules for your state.*",
+  "escalation_message": "",
+  "escalated": false,
+  "case_file": {
+    "category": "wages",
+    "user_goal": "payment",
+    "parties": {
+      "user": {
+        "name": "User"
+      },
+      "other_side": {
+        "name": "Opposite Party",
+        "type": "company"
+      }
+    },
+    "amount_in_dispute": 240000.0,
+    "timeline": [
+      {
+        "date": "2026-10-01",
+        "event": "Disputed transaction/notice",
+        "source": "user_said",
+        "certainty": "approx"
+      }
+    ],
+    "evidence": [
+      {
+        "item": "Offer Letter",
+        "status": "have",
+        "how_to_get": "",
+        "why_it_matters": ""
+      },
+      {
+        "item": "Bank Statement",
+        "status": "have",
+        "how_to_get": "",
+        "why_it_matters": ""
+      },
+      {
+        "item": "Offer letter or appointment letter",
+        "status": "dont_have",
+        "how_to_get": "Check email or ask HR for a copy",
+        "why_it_matters": "Proves the employment relationship and agreed salary"
+      },
+      {
+        "item": "Salary slips or pay stubs",
+        "status": "dont_have",
+        "how_to_get": "Check email, HR portal, or ask HR",
+        "why_it_matters": "Shows what was paid and what components were included"
+      },
+      {
+        "item": "Bank statements showing salary credits",
+        "status": "dont_have",
+        "how_to_get": "Download from banking app or request from bank",
+        "why_it_matters": "Independent proof of payments received (or not received)"
+      },
+      {
+        "item": "Messages or emails about dues",
+        "status": "dont_have",
+        "how_to_get": "Screenshot emails, WhatsApp, or other chat messages",
+        "why_it_matters": "Shows you asked for payment and what they said"
+      },
+      {
+        "item": "Proof of work / attendance",
+        "status": "dont_have",
+        "how_to_get": "Attendance records, emails showing work, project outputs",
+        "why_it_matters": "Proves you actually worked during the period claimed"
+      },
+      {
+        "item": "Resignation or termination communication",
+        "status": "dont_have",
+        "how_to_get": "Check email, WhatsApp, any written communication",
+        "why_it_matters": "Establishes how the employment ended"
+      }
+    ],
+    "evidence_gaps": [
+      "Offer letter or appointment letter",
+      "Salary slips or pay stubs",
+      "Bank statements showing salary credits",
+      "Messages or emails about dues"
+    ],
+    "prior_steps": [
+      "Direct communication with customer support / HR"
+    ],
+    "limitation": {
+      "trigger_date": "2026-10-01",
+      "period_ref_chunk_id": "COW2019:s45",
+      "deadline": "2029-10-01",
+      "days_left": 1046,
+      "warning": null
+    },
+    "escalation_flags": [],
+    "strength_inputs": {
+      "key_evidence_present": true,
+      "within_limitation": true,
+      "prior_demand_made": true
+    },
+    "strength_band": "moderate"
+  },
+  "clarifying_questions": [],
+  "verifier_log": [
+    {
+      "layer_a": [],
+      "layer_b": [],
+      "passed": true
+    }
+  ],
+  "drafts_available": [
+    "legal_notice",
+    "legal_aid_application"
+  ],
+  "run_log": [
+    {
+      "ts": 1795185205.250211,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.1
+    },
+    {
+      "ts": 1795185205.261407,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.090863,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.094392,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.095318,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.0979671,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.10591,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.120574,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.12164,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    }
+  ]
+}

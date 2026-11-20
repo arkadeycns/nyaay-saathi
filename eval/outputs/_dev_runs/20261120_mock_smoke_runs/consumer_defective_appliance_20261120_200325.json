@@ -1,0 +1,102 @@
+{
+  "case_id": "consumer_defective_appliance",
+  "case_name": "Defective appliance, warranty denied",
+  "type": "advisor",
+  "input": "I bought a washing machine from Croma for ₹35,000 in June 2026.\nIt stopped working in September. The company says warranty doesn't\ncover this type of damage. I think it's a manufacturing defect.\nI have the invoice and warranty card. What can I do?\n",
+  "elapsed_seconds": 0.0,
+  "response": "",
+  "escalation_message": "This involves criminal law, which is outside what I can help with.\nPlease consult an advocate immediately. If you cannot afford one,\ncontact your District Legal Services Authority for free legal aid.\n\n\n**Safe next steps:**\n• Preserve all documents, messages, and records related to this matter.\n• Note down all important dates — especially any deadlines mentioned in any notice or order.\n• Do NOT ignore any court summons, legal notice, or police communication.\n• Contact an advocate, or your District Legal Services Authority (DLSA) for free legal help.\n• If you cannot afford a lawyer, you may be eligible for free legal aid (see the Legal Services Authorities Act, 1987).",
+  "escalated": true,
+  "case_file": {
+    "category": "consumer",
+    "user_goal": "refund",
+    "parties": {
+      "user": {
+        "name": "User"
+      },
+      "other_side": {
+        "name": "Opposite Party",
+        "type": "company"
+      }
+    },
+    "amount_in_dispute": 35000.0,
+    "timeline": [
+      {
+        "date": "2026-10-01",
+        "event": "Disputed transaction/notice",
+        "source": "user_said",
+        "certainty": "approx"
+      }
+    ],
+    "evidence": [
+      {
+        "item": "Invoice / Bill",
+        "status": "have",
+        "how_to_get": "",
+        "why_it_matters": ""
+      },
+      {
+        "item": "Warranty Card",
+        "status": "have",
+        "how_to_get": "",
+        "why_it_matters": ""
+      }
+    ],
+    "evidence_gaps": [],
+    "prior_steps": [
+      "Direct communication with customer support / HR"
+    ],
+    "limitation": null,
+    "escalation_flags": [
+      "court_summons_received",
+      "keyword:warrant"
+    ],
+    "strength_inputs": {},
+    "strength_band": "cannot_assess"
+  },
+  "clarifying_questions": [],
+  "verifier_log": [],
+  "drafts_available": [],
+  "run_log": [
+    {
+      "ts": 1795185205.250211,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.1
+    },
+    {
+      "ts": 1795185205.261407,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.090863,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.094392,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185207.095318,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    }
+  ]
+}

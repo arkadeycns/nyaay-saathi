@@ -1,0 +1,657 @@
+{
+  "case_id": "A01_househelp_unpaid",
+  "bucket": "A",
+  "flow": "advisor",
+  "started": "2026-11-20T22:01:00.069936",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 34.68,
+  "llm_calls": [
+    {
+      "ts": 1795192261.857,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 1827,
+      "completion_tokens": 446,
+      "latency_ms": 1369.1,
+      "note": ""
+    },
+    {
+      "ts": 1795192263.067,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 353,
+      "completion_tokens": 49,
+      "latency_ms": 1188.6,
+      "note": ""
+    },
+    {
+      "ts": 1795192267.982,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 3325,
+      "completion_tokens": 882,
+      "latency_ms": 3474.4,
+      "note": ""
+    },
+    {
+      "ts": 1795192268.631,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 969,
+      "completion_tokens": 194,
+      "latency_ms": 635.2,
+      "note": ""
+    },
+    {
+      "ts": 1795192268.755,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 123.2,
+      "note": "429, waiting 19.5s"
+    },
+    {
+      "ts": 1795192293.098,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 3493,
+      "completion_tokens": 743,
+      "latency_ms": 4836.7,
+      "note": ""
+    },
+    {
+      "ts": 1795192293.94,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 837.6,
+      "note": "HTTP 400"
+    },
+    {
+      "ts": 1795192294.746,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 1416,
+      "completion_tokens": 273,
+      "latency_ms": 804.1,
+      "note": ""
+    }
+  ],
+  "state": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Main 2 saal se ek ghar mein kaam karti hoon, jhaadu pocha aur khana. Madam ne pichle 3 mahine se 9000 mahina wali salary nahi di, total 27000. Kehti hai abhi paise nahi hain. Kuch likha hua nahi hai, cash milta tha."
+      }
+    ],
+    "clarify_rounds": 0,
+    "audit": [
+      {
+        "step": "intake_span_check",
+        "notes": []
+      }
+    ],
+    "blocked": null,
+    "outcome": null,
+    "facts": {
+      "summary": "You have been working in a household for two years and have not received your salary for the last three months, totaling ₹27,000.",
+      "category": "wages",
+      "category_reason": "Unpaid wages from a household employer",
+      "user_goal": null,
+      "other_party_name": "Madam",
+      "other_party_type": "household",
+      "employer_type": "household",
+      "has_written_terms": false,
+      "consumer_subject": null,
+      "contract_subject": null,
+      "amount": 27000.0,
+      "amount_text": "27000",
+      "events": [
+        {
+          "date": "2026-08-01",
+          "date_text": "pichle 3 mahine",
+          "event": "Salary not paid for 3 months"
+        }
+      ],
+      "due_date": "2026-08-01",
+      "due_date_text": "pichle 3 mahine",
+      "evidence_have": [],
+      "prior_steps": [],
+      "user_state": null,
+      "work_or_purchase_proven": true,
+      "amount_documented": null,
+      "other_side_acknowledged": true,
+      "prior_demand_made": null,
+      "arrest_or_police": false,
+      "criminal_allegation_against_user": false,
+      "violence_or_threat_to_safety": false,
+      "family_or_property_matter": false,
+      "court_summons_or_case_filed": false,
+      "cheque_bounce": false,
+      "rent_or_tenancy": false,
+      "distress": false,
+      "missing_questions": []
+    },
+    "context": {
+      "id": "household_worker",
+      "category": "wages",
+      "when": {
+        "employer_type": [
+          "household",
+          "individual"
+        ]
+      },
+      "label": "domestic / household worker paid by a family"
+    },
+    "distress": false,
+    "lang": "hinglish",
+    "queries": [
+      "time limit for payment of wages",
+      "compensation for breach of contract domestic worker",
+      "criteria for giving legal services to domestic workers"
+    ],
+    "sources": {
+      "COW2019:s17": {
+        "act": "Code on Wages, 2019",
+        "heading": "Time limit for payment of wages",
+        "text": "17. Time limit for payment of wages.—(1) The employer shall pay or cause to be paid wages to the \nemployees, engaged on— \n(i) daily basis, at the end of the shift; \n(ii) weekly basis, on the last working day of the week, that is to say, before the weekly holiday; \n(iii) fortnightly basis, before the end of the second day after the end of the fortnight; \n(iv) monthly basis, before the expiry of the seventh day of the succeeding month. \n(2) Where an employee has been— \n(i) removed or dismissed from service; or \n(ii) retrenched or has resigned from service, or became unemployed due to closure of the \nestablishment, \nthe wages payable to him shall be paid within two working days of his removal, dismissal, retrenchment \nor, as the case may be, his resignation. \n(3) Notwithstanding anything contained in sub -section ( 1) or sub -section ( 2), the appropriate \nGovernment may, provide any other time limit for payment of wages where it considers reasonable \nhaving regard to the circumstances under which the wages are to be paid. \n(4) Nothing contained in sub -section (1) or sub-section (2) shall affect any time limit for payment of \nwages provided in any other law for the time being in force.",
+        "full_text": "17. Time limit for payment of wages.—(1) The employer shall pay or cause to be paid wages to the \nemployees, engaged on— \n(i) daily basis, at the end of the shift; \n(ii) weekly basis, on the last working day of the week, that is to say, before the weekly holiday; \n(iii) fortnightly basis, before the end of the second day after the end of the fortnight; \n(iv) monthly basis, before the expiry of the seventh day of the succeeding month. \n(2) Where an employee has been— \n(i) removed or dismissed from service; or \n(ii) retrenched or has resigned from service, or became unemployed due to closure of the \nestablishment, \nthe wages payable to him shall be paid within two working days of his removal, dismissal, retrenchment \nor, as the case may be, his resignation. \n(3) Notwithstanding anything contained in sub -section ( 1) or sub -section ( 2), the appropriate \nGovernment may, provide any other time limit for payment of wages where it considers reasonable \nhaving regard to the circumstances under which the wages are to be paid. \n(4) Nothing contained in sub -section (1) or sub-section (2) shall affect any time limit for payment of \nwages provided in any other law for the time being in force.",
+        "url": "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf",
+        "tag": "law"
+      },
+      "COW2019:s39": {
+        "act": "Code on Wages, 2019",
+        "heading": "Time limit for payment of bonus",
+        "text": "39 .Time limit for payment of bonus .—(1) All amounts payable to an employee by way of bonus \nunder this Code shall be paid by crediting it in the bank account of the employee by his employer within a \nperiod of eight months from the close of the accounting year: \nProvided that the appropriate Government or such authority as the appropriate Government may \nspecify in this behalf may, upon an application made to it by the employer and for sufficient reasons, by \norder, extend the said period of eight months to such further period or periods as it thinks fit; so, however, \nthat the total period so extended shall not in any case exceed two years. \n(2) Notwithstanding anything contained in sub -section ( 1), where there is a dispute regarding \npayment of bonus pending before any authority, such bonus shall be paid, within a period of one month \nfrom the date on which the award becomes enforceable or the settlement comes into operation, in respect \nof such dispute: \nProvided that if, there is a dispute for payment at the higher rate, the employer shall pay eight and \none-third per cent. of the wages earned by the employee as per the provisions of this Code within a period \nof eight months from the close of the accounting year.",
+        "full_text": "39 .Time limit for payment of bonus .—(1) All amounts payable to an employee by way of bonus \nunder this Code shall be paid by crediting it in the bank account of the employee by his employer within a \nperiod of eight months from the close of the accounting year: \nProvided that the appropriate Government or such authority as the appropriate Government may \nspecify in this behalf may, upon an application made to it by the employer and for sufficient reasons, by \norder, extend the said period of eight months to such further period or periods as it thinks fit; so, however, \nthat the total period so extended shall not in any case exceed two years. \n(2) Notwithstanding anything contained in sub -section ( 1), where there is a dispute regarding \npayment of bonus pending before any authority, such bonus shall be paid, within a period of one month \nfrom the date on which the award becomes enforceable or the settlement comes into operation, in respect \nof such dispute: \nProvided that if, there is a dispute for payment at the higher rate, the employer shall pay eight and \none-third per cent. of the wages earned by the employee as per the provisions of this Code within a period \nof eight months from the close of the accounting year.",
+        "url": "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf",
+        "tag": "law"
+      },
+      "LSAA1987:s12": {
+        "act": "Legal Services Authorities Act, 1987",
+        "heading": "Criteria for giving legal services",
+        "text": "12. Criteria for giving legal services .—Every person who has to file or defend a case shall be \nentitled to legal services under this Act if that person is— \n(a) a member of a Scheduled Caste or Scheduled Tribe; \n(b) a victim of tra fficking in human beings or begar as referred to in article 23 of the \nConstitution; \n(c) a woman or a child; \n[(d) a person with disability as defined in clause (i) of section 2 of the Persons With Disabilities \n(Equal Opportunities, Protection of Rights and Full Participation) Act, 1995 (1 of 1996);] \n \n \n(e) a person under circumstances of underserved want such as being a victim of a mass disa ster, \nethnic, violence, caste atrocity, flood, drought, earthquake or industrial disaster; or \n(f) an industrial workman; or \n(g) in custody, including custody in a protective home within the meaning of clause (g) of \nsection 2 of the Immoral Traffic (Prevention) Act, 1956 (104 of 1956), or in a juvenile home within \nthe meaning of clause ( j) of section 2 of the Juvenile Justice Act, 1986 (53 of 1986), or in a \npsychiatric hospital or psychiatric nursing home within the meaning of clause (g) of section 2 of the \nMental Health Act, 1987 (14 of 1987); or \n[(h) in receipt of annual income less than rupees nine thousand or such other higher amount as \nmay be prescribed by the State Government, if the case is before a court other than the Supreme \nCourt, and ",
+        "full_text": "12. Criteria for giving legal services .—Every person who has to file or defend a case shall be \nentitled to legal services under this Act if that person is— \n(a) a member of a Scheduled Caste or Scheduled Tribe; \n(b) a victim of tra fficking in human beings or begar as referred to in article 23 of the \nConstitution; \n(c) a woman or a child; \n[(d) a person with disability as defined in clause (i) of section 2 of the Persons With Disabilities \n(Equal Opportunities, Protection of Rights and Full Participation) Act, 1995 (1 of 1996);] \n \n \n(e) a person under circumstances of underserved want such as being a victim of a mass disa ster, \nethnic, violence, caste atrocity, flood, drought, earthquake or industrial disaster; or \n(f) an industrial workman; or \n(g) in custody, including custody in a protective home within the meaning of clause (g) of \nsection 2 of the Immoral Traffic (Prevention) Act, 1956 (104 of 1956), or in a juvenile home within \nthe meaning of clause ( j) of section 2 of the Juvenile Justice Act, 1986 (53 of 1986), or in a \npsychiatric hospital or psychiatric nursing home within the meaning of clause (g) of section 2 of the \nMental Health Act, 1987 (14 of 1987); or \n[(h) in receipt of annual income less than rupees nine thousand or such other higher amount as \nmay be prescribed by the State Government, if the case is before a court other than the Supreme \nCourt, and less than rupees twelve thousand or such other higher amount as may be prescribed by the \nCentral Government, if the case is before the Supreme Court.]",
+        "url": "https://patnahighcourt.gov.in/BSLSA/pdf/ActsRules/1.pdf",
+        "tag": "law"
+      },
+      "ICA1872:s73": {
+        "act": "Indian Contract Act, 1872",
+        "heading": "Compensation of loss or damage caused by breach of contract",
+        "text": "73. Compensation of loss or damage caused by breach of contract \n \nWhen a contract has been broken, the party who suffers by such breach is entitled to \nreceive, form the party who has broken the contract, compensation for any loss or \ndamage caused to him thereby, which naturally arose in the usual course of things \nfrom such breach, or which the parties knew, when they made the contract, to be \nlikely to result from the breach of it. \n \nSuch compensation is not to be given for any remote and indirect loss of damage \nsustained by reason of the breach. \n \nCompensation for failure to discharge obligation resembling those created by \ncontract : When an obligation resembling those created by contract has been \nincurred and has not been discharged, any person injured by the failure to discharge \nit is entitled to receive the same compensation from the party in default, as if such \nperson had contracted to discharge it and had broken his contract. \n \nExplanation : In estimating the loss or damage arising from a breach of contract, the \nmeans which existed of remedying the inconvenience caused by non-performance of \nthe contract must be taken into account.",
+        "full_text": "73. Compensation of loss or damage caused by breach of contract \n \nWhen a contract has been broken, the party who suffers by such breach is entitled to \nreceive, form the party who has broken the contract, compensation for any loss or \ndamage caused to him thereby, which naturally arose in the usual course of things \nfrom such breach, or which the parties knew, when they made the contract, to be \nlikely to result from the breach of it. \n \nSuch compensation is not to be given for any remote and indirect loss of damage \nsustained by reason of the breach. \n \nCompensation for failure to discharge obligation resembling those created by \ncontract : When an obligation resembling those created by contract has been \nincurred and has not been discharged, any person injured by the failure to discharge \nit is entitled to receive the same compensation from the party in default, as if such \nperson had contracted to discharge it and had broken his contract. \n \nExplanation : In estimating the loss or damage arising from a breach of contract, the \nmeans which existed of remedying the inconvenience caused by non-performance of \nthe contract must be taken into account.",
+        "url": "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art7": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "7. For wages in the case of any other \nperson. \nThree years. When the wages accrue due.",
+        "full_text": "7. For wages in the case of any other \nperson. \nThree years. When the wages accrue due.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art22": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "22. For money deposited under an \nagreement that it shall be \npayable on demand, including \nmoney of a customer in the \nhands of his banker so payable. \nThree years. When the demand is made.",
+        "full_text": "22. For money deposited under an \nagreement that it shall be \npayable on demand, including \nmoney of a customer in the \nhands of his banker so payable. \nThree years. When the demand is made.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art18": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "18. For the price of work done by the \nplaintiff for the defendant at his \nrequest, where no time has been \nfixed for payment. \nThree years. When the work is done.",
+        "full_text": "18. For the price of work done by the \nplaintiff for the defendant at his \nrequest, where no time has been \nfixed for payment. \nThree years. When the work is done.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "ICA1872:s74": {
+        "act": "Indian Contract Act, 1872",
+        "heading": "Compensation of breach of contract where penalty stipulated for",
+        "text": "74. Compensation of breach of contract where penalty stipulated for \n \nWhen a contract has been broken, if a sum is named in the contract as the amount \nbe paid in case of such breach, or if the contract contains any other stipulation by \nway of penalty, the party complaining of the breach is entitled, whether or not actual \ndamage or loss or proved to have been caused thereby, to receive from the party \nwho has broken the contract reasonable compensation not exceeding the amount so \nnamed or, as the case may be, the penalty stipulated for. \n \nExplanation : A stipulation for increased interest from the date of default may be a \nstipulation by way of penalty. \n \nExplanation : When any person enters into any bail bond, recognisance or other \ninstrument of the same nature or, under the provisions of any law, or under the \norders of the Central Government or of any State Government, gives any bond for \nthe performance of any public duty or act in which the public are interested, he shall \nbe liable, upon breach of the condition of any such instrument, to pay the whole sum \nmentioned therein.",
+        "full_text": "74. Compensation of breach of contract where penalty stipulated for \n \nWhen a contract has been broken, if a sum is named in the contract as the amount \nbe paid in case of such breach, or if the contract contains any other stipulation by \nway of penalty, the party complaining of the breach is entitled, whether or not actual \ndamage or loss or proved to have been caused thereby, to receive from the party \nwho has broken the contract reasonable compensation not exceeding the amount so \nnamed or, as the case may be, the penalty stipulated for. \n \nExplanation : A stipulation for increased interest from the date of default may be a \nstipulation by way of penalty. \n \nExplanation : When any person enters into any bail bond, recognisance or other \ninstrument of the same nature or, under the provisions of any law, or under the \norders of the Central Government or of any State Government, gives any bond for \nthe performance of any public duty or act in which the public are interested, he shall \nbe liable, upon breach of the condition of any such instrument, to pay the whole sum \nmentioned therein.",
+        "url": "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf",
+        "tag": "law"
+      },
+      "LSAA1987:s19": {
+        "act": "Legal Services Authorities Act, 1987",
+        "heading": "Organisation of Lok Adalats",
+        "text": "[19. Organisation of Lok Adalats.—(1) Every State Authority or District Authority or the Supreme \nCourt Legal Services Committee or every High Court Legal Services Committee or, as the case may be, \n \n \nTaluk Legal Services Committee may organise Lok Adalats at such intervals and places and for \nexercising such jurisdiction and for such areas as it thinks fit. \n(2) Every Lok Adalat organised for an area shall consist of such number of— \n(a) serving or retired judicial officers; and \n(b) other persons, \nof the area as may be specified by the State Autho rity or the District Authority or the Supreme Court \nLegal Services Committee or the High Court Legal Services Committee, or as the case may be, the Taluk \nLegal Services Committee, organising such Lok Adalat. \n(3) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s organised by the Supreme Court Legal Services Committee shall be such as may be \nprescribed by the Central Government in consultation with the Chief Justice of India. \n(4) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s other than referred to in sub -section (3) shall be such as may be prescribed by the State \nGovernment in consultation with the Chief Justice of the High Court. \n(5) A Lok Adalat shall have jurisdiction to determine and to arr",
+        "full_text": "[19. Organisation of Lok Adalats.—(1) Every State Authority or District Authority or the Supreme \nCourt Legal Services Committee or every High Court Legal Services Committee or, as the case may be, \n \n \nTaluk Legal Services Committee may organise Lok Adalats at such intervals and places and for \nexercising such jurisdiction and for such areas as it thinks fit. \n(2) Every Lok Adalat organised for an area shall consist of such number of— \n(a) serving or retired judicial officers; and \n(b) other persons, \nof the area as may be specified by the State Autho rity or the District Authority or the Supreme Court \nLegal Services Committee or the High Court Legal Services Committee, or as the case may be, the Taluk \nLegal Services Committee, organising such Lok Adalat. \n(3) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s organised by the Supreme Court Legal Services Committee shall be such as may be \nprescribed by the Central Government in consultation with the Chief Justice of India. \n(4) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s other than referred to in sub -section (3) shall be such as may be prescribed by the State \nGovernment in consultation with the Chief Justice of the High Court. \n(5) A Lok Adalat shall have jurisdiction to determine and to arrive at a compromise or settlement \nbetween the parties to a dispute in respect of— \n(i) any case pending before; or \n(ii) any matter which is falling within the jurisdiction of, and is not brought before, \nany Court for which the Lok Adalat is organised: \nProvided that the Lok Adalat shall have no jurisdiction in respect of any case or matter relating to an \noffence not compoundable under any law.",
+        "url": "https://patnahighcourt.gov.in/BSLSA/pdf/ActsRules/1.pdf",
+        "tag": "law"
+      },
+      "COW2019:s2(k)": {
+        "act": "Code on Wages, 2019",
+        "heading": "Definitions: employee",
+        "text": "(k) “employee” means, any person (other than an apprentice engaged under the Apprentices Act, \n1961 (52 of 1961)), employed on wages by an establishment to do any skilled, semi -skilled or \nunskilled, manual, operational, supervisory, managerial, administrative, technical or clerical work for \nhire or reward, whether the terms of employment be express or implied, and also includes a person \ndeclared to be an employee by the appropriate Government, but does not include any member of the \nArmed Forces of the Union;",
+        "full_text": "(k) “employee” means, any person (other than an apprentice engaged under the Apprentices Act, \n1961 (52 of 1961)), employed on wages by an establishment to do any skilled, semi -skilled or \nunskilled, manual, operational, supervisory, managerial, administrative, technical or clerical work for \nhire or reward, whether the terms of employment be express or implied, and also includes a person \ndeclared to be an employee by the appropriate Government, but does not include any member of the \nArmed Forces of the Union;",
+        "url": "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf",
+        "tag": "law"
+      },
+      "COW2019:s2(m)": {
+        "act": "Code on Wages, 2019",
+        "heading": "Definitions: establishment",
+        "text": "(m) “establishment” means any place where any industry, trade, business, manufacture or \noccupation is carried on and includes Government establishment;",
+        "full_text": "(m) “establishment” means any place where any industry, trade, business, manufacture or \noccupation is carried on and includes Government establishment;",
+        "url": "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf",
+        "tag": "law"
+      }
+    },
+    "gate": {
+      "passed": true,
+      "top_similarity": 0.868,
+      "threshold": 0.7
+    },
+    "advice": {
+      "plain_summary": "Aap do saal se household mein kaam kar rahe hain aur pichle 3 mahine ka ₹27,000 salary nahi mila. Code on Wages ke mutabik salary time par dena zaroori hai, aur aapke paas abhi tak case file karne ka samay hai. Aapko pehle likhit notice bhejna aur free legal aid se baat karna chahiye.",
+      "claims": [
+        {
+          "section": "law",
+          "tag": "Law",
+          "text": "Employer ko salary mahine ke 7 din ke andar deni hoti hai.",
+          "cites": [
+            "COW2019:s17"
+          ],
+          "quote": "monthly basis, before the expiry of the seventh day of the succeeding month."
+        },
+        {
+          "section": "where_you_stand",
+          "tag": "Law",
+          "text": "Wages ke liye limitation period 3 saal hai, isliye aap abhi claim file kar sakte hain.",
+          "cites": [
+            "LA1963:schedule_art18"
+          ],
+          "quote": "Three years. When the work is done."
+        },
+        {
+          "section": "where_you_stand",
+          "tag": "Law",
+          "text": "Aapka kaam contract ke jaise hai; breach par aapko compensation mil sakti hai.",
+          "cites": [
+            "ICA1872:s73"
+          ],
+          "quote": "When a contract has been broken, the party who suffers by such breach is entitled to receive ... compensation for any loss or damage caused to him thereby"
+        },
+        {
+          "section": "law",
+          "tag": "Official procedure",
+          "text": "Lok Adalat ko State ya District Legal Services Authority organize karti hai aur yeh wage disputes ko suljha sakta hai.",
+          "cites": [
+            "LSAA1987:s19"
+          ],
+          "quote": "Every State Authority or District Authority ... may organise Lok Adalats at such intervals and places"
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Aap ek likhit demand (WhatsApp, email ya letter) bhejein, jisme unpaid salary ka amount aur payment ki deadline likhe.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Free legal aid helpline (DLSA) ko call karein aur unse guidance lein ki wages authority ya Lok Adalat me kaise file karein.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Agar employer response nahi deta, to aap DLSA ke through wages authority me claim file kar sakte hain.",
+          "cites": [],
+          "quote": null
+        }
+      ],
+      "cannot_assess": [],
+      "lawyer_needed_when": [
+        "Employer ne likhit notice ke baad bhi payment nahi kiya.",
+        "Aapko court me suit file karna ho ya compensation ke liye detailed legal argument ki zarurat ho."
+      ]
+    },
+    "verifier_log": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "issues": [
+          "claim 2: quote not found verbatim in ['ICA1872:s73']: 'When a contract has been broken, the party who suffers by such breach is entitle'",
+          "claim 3: legal/procedure statement without a citation",
+          "claim 1: verifier: unsupported (The source text provides a 3-year limitation period for the price of work done, but it does not mention 'wages' specifically, nor does it state that the user is currently within the time limit.)",
+          "claim 4: verifier: unsupported (The source text describes the organization and jurisdiction of Lok Adalats but does not mention that they settle disputes 'quickly' or 'without court fees'.)"
+        ],
+        "verdicts": [
+          {
+            "id": 0,
+            "verdict": "partially_supported",
+            "reason": "The source text specifies the deadline for monthly wages as 'before the expiry of the seventh day of the succeeding month', which is not equivalent to 'within 7 days of every month' (which implies within the current month), and the source does not state that the payment has not yet been made."
+          },
+          {
+            "id": 1,
+            "verdict": "unsupported",
+            "reason": "The source text provides a 3-year limitation period for the price of work done, but it does not mention 'wages' specifically, nor does it state that the user is currently within the time limit."
+          },
+          {
+            "id": 4,
+            "verdict": "unsupported",
+            "reason": "The source text describes the organization and jurisdiction of Lok Adalats but does not mention that they settle disputes 'quickly' or 'without court fees'."
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "passed": true,
+        "issues": [],
+        "verdicts": [
+          {
+            "id": 0,
+            "verdict": "partially_supported",
+            "reason": "The source text specifies the 7-day limit only for employees engaged on a 'monthly basis', whereas the statement applies it generally to all employers/employees without this condition."
+          },
+          {
+            "id": 1,
+            "verdict": "partially_supported",
+            "reason": "The source text confirms the 3-year limitation period for the specific cause of action described, but does not provide the factual basis to conclude that the user's specific claim is currently within that period."
+          },
+          {
+            "id": 2,
+            "verdict": "supported",
+            "reason": "The source text explicitly states that a party suffering from a breach of contract is entitled to receive compensation for loss or damage."
+          },
+          {
+            "id": 3,
+            "verdict": "partially_supported",
+            "reason": "The source text confirms that State or District Authorities can organize Lok Adalats, but the provided excerpt cuts off before specifying their jurisdiction, so it does not explicitly state they can resolve wage disputes."
+          }
+        ]
+      }
+    ],
+    "dropped_claims": 0,
+    "partial_claims": [
+      0,
+      1,
+      3
+    ],
+    "result": {
+      "context": {
+        "id": "household_worker",
+        "category": "wages",
+        "when": {
+          "employer_type": [
+            "household",
+            "individual"
+          ]
+        },
+        "label": "domestic / household worker paid by a family"
+      },
+      "evidence": [
+        {
+          "item": "A written note of the work: start date, what work, hours/days, agreed pay",
+          "required": true,
+          "how_to_get": "Write it down today in your own words, with dates. Keep it simple and honest.",
+          "why": "Your own record made early is useful if the other side later disputes the facts.",
+          "status": "need"
+        },
+        {
+          "item": "Proof of payments you DID receive (UPI history, bank passbook, cash notes)",
+          "required": true,
+          "how_to_get": "Screenshot UPI history or get the passbook updated. For cash, note dates and amounts.",
+          "why": "Shows the pattern of pay and the gap in the months that were not paid.",
+          "status": "need"
+        },
+        {
+          "item": "Messages or calls about the unpaid money",
+          "required": true,
+          "how_to_get": "Screenshot WhatsApp/SMS. Note dates of calls and what was said.",
+          "why": "Shows you asked for the money and what the other side replied.",
+          "status": "need"
+        },
+        {
+          "item": "Employer's full name, house address and phone number",
+          "required": true,
+          "how_to_get": "Write down the address exactly as it appears at the building/society.",
+          "why": "Any complaint or notice needs to name and reach the person who owes you.",
+          "status": "need"
+        },
+        {
+          "item": "Anyone who saw you working there (watchman, neighbour, other workers)",
+          "required": false,
+          "how_to_get": "Note their names and phone numbers. Do not pressure anyone.",
+          "why": "Without written terms, people who saw you work can support your account.",
+          "status": "need"
+        },
+        {
+          "item": "Society / building entry records or ID card, if any",
+          "required": false,
+          "how_to_get": "Ask the security desk whether visitor or staff registers exist.",
+          "why": "Shows you came to work there on particular dates.",
+          "status": "need"
+        }
+      ],
+      "pathways": [
+        {
+          "id": "written_demand",
+          "name": "Ask in writing (WhatsApp, email or letter)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0–₹50",
+          "time": "1–2 weeks for a reply",
+          "emotional": "Low to moderate",
+          "risk": "They may ignore it, but it creates a dated record you will need later.",
+          "how": "State what is owed, from when, and a date by which you expect it. Keep it polite and factual."
+        },
+        {
+          "id": "helpline_household",
+          "name": "Talk to the free legal aid helpline / DLSA first",
+          "categories": [
+            "wages"
+          ],
+          "contexts": [
+            "household_worker",
+            "informal_worker",
+            "gig_worker",
+            "unknown_employer"
+          ],
+          "money": "₹0",
+          "time": "A call or one visit to the district court complex",
+          "emotional": "Low",
+          "risk": "Help depends on your district's capacity; follow up if you do not hear back.",
+          "procedure_ref": "PROC:nalsa_helpline",
+          "law": {
+            "ref": "LSAA1987:s12",
+            "quote": "an industrial workman"
+          },
+          "note": "Free legal services are available to listed categories, including \"a woman or a child\" and \"an industrial workman\" [LSAA1987:s12]; NALSA also lists income-based eligibility by state [PROC:nalsa_legal_aid]."
+        },
+        {
+          "id": "lok_adalat",
+          "name": "Settle through a Lok Adalat (via the DLSA)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0",
+          "time": "Depends on when your DLSA holds one",
+          "emotional": "Low to moderate: it is a settlement, both sides must agree",
+          "risk": "Works only if the other side is willing to settle.",
+          "law": {
+            "ref": "LSAA1987:s19",
+            "quote": "arrive at a compromise or settlement between the parties"
+          }
+        },
+        {
+          "id": "wages_authority",
+          "name": "Claim before the wages authority (labour office)",
+          "categories": [
+            "wages"
+          ],
+          "contexts": [
+            "formal_employee",
+            "informal_worker",
+            "gig_worker",
+            "household_worker",
+            "unknown_employer"
+          ],
+          "money": "₹0–₹500 (travel, copies); Practical estimate",
+          "time": "Months; the law asks the authority to try to decide within three months",
+          "emotional": "Moderate: forms, hearings, facing the employer",
+          "risk": "Which office handles it depends on your state's rules. For household work, coverage itself may be disputed.",
+          "law": {
+            "ref": "COW2019:s45",
+            "quote": "endeavour shall be made by the authority to decide the claim within a period of three months"
+          },
+          "note": "The authority can order compensation that \"may extend to ten times of the claim determined\" [COW2019:s45]; that is a maximum, not a promise."
+        },
+        {
+          "id": "legal_notice",
+          "name": "Send a legal notice (yourself or through an advocate)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0 if you send it; roughly ₹2,000–₹10,000 through an advocate (Practical estimate, varies by city)",
+          "time": "2–4 weeks including the reply period",
+          "emotional": "Moderate: it feels formal",
+          "risk": "It may harden the other side. Anything you write can be used later, so stick to facts."
+        },
+        {
+          "id": "civil_recovery",
+          "name": "Recover the money through a civil suit (with an advocate)",
+          "categories": [
+            "contract_payment",
+            "wages"
+          ],
+          "contexts": [
+            "freelancer_client",
+            "personal_loan",
+            "general_contract",
+            "household_worker",
+            "informal_worker",
+            "unknown_employer"
+          ],
+          "money": "Court fee (state-specific, not in this corpus) + advocate fees, often ₹10,000+; Practical estimate",
+          "time": "Often a year or more; Practical estimate",
+          "emotional": "High",
+          "risk": "Costly relative to small amounts; outcome uncertain."
+        },
+        {
+          "id": "do_nothing",
+          "name": "Do nothing for now",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0",
+          "time": "None",
+          "emotional": "Low now; the loss stays",
+          "risk": "Time limits keep running. Waiting too long can end your claim."
+        },
+        {
+          "id": "hire_advocate",
+          "name": "Hire an advocate for full representation",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "Varies widely; often ₹10,000–₹50,000+ (Practical estimate)",
+          "time": "Depends on the forum",
+          "emotional": "Lower day-to-day stress; higher cost",
+          "risk": "Cost may exceed small claims."
+        }
+      ],
+      "coverage_notes": [
+        {
+          "tag": "Law",
+          "ref": "COW2019:s2(k)",
+          "quote": "employed on wages by an establishment",
+          "text": "The Code on Wages defines an employee as a person \"employed on wages by an establishment\"."
+        },
+        {
+          "tag": "Law",
+          "ref": "COW2019:s2(m)",
+          "quote": "any place where any industry, trade, business, manufacture or occupation is carried on",
+          "text": "An \"establishment\" is \"any place where any industry, trade, business, manufacture or occupation is carried on\"."
+        },
+        {
+          "tag": "Practical",
+          "text": "Whether a private home counts as an establishment is not settled by this text, and state rules may add to it. Ask the District Legal Services Authority (free) or the local labour office whether your claim can go to the wages authority. Separately, unpaid agreed pay can also be claimed as money owed under an agreement."
+        }
+      ],
+      "limitation": {
+        "period_id": "wages_claim_authority",
+        "ref": "COW2019:s45",
+        "quote": "within a period of three years from the date on which claims referred to in sub-section (1) arises",
+        "trigger": "the date the unpaid wages fell due",
+        "trigger_date": "2026-08-01",
+        "deadline": "2029-08-01",
+        "days_left": 985,
+        "status": "ok",
+        "message": "About 32 months left (deadline 01 Aug 2029)."
+      },
+      "strength": {
+        "band": "moderate",
+        "inputs": {
+          "work_or_purchase_proven": true,
+          "amount_documented": null,
+          "other_side_acknowledged": true,
+          "prior_demand_made": null,
+          "within_limitation": true
+        },
+        "for": [
+          "proof that you did the work / made the purchase",
+          "the other side has accepted (in any message) that they owe you",
+          "you appear to be within the time limit"
+        ],
+        "against": [],
+        "unknown": [
+          "the amount owed is written down somewhere",
+          "you have already asked for the money in writing"
+        ]
+      },
+      "drafts": [
+        "demand_letter",
+        "legal_aid_application"
+      ],
+      "wages_state_rules_note": true
+    },
+    "_turns": [
+      {
+        "turn": 0,
+        "outcome": null
+      }
+    ]
+  }
+}

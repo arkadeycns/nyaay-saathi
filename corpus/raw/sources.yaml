@@ -1,0 +1,64 @@
+# Where each Act PDF in corpus/raw/pdf/ came from. Retrieved 2026-11-20.
+# India Code (indiacode.nic.in) refused automated download from the build machine,
+# so government-hosted copies were used. Replace any PDF with the India Code copy
+# (same filename), clear its sha256 below, and rerun `python -m corpus.build_corpus`.
+acts:
+  CPA2019:
+    name: "Consumer Protection Act, 2019"
+    url: "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf"
+    publisher: "Gazette of India Extraordinary, 9 Aug 2019 (copy hosted by PRS Legislative Research)"
+    as_of: "2019-08-09 (as enacted; later amendments, if any, not included)"
+    layout: gazette
+    body_start: "^1\\. \\(1\\) This Act may be called"
+    body_end: "^————"
+    last_section: 107
+    sha256: 0ae7f82ab5b77d50087cd4cd2dd2dbc12755c0bdb31371fdefd042b020d50756
+  ICA1872:
+    name: "Indian Contract Act, 1872"
+    url: "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf"
+    publisher: "Commercial Tax Dept, Govt of Uttar Pradesh (transcription; contains typos vs India Code)"
+    as_of: "undated transcription"
+    layout: plain
+    body_start: "^1\\. Short title"
+    last_section: 238
+    repealed_ranges: [[76, 123]]   # source text: "Section 76 to 123 – Repealed"
+    sha256: 6ecc0edf1d1e1c861a57038e68da2e6fd1c8d623f3ace7e7c997914f1bfb645a
+  LA1963:
+    name: "Limitation Act, 1963"
+    url: "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf"
+    publisher: "Tripura High Court (India Code layout, amendments footnoted)"
+    as_of: "India Code consolidated copy (date not stated)"
+    layout: indiacode
+    body_start: "^1\\. Short title, extent and commencement\\.—"
+    body_end: "^THE SCHEDULE\\s*$"
+    schedule_start: "FIRST DIVISION—SUITS"
+    last_section: 32
+    sha256: 508feabba1a8039d2d30fd74ddfec2155d912c44c63f988947f95e0a5a92176c
+  COW2019:
+    name: "Code on Wages, 2019"
+    url: "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf"
+    publisher: "India Code consolidated text 'As on 21 November 2025' (hosted by New Mangalore Port Authority)"
+    as_of: "2025-11-21"
+    layout: indiacode
+    body_start: "^1\\. Short title, extent and commencement\\.—"
+    body_end: "^STATEMENT OF OBJECTS AND REASONS"
+    last_section: 69
+    sha256: 846f2e2745d8a9bc6a6503ca13fb3b5ee9a6d74f364b8179547739090c54cf7f
+  LSAA1987:
+    name: "Legal Services Authorities Act, 1987"
+    url: "https://patnahighcourt.gov.in/BSLSA/pdf/ActsRules/1.pdf"
+    publisher: "Patna High Court / Bihar SLSA (India Code layout, amendments footnoted)"
+    as_of: "India Code consolidated copy (date not stated)"
+    layout: indiacode
+    body_start: "^1\\. Short title, extent and commencement\\s*\\.—"
+    last_section: 30
+    sha256: 7a10bc2ae2a6c7fd0fb293488ed556fad664ca7adca10de24038477586da3ab7
+  CPJR2021:
+    name: "Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021"
+    url: "https://www.thc.nic.in/Central%20Governmental%20Rules/Consumer%20Protection%20(Jurisdiction%20of%20the%20District%20Commission,%20the%20State%20Commission%20and%20the%20National%20Commission)%20Rules,%202021.pdf"
+    publisher: "Gazette of India G.S.R. 912(E), 30 Dec 2021 (copy hosted by Tripura High Court)"
+    as_of: "2021-12-30"
+    layout: indiacode
+    body_start: "^1\\.\\s+Short title and commencement"
+    last_section: 5
+    sha256: 2c10f5a312064d5d7eaf80181580919fc13aff09f2df47b4ecc2ca7b79ade979

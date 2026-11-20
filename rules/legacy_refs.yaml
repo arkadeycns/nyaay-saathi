@@ -1,0 +1,20 @@
+# Repealed or out-of-corpus statutes users (and models) often cite. Mapping is at ACT level only.
+# `ref`+`quote` = the corpus says so (validated). No ref = we only flag it; we do not assert what replaced it.
+legacy_acts:
+  - {name: "Payment of Wages Act", pattern: "payment of wages act", year: 1936, status: repealed, now: "Code on Wages, 2019",
+     ref: "COW2019:s69", quote: "The Payment of Wages Act, 1936 (4 of 1936)"}
+  - {name: "Minimum Wages Act", pattern: "minimum wages act", year: 1948, status: repealed, now: "Code on Wages, 2019",
+     ref: "COW2019:s69", quote: "the Minimum Wages\nAct, 1948"}
+  - {name: "Payment of Bonus Act", pattern: "payment of bonus act", year: 1965, status: repealed, now: "Code on Wages, 2019",
+     ref: "COW2019:s69", quote: "the Payment of Bonus Act, 1965"}
+  - {name: "Equal Remuneration Act", pattern: "equal remuneration act", year: 1976, status: repealed, now: "Code on Wages, 2019",
+     ref: "COW2019:s69", quote: "the Equal Remuneration Act"}
+  - {name: "Consumer Protection Act, 1986", pattern: "consumer protection act,? 1986|cpa,? 1986|1986 act", year: 1986, status: repealed, now: "Consumer Protection Act, 2019",
+     ref: "CPA2019:s107", quote: "The Consumer Protection Act, 1986 is hereby repealed"}
+  - {name: "Indian Penal Code (IPC)", pattern: "\\bipc\\b|indian penal code", status: not_in_corpus,
+     note: "Criminal law. Not covered here; whether a section still applies must be checked by an advocate."}
+  - {name: "Code of Criminal Procedure (CrPC)", pattern: "\\bcrpc\\b|code of criminal procedure", status: not_in_corpus,
+     note: "Criminal procedure. Not covered here."}
+  - {name: "Indian Evidence Act", pattern: "evidence act", status: not_in_corpus, note: "Not covered here."}
+  - {name: "Negotiable Instruments Act", pattern: "negotiable instruments|\\bn\\.?i\\.? act\\b", status: not_in_corpus,
+     note: "Cheque-bounce law. Not covered here; its deadlines are short."}

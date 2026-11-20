@@ -1,0 +1,154 @@
+{
+  "case_id": "A01_househelp_unpaid",
+  "bucket": "A",
+  "flow": "advisor",
+  "started": "2026-11-20T21:49:32.810154",
+  "run_id": "20261120_214932_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 199.28,
+  "llm_calls": [
+    {
+      "ts": 1795191574.243,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 1720,
+      "completion_tokens": 401,
+      "latency_ms": 1181.4,
+      "note": ""
+    },
+    {
+      "ts": 1795191574.509,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 344,
+      "completion_tokens": 50,
+      "latency_ms": 240.0,
+      "note": ""
+    },
+    {
+      "ts": 1795191576.251,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 395.8,
+      "note": "429, waiting 13.5s"
+    },
+    {
+      "ts": 1795191590.089,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 332.0,
+      "note": "429, waiting 30.5s"
+    },
+    {
+      "ts": 1795191621.026,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 430.4,
+      "note": "429, waiting 31.5s"
+    },
+    {
+      "ts": 1795191653.669,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 1138.5,
+      "note": "429, waiting 2.5s"
+    },
+    {
+      "ts": 1795191658.733,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 3741,
+      "completion_tokens": 885,
+      "latency_ms": 2557.1,
+      "note": ""
+    },
+    {
+      "ts": 1795191659.373,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 1295,
+      "completion_tokens": 184,
+      "latency_ms": 636.2,
+      "note": ""
+    },
+    {
+      "ts": 1795191659.491,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 115.6,
+      "note": "429, waiting 32.5s"
+    },
+    {
+      "ts": 1795191692.26,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 265.1,
+      "note": "429, waiting 29.5s"
+    },
+    {
+      "ts": 1795191722.083,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 320.1,
+      "note": "429, waiting 3.5s"
+    },
+    {
+      "ts": 1795191725.705,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 116.5,
+      "note": "429, waiting 16.5s"
+    },
+    {
+      "ts": 1795191742.576,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 365.2,
+      "note": "429, waiting 29.5s"
+    }
+  ],
+  "state": {
+    "outcome": "error",
+    "error": "LLMError: groq rate limit: still throttled after 5 retries. Try again in a minute.",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/eval/run_eval.py\", line 165, in main\n    state = RUNNERS[case[\"flow\"]](case)\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/eval/run_eval.py\", line 56, in run_advisor\n    state = run(advisor_graph(), {\"messages\": list(messages), \"clarify_rounds\": state.get(\"clarify_rounds\", 0), \"audit\": []})\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/graph.py\", line 126, in run\n    final = dict(state)\n                  ^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/langgraph/pregel/__init__.py\", line 2436, in stream\n    for _ in runner.tick(\n             ~~~~~~~~~~~^\n        [t for t in loop.tasks.values() if not t.writes],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<2 lines>...\n        schedule_task=loop.accept_push,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ):\n    ^\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/nodes_advisor.py\", line 175, in verify_node\n    llm = get_llm()\n    \n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/nodes_advisor.py\", line 161, in advise\n    system = _ADVISE.format(lang=lang, ctx_label=ctx.get(\"label\", \"unknown\"), avoid=\", \".join(avoid) or \"none\")\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/llm.py\", line 107, in complete\n    raw = self._call(role, model, msgs, **kwargs)\n  File \"/Users/arkadey/nov proj/kuku fm/legal-ai/llm.py\", line 153, in _call\n    raise LLMError(f\"{self.cfg.name} rate limit: still throttled after {_MAX_RETRIES} retries. Try again in a minute.\")\nllm.LLMError: groq rate limit: still throttled after 5 retries. Try again in a minute.\nDuring task with name 'verify' and id '02410962-4d1c-0353-84e8-fcc779d4ecf3'\n"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "case_id": "A07_decoder_money_demand",
+  "bucket": "A",
+  "flow": "decoder",
+  "started": "2026-11-20T22:06:27.792750",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 33.78,
+  "llm_calls": [
+    {
+      "ts": 1795192588.066,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 252.3,
+      "note": "429, waiting 3.0s"
+    },
+    {
+      "ts": 1795192593.371,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 903,
+      "completion_tokens": 663,
+      "latency_ms": 2303.6,
+      "note": ""
+    },
+    {
+      "ts": 1795192593.49,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 85.6,
+      "note": "429, waiting 9.5s"
+    },
+    {
+      "ts": 1795192606.215,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 1199,
+      "completion_tokens": 790,
+      "latency_ms": 3220.0,
+      "note": ""
+    },
+    {
+      "ts": 1795192606.343,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 123.2,
+      "note": "429, waiting 12.5s"
+    },
+    {
+      "ts": 1795192621.253,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 1367,
+      "completion_tokens": 732,
+      "latency_ms": 2407.5,
+      "note": ""
+    },
+    {
+      "ts": 1795192621.566,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 262,
+      "completion_tokens": 58,
+      "latency_ms": 310.6,
+      "note": ""
+    }
+  ],
+  "state": {
+    "notice_text": "LEGAL NOTICE\nDate: 10 November 2026\nTo: Mr. Ravi Kumar, Flat 12, Shanti Apartments, Indore\nUnder instructions from my client M/s Sharma Electronics, I hereby call upon you to pay a sum of Rs. 42,500/- (Rupees Forty Two Thousand Five Hundred only) being the balance amount due towards the purchase of a refrigerator and air conditioner on credit in March 2026, within 15 days of receipt of this notice, failing which my client shall be constrained to initiate appropriate legal proceedings against you for recovery along with interest and costs, entirely at your risk.\nSd/- A. Verma, Advocate\n",
+    "received_date": "2026-11-15",
+    "audit": [],
+    "notice": {
+      "sender_type": "advocate_or_party",
+      "sender": {
+        "value": "A. Verma, Advocate",
+        "snippet": "Sd/- A. Verma, Advocate"
+      },
+      "recipient": {
+        "value": "Mr. Ravi Kumar, Flat 12, Shanti Apartments, Indore",
+        "snippet": "To: Mr. Ravi Kumar, Flat 12, Shanti Apartments, Indore"
+      },
+      "notice_date": {
+        "value": "10 November 2026",
+        "snippet": "Date: 10 November 2026"
+      },
+      "demand_amount": {
+        "value": "Rs. 42,500/- (Rupees Forty Two Thousand Five Hundred only)",
+        "snippet": "Rs. 42,500/- (Rupees Forty Two Thousand Five Hundred only)"
+      },
+      "demand_action": {
+        "value": "pay a sum of Rs. 42,500/- (Rupees Forty Two Thousand Five Hundred only) being the balance amount due towards the purchase of a refrigerator and air conditioner on credit",
+        "snippet": "pay a sum of Rs. 42,500/- (Rupees Forty Two Thousand Five Hundred only) being the balance amount due towards the purchase of a refrigerator and air conditioner on credit"
+      },
+      "deadline": {
+        "value": "within 15 days of receipt of this notice",
+        "snippet": "within 15 days of receipt of this notice"
+      },
+      "deadline_days": 15,
+      "threatened_consequences": [
+        {
+          "value": "initiate appropriate legal proceedings against you for recovery along with interest and costs",
+          "snippet": "my client shall be constrained to initiate appropriate legal proceedings against you for recovery along with interest and costs, entirely at your risk."
+        }
+      ],
+      "provisions": [],
+      "subject": "money_demand",
+      "plain_summary": "The notice demands payment of Rs. 42,500 within 15 days of receipt. It warns that legal proceedings with interest and costs will be initiated if the amount is not paid."
+    },
+    "span_issues": [],
+    "outcome": null,
+    "triage": {
+      "cleared": true
+    },
+    "provisions": [],
+    "sources": {
+      "LA1963:schedule_art22": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "22. For money deposited under an \nagreement that it shall be \npayable on demand, including \nmoney of a customer in the \nhands of his banker so payable. \nThree years. When the demand is made.",
+        "full_text": "22. For money deposited under an \nagreement that it shall be \npayable on demand, including \nmoney of a customer in the \nhands of his banker so payable. \nThree years. When the demand is made.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art21": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "21. For money lent under an agreement \nthat it shall be payable on \ndemand. \nThree years. When the loan is made.",
+        "full_text": "21. For money lent under an agreement \nthat it shall be payable on \ndemand. \nThree years. When the loan is made.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "ICA1872:s69": {
+        "act": "Indian Contract Act, 1872",
+        "heading": "Reimbursement of person paying money due by another, in payment of",
+        "text": "69. Reimbursement of person paying money due by another, in payment of \nwhich he is interested \n \nA person who is interested in the payment of money which another is bound by law \nto pay, and who therefore pays it, is entitled to be reimbursed by the other.",
+        "full_text": "69. Reimbursement of person paying money due by another, in payment of \nwhich he is interested \n \nA person who is interested in the payment of money which another is bound by law \nto pay, and who therefore pays it, is entitled to be reimbursed by the other.",
+        "url": "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf",
+        "tag": "law"
+      }
+    },
+    "explanation": {
+      "plain_summary": "You have received a notice from Advocate A. Verma asking you to pay Rs. 42,500 within 15 days for a refrigerator and air‑conditioner bought on credit. The notice warns that if you do not pay, the sender may start legal proceedings to recover the amount with interest and costs.",
+      "claims": [
+        {
+          "section": "where_you_stand",
+          "tag": "Law",
+          "text": "The notice treats the amount as a sum payable on demand under a credit agreement, which is a type of contract for money lent.",
+          "cites": [
+            "LA1963:schedule_art21"
+          ],
+          "quote": "For money lent under an agreement that it shall be payable on demand. Three years. When the loan is made."
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Do not panic. Note the date you actually received the notice (not the date printed on it). Gather any documents related to the purchase – receipts, credit agreement, payment records, and any correspondence. If you dispute the amount or the claim, consider contacting free legal aid services in Indore for advice.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "If you are able to pay the amount, you may do so within the 15‑day period to avoid further costs. If you cannot pay or believe the demand is incorrect, you can reply in writing stating your position and request a detailed statement of the debt.",
+          "cites": [],
+          "quote": null
+        }
+      ],
+      "cannot_assess": [
+        "Whether a valid credit agreement exists between you and the seller, as the notice does not include a copy of the contract.",
+        "Whether any part of the amount has already been paid or set off against other obligations."
+      ],
+      "lawyer_needed_when": [
+        "You dispute the existence or amount of the debt.",
+        "The sender initiates legal proceedings and you need to defend the claim."
+      ]
+    },
+    "verifier_log": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "issues": [
+          "claim 0: legal/procedure statement without a citation",
+          "claim 1: quote not found verbatim in ['LA1963:schedule_art21']: 'For money lent under an agreement that it shall be payable on demand. Three year'",
+          "claim 1: states the number 1963 which is not in the cited text or your facts",
+          "claim 1: states the number 22 which is not in the cited text or your facts",
+          "claim 2: quote not found verbatim in ['ICA1872:s69']: 'A person who is interested in the payment of money which another is bound by law'",
+          "claim 2: states the number 1872 which is not in the cited text or your facts"
+        ],
+        "verdicts": []
+      },
+      {
+        "attempt": 2,
+        "passed": false,
+        "issues": [
+          "claim 1: states the number 1963 which is not in the cited text or your facts"
+        ],
+        "verdicts": [
+          {
+            "id": 0,
+            "verdict": "supported",
+            "reason": "The source text explicitly states the limitation period applies to money lent under an agreement that it shall be payable on demand, which supports the statement's description of the legal basis."
+          }
+        ]
+      }
+    ],
+    "dropped_claims": 1,
+    "result": {
+      "kind": {
+        "is": "A letter from the other side (often through their lawyer) stating what they want.",
+        "is_not": [
+          "It is not a court order or a judgment. A court has not decided anything because of this letter.",
+          "It does not by itself mean a case has been filed.",
+          "What it says about the law is their version; it may be right, exaggerated or wrong."
+        ]
+      },
+      "deadline": {
+        "status": "running",
+        "days": 15,
+        "due": "2026-11-30",
+        "days_left": 10
+      },
+      "options": [
+        {
+          "id": "ignore",
+          "name": "Ignore it",
+          "risk": "Silence can be read as not disputing their claims, and you lose track of any deadline they set. Not recommended without advice."
+        },
+        {
+          "id": "reply",
+          "name": "Send a short factual reply",
+          "risk": "Anything you write can be used later. Stick to facts, deny what is wrong, admit nothing you are unsure of."
+        },
+        {
+          "id": "negotiate",
+          "name": "Negotiate / ask for documents",
+          "risk": "Asking for the documents they rely on costs little and buys time, but note their deadline."
+        },
+        {
+          "id": "pay",
+          "name": "Pay what they ask",
+          "risk": "Ends the dispute fast but may mean paying something not owed. Get it in writing as full and final settlement."
+        },
+        {
+          "id": "get_help",
+          "name": "Get free legal help first (DLSA / NALSA 15100)",
+          "risk": "Takes a little time; do it well before their deadline."
+        }
+      ],
+      "reply_warning": "A reply to a legal notice can create admissions. Keep it short and factual, do not apologise for things you did not do, and have an advocate or the DLSA check it if the amount matters to you.",
+      "threats": [
+        "my client shall be constrained to initiate appropriate legal proceedings against you for recovery along with interest and costs, entirely at your risk."
+      ],
+      "gather": [
+        "The notice and its envelope / courier slip (proves when it reached you)",
+        "Any agreement, bill, invoice or messages the notice refers to",
+        "Proof of any payments you already made",
+        "A note of the date you received it and how (post, courier, WhatsApp, email)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "case_id": "notice_cheque_bounce",
+  "case_name": "Cheque bounce notice — should escalate",
+  "type": "decoder",
+  "input": "DEMAND NOTICE UNDER SECTION 138 OF THE NEGOTIABLE INSTRUMENTS ACT, 1881\n\nYou are hereby notified that the cheque bearing No. 456789 dated\n01.09.2026 for Rs. 2,00,000 drawn on HDFC Bank issued by you in\nfavour of Mr. Suresh Patel has been dishonoured by the bank on\ngrounds of \"insufficient funds\". You are called upon to make payment\nof the said amount within 15 days of receipt of this notice.\n",
+  "elapsed_seconds": 0.0,
+  "response": "",
+  "triage_result": "hard_escalate",
+  "triage_message": "⚠️ **This appears to relate to a CHEQUE BOUNCE case.**\n\nCheque-bounce cases under Section 138 of the Negotiable Instruments Act have SHORT CRITICAL DEADLINES. I am not equipped to advise on this. **Please see an advocate IMMEDIATELY.**",
+  "escalated": true,
+  "provisions_cited": [
+    {
+      "provision": "Negotiable Instruments Act, 1881, Section 138",
+      "snippet": "DEMAND NOTICE UNDER SECTION 138 OF THE NEGOTIABLE INSTRUMENTS ACT, 1881"
+    }
+  ],
+  "provision_checks": [],
+  "deadline_info": null,
+  "verifier_log": [],
+  "run_log": [
+    {
+      "ts": 1795185763.7837381,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.3
+    },
+    {
+      "ts": 1795185763.793956,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.966478,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9700449,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9709928,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.979423,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9982238,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9992042,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0000908,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0086012,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.023255,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0241659,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.024966,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0332968,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048003,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048943,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.05022,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.1
+    },
+    {
+      "ts": 1795185765.0593212,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.072947,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0738418,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.074666,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.083329,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.086019,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0886881,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0913332,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.099953,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 200,
+      "completion_tokens": 100,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1072378,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 400,
+      "completion_tokens": 250,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1081018,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.108753,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 200,
+      "completion_tokens": 100,
+      "latency_ms": 0.0
+    }
+  ]
+}

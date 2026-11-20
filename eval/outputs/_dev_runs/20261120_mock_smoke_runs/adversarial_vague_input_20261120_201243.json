@@ -1,0 +1,365 @@
+{
+  "case_id": "adversarial_vague_input",
+  "case_name": "Very vague input",
+  "type": "advisor",
+  "input": "kuch hua hai, paise ka problem hai, help karo",
+  "elapsed_seconds": 0.03,
+  "response": "## Where You Stand\nBased on your case file and evidence, your position is grounded in the Consumer Protection Act, 2019 [Law]. The seller or platform is obligated to provide goods free of defect. Your strength band is assessed from available proof.\n\n## Case Timeline\n• Order placed and transaction confirmed with invoice records.\n• Defect identified, return or refund requested within reasonable time.\n• Refund or remedy pending from seller/company.\n\n## Evidence Checklist\n• Invoice / order confirmation and payment proof [Practical estimate]\n• Warranty card and photos/video showing defect [Practical estimate]\n• Customer care grievance reference numbers and chat history [Practical estimate]\n\n## Your Options\n1. Direct negotiation: Send a written demand for full refund or replacement [Practical estimate].\n2. Legal notice through an advocate to signal formal intent [Practical estimate].\n3. File a consumer complaint before the Consumer Commission under Section 35 [CPA2019:s35] [Official procedure] [PROC:consumer_filing].\n4. Free legal aid / Lok Adalat: Approach DLSA under Section 12 [LSAA1987:s12] [PROC:dlsa_aid] [Official procedure].\n\n## Deadline Status\nLimitation period of two years applies under Section 69 [CPA2019:s69] [Law].\n\n## Drafts Available\n• Legal Notice draft\n• Consumer Complaint draft\n• Free Legal Aid Application draft\n\n## When You Need a Real Lawyer\nConsult an advocate if the company disputes jurisdiction or if your claim involves high disputed damages.\n\n---\n📋 *This is AI-generated guidance based on central Indian law as of 2026-11-01. It is not legal advice. For matters involving significant money, court proceedings, or personal safety, please consult an advocate.*",
+  "escalation_message": "",
+  "escalated": false,
+  "case_file": {
+    "category": "contract_payment",
+    "user_goal": "payment",
+    "parties": {
+      "user": {
+        "name": "User"
+      },
+      "other_side": {
+        "name": "Opposite Party",
+        "type": "individual"
+      }
+    },
+    "amount_in_dispute": null,
+    "timeline": [
+      {
+        "date": "2026-10-01",
+        "event": "Disputed transaction/notice",
+        "source": "user_said",
+        "certainty": "approx"
+      }
+    ],
+    "evidence": [
+      {
+        "item": "Written agreement or contract",
+        "status": "dont_have",
+        "how_to_get": "Any document — formal contract, email agreement, even WhatsApp messages agreeing to terms",
+        "why_it_matters": "Proves what was agreed between the parties"
+      },
+      {
+        "item": "Payment proof (transfers, receipts, UPI)",
+        "status": "dont_have",
+        "how_to_get": "Bank statements, UPI transaction screenshots, receipts",
+        "why_it_matters": "Proves money was paid"
+      },
+      {
+        "item": "Acknowledgement messages from the other side",
+        "status": "dont_have",
+        "how_to_get": "Screenshot any message where they acknowledge the arrangement or payment",
+        "why_it_matters": "Strengthens your case — shows the other side agrees on key facts"
+      },
+      {
+        "item": "Prior demand or follow-up messages",
+        "status": "dont_have",
+        "how_to_get": "Screenshot emails, chats where you asked for payment/return",
+        "why_it_matters": "Shows you tried to resolve it before escalating"
+      }
+    ],
+    "evidence_gaps": [
+      "Written agreement or contract",
+      "Payment proof (transfers, receipts, UPI)"
+    ],
+    "prior_steps": [
+      "Direct communication with customer support / HR"
+    ],
+    "limitation": {
+      "trigger_date": "2026-10-01",
+      "period_ref_chunk_id": "LA1963:schedule_art55",
+      "deadline": "2029-10-01",
+      "days_left": 1046,
+      "warning": null
+    },
+    "escalation_flags": [],
+    "strength_inputs": {
+      "key_evidence_present": false,
+      "within_limitation": true,
+      "prior_demand_made": true
+    },
+    "strength_band": "weak"
+  },
+  "clarifying_questions": [],
+  "verifier_log": [
+    {
+      "layer_a": [],
+      "layer_b": [],
+      "passed": true
+    }
+  ],
+  "drafts_available": [
+    "legal_notice",
+    "legal_aid_application"
+  ],
+  "run_log": [
+    {
+      "ts": 1795185763.7837381,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.3
+    },
+    {
+      "ts": 1795185763.793956,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.966478,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9700449,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9709928,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.979423,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9982238,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9992042,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0000908,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0086012,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.023255,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0241659,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.024966,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0332968,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048003,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048943,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.05022,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.1
+    },
+    {
+      "ts": 1795185765.0593212,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.072947,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0738418,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.074666,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.083329,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.086019,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0886881,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0913332,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.099953,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 200,
+      "completion_tokens": 100,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1072378,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 400,
+      "completion_tokens": 250,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1081018,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.108753,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 200,
+      "completion_tokens": 100,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.109451,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.112261,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1205719,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1366558,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1376169,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    }
+  ]
+}

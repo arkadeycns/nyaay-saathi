@@ -1,0 +1,19 @@
+DRAFT OUTLINE — CHECK EVERY FACT. This is an outline to help you prepare; the Consumer Commission's own format and fee rules apply.
+
+BEFORE THE DISTRICT CONSUMER DISPUTES REDRESSAL COMMISSION, {{ district or "[District]" }}
+
+Complainant: {{ user_name or "[Your name]" }}, {{ user_address or "[Your address]" }}
+Opposite party: {{ other_name or "[Seller / service provider]" }}, {{ other_address or "[Their address]" }}
+
+1. What I bought / which service: {{ item or "[product or service, order number]" }}
+2. Date and price paid: {{ since or "[date]" }}, {{ "₹" ~ amount if amount else "[amount]" }}
+3. What went wrong:
+{{ facts or "[Write 2-3 lines in your own words: what happened, when, and what is unpaid or wrong]" }}
+4. What I did to resolve it (complaints, ticket numbers, replies): {{ prior_steps or "[list with dates]" }}
+5. What I am asking for: {{ relief or "[refund / replacement / repair]" }}
+{% if legal_points %}6. Legal points (from the verified explanation):
+{% for p in legal_points %}   - {{ p }}
+{% endfor %}{% endif %}
+Documents attached (list): [invoice, payment proof, screenshots of complaints, photos]
+
+Signature: {{ user_name or "[Your name]" }}        Date: {{ today }}

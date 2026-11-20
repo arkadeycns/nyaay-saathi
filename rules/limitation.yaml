@@ -1,0 +1,47 @@
+# LIMITATION TABLE — the only source of periods used by rules/limitation.py.
+# Each row quotes the corpus; the validator checks the quote. The LLM never computes deadlines.
+# `trigger` says which date starts the clock; the user must confirm that date.
+periods:
+  - id: consumer_complaint
+    categories: [consumer]
+    years: 2
+    ref: "CPA2019:s69"
+    quote: "within two years from the date on which the cause of action has arisen"
+    trigger: "the date the problem arose (e.g. refund refused, defect found, service failed)"
+    extension: {ref: "CPA2019:s69", quote: "he had sufficient cause for not filing the complaint within such period"}
+
+  - id: wages_claim_authority
+    categories: [wages]
+    years: 3
+    ref: "COW2019:s45"
+    quote: "within a period of three years from the date on which claims referred to in sub-section (1) arises"
+    trigger: "the date the unpaid wages fell due"
+    extension: {ref: "COW2019:s45", quote: "entertain the application after three years on sufficient cause being shown"}
+
+  - id: wages_suit
+    categories: [wages]
+    years: 3
+    ref: "LA1963:schedule_art7"
+    quote: "For wages in the case of any other person"
+    trigger: "when the wages accrue due"
+
+  - id: contract_breach_suit
+    categories: [contract_payment]
+    years: 3
+    ref: "LA1963:schedule_art55"
+    quote: "For compensation for the breach of any contract"
+    trigger: "when the contract is broken"
+
+  - id: money_lent_suit
+    categories: [contract_payment]
+    contexts: [personal_loan]
+    years: 3
+    ref: "LA1963:schedule_art19"
+    quote: "For money payable for money lent"
+    trigger: "when the loan is made"
+
+# Period text in the Schedule reads "Three years." — validated as a separate quote.
+schedule_period_quote: {ref: "LA1963:schedule_art55", quote: "Three years"}
+
+# Warning thresholds (product choice, not law).
+warn_days: {urgent: 30, soon: 90}

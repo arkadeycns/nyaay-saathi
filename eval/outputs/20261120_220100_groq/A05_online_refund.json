@@ -1,0 +1,549 @@
+{
+  "case_id": "A05_online_refund",
+  "bucket": "A",
+  "flow": "advisor",
+  "started": "2026-11-20T22:04:34.651386",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 48.64,
+  "llm_calls": [
+    {
+      "ts": 1795192476.263,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 1813,
+      "completion_tokens": 600,
+      "latency_ms": 1604.3,
+      "note": ""
+    },
+    {
+      "ts": 1795192476.82,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 338,
+      "completion_tokens": 48,
+      "latency_ms": 552.1,
+      "note": ""
+    },
+    {
+      "ts": 1795192476.971,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 104.1,
+      "note": "429, waiting 13.5s"
+    },
+    {
+      "ts": 1795192493.213,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 2943,
+      "completion_tokens": 776,
+      "latency_ms": 2736.4,
+      "note": ""
+    },
+    {
+      "ts": 1795192494.048,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 1204,
+      "completion_tokens": 144,
+      "latency_ms": 829.4,
+      "note": ""
+    },
+    {
+      "ts": 1795192494.146,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 95.1,
+      "note": "429, waiting 25.5s"
+    },
+    {
+      "ts": 1795192522.32,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 3043,
+      "completion_tokens": 953,
+      "latency_ms": 2668.4,
+      "note": ""
+    },
+    {
+      "ts": 1795192523.292,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 888,
+      "completion_tokens": 175,
+      "latency_ms": 968.2,
+      "note": ""
+    }
+  ],
+  "state": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Ordered a phone for ₹15,999 on an online shopping app on 2 October 2026. Screen was defective, they picked it up on 9 October but refund still not credited. Customer care keeps saying wait 7-10 days. I have the invoice and pickup SMS."
+      }
+    ],
+    "clarify_rounds": 0,
+    "audit": [
+      {
+        "step": "intake_span_check",
+        "notes": [
+          "due_date 2026-10-09 dropped: '9 October 2026' not in user text"
+        ]
+      }
+    ],
+    "blocked": null,
+    "outcome": null,
+    "facts": {
+      "summary": "You ordered a phone for ₹15,999, received a defective screen, returned it on 9 October 2026, but the refund hasn't been credited yet.",
+      "category": "consumer",
+      "category_reason": "purchase of goods with refund dispute",
+      "user_goal": null,
+      "other_party_name": "online shopping app",
+      "other_party_type": "online_platform",
+      "employer_type": "unknown",
+      "has_written_terms": null,
+      "consumer_subject": "goods",
+      "contract_subject": null,
+      "amount": 15999.0,
+      "amount_text": "₹15,999",
+      "events": [],
+      "due_date": null,
+      "due_date_text": "9 October 2026",
+      "evidence_have": [
+        "invoice",
+        "pickup SMS"
+      ],
+      "prior_steps": [
+        "Customer care keeps saying wait 7-10 days"
+      ],
+      "user_state": null,
+      "work_or_purchase_proven": true,
+      "amount_documented": true,
+      "other_side_acknowledged": null,
+      "prior_demand_made": true,
+      "arrest_or_police": false,
+      "criminal_allegation_against_user": false,
+      "violence_or_threat_to_safety": false,
+      "family_or_property_matter": false,
+      "court_summons_or_case_filed": false,
+      "cheque_bounce": false,
+      "rent_or_tenancy": false,
+      "distress": false,
+      "missing_questions": []
+    },
+    "context": {
+      "id": "online_purchase",
+      "category": "consumer",
+      "when": {
+        "other_party_type": [
+          "online_platform"
+        ]
+      },
+      "label": "online purchase"
+    },
+    "distress": false,
+    "lang": "en",
+    "queries": [
+      "deficiency in service under Consumer Protection Act",
+      "time limit for refund of defective goods",
+      "criteria for refund of online purchase"
+    ],
+    "sources": {
+      "CPA2019:s2(11)": {
+        "act": "Consumer Protection Act, 2019",
+        "heading": "Definitions: deficiency",
+        "text": "(11) \"deficiency\" means any fault, imperfection, shortcoming or inadequacy in\nthe quality, nature and manner of performance which is required to be maintained by or\nunder any law for the time being in force or has been undertaken to be performed by a\nperson in pursuance of a contract or otherwise in relation to any service and includes—\n(i) any act of negligence or omission or commission by such person which\ncauses loss or injury to the consumer; and\n(ii) deliberate withholding of relevant information by such person to the\nconsumer;",
+        "full_text": "(11) \"deficiency\" means any fault, imperfection, shortcoming or inadequacy in\nthe quality, nature and manner of performance which is required to be maintained by or\nunder any law for the time being in force or has been undertaken to be performed by a\nperson in pursuance of a contract or otherwise in relation to any service and includes—\n(i) any act of negligence or omission or commission by such person which\ncauses loss or injury to the consumer; and\n(ii) deliberate withholding of relevant information by such person to the\nconsumer;",
+        "url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf",
+        "tag": "law"
+      },
+      "CPA2019:s39": {
+        "act": "Consumer Protection Act, 2019",
+        "heading": "Findings of District Commission",
+        "text": "39. (1) Where the District Commission is satisfied that the goods complained against\nsuffer from any of the defects specified in the complaint or that any of the allegations\ncontained in the complaint about the services or any unfair trade practices, or claims for\ncompensation under product liability are proved, it shall issue an order to the opposite party\ndirecting him to do one or more of the following, namely:—\n(a) to remove the defect pointed out by the appropriate laboratory from the\ngoods in question;\n(b) to replace the goods with new goods of similar description which shall be\nfree from any defect;\n(c) to return to the complainant the price, or, as the case may be, the charges paid\nby the complainant along with such interest on such price or charges as may be\ndecided;\n(d) to pay such amount as may be awarded by it as compensation to the consumer\nfor any loss or injury suffered by the consumer due to the negligence of the opposite\nparty:\nProvided that the District Commission shall have the power to grant punitive\ndamages in such circumstances as it deems fit;\n(e) to pay such amount as may be awarded by it as compensation in a product\nliability action under Chapter VI;\n(f) to remove the defects in goods or deficiencies in the services in question;\n(g) to discontinue the unfair trade practice or restrictive trade practice and not to\nrepeat them;\n(h) not to offer the hazard",
+        "full_text": "39. (1) Where the District Commission is satisfied that the goods complained against\nsuffer from any of the defects specified in the complaint or that any of the allegations\ncontained in the complaint about the services or any unfair trade practices, or claims for\ncompensation under product liability are proved, it shall issue an order to the opposite party\ndirecting him to do one or more of the following, namely:—\n(a) to remove the defect pointed out by the appropriate laboratory from the\ngoods in question;\n(b) to replace the goods with new goods of similar description which shall be\nfree from any defect;\n(c) to return to the complainant the price, or, as the case may be, the charges paid\nby the complainant along with such interest on such price or charges as may be\ndecided;\n(d) to pay such amount as may be awarded by it as compensation to the consumer\nfor any loss or injury suffered by the consumer due to the negligence of the opposite\nparty:\nProvided that the District Commission shall have the power to grant punitive\ndamages in such circumstances as it deems fit;\n(e) to pay such amount as may be awarded by it as compensation in a product\nliability action under Chapter VI;\n(f) to remove the defects in goods or deficiencies in the services in question;\n(g) to discontinue the unfair trade practice or restrictive trade practice and not to\nrepeat them;\n(h) not to offer the hazardous or unsafe goods for sale;\n(i) to withdraw the hazardous goods from being offered for sale;\n(j) to cease manufacture of hazardous goods and to desist from offering services\nwhich are hazardous in nature;\n(k) to pay such sum as may be determined by it, if it is of the opinion that loss or\ninjury has been suffered by a large number of consumers who are not identifiable\nconveniently:\nProvided that the minimum amount of sum so payable shall not be less than\ntwenty-five per cent. of the value of such defective goods sold or service provided, as\nthe case may be, to such consumers;\n(l) to issue corrective advertisement to neutralise the effect of misleading\nadvertisement at the cost of the opposite party responsible for issuing such misleading\nadvertisement;\n(m) to provide for adequate costs to parties; and\n(n) to cease and desist from issuing any misleading advertisement.\n(2) Any amount obtained under sub-section ( 1) shall be credited to such fund and\nutilised in such manner as may be prescribed.\n(3) In any proceeding conducted by the President and a member and if they differ on\nany point or points, they shall state the point or points on which they differ and refer the\nsame to another member for hearing on such point or points and the opinion of the majority\nshall be the order of the District Commission:\nProvided that the other member shall give his opinion on such point or points referred\nto him within a period of one month from the date of such reference.\n(4) Every order made by the District Commission under sub-section (1) shall be signed\nby the President and the member who conducted the proceeding:\nProvided that where the order is made as per majority opinion under sub-section (3),\nsuch order shall also be signed by the other member.",
+        "url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf",
+        "tag": "law"
+      },
+      "CPA2019:s65": {
+        "act": "Consumer Protection Act, 2019",
+        "heading": "Service of notice, etc",
+        "text": "65. (1) All notices, required by this Act to be served, shall be served by delivering or\ntransmitting a copy thereof by registered post acknowledgment due addressed to opposite\nparty against whom complaint is made or to the complainant by speed post or by such\ncourier service, approved by the District Commission, the State Commission or the National\nCommission, as the case may be, or by any other mode of transmission of documents\nincluding electronic means.\n(2) Without prejudice to the provisions contained in sub-section (1), the notice required\nby this Act may be served on an electronic service provider at the address provided by it on\nthe electronic platform from where it provides its services as such and for this purpose, the\nelectronic service provider shall designate a nodal officer to accept and process such notices.\n(3) When an acknowledgment or any other receipt purporting to be signed by the\nopposite party or his agent or, as the case may be, by the complainant is received by the\nDistrict Commission, the State Commission or the National Commission, as the case may be,\nor postal article containing the notice is received back by such District Commission, State\nCommission or the National Commission, with an endorsement purporting to have been\nmade by a postal employee or by any person authorised by the courier service to the effect\nthat the opposite party or his agent or ",
+        "full_text": "65. (1) All notices, required by this Act to be served, shall be served by delivering or\ntransmitting a copy thereof by registered post acknowledgment due addressed to opposite\nparty against whom complaint is made or to the complainant by speed post or by such\ncourier service, approved by the District Commission, the State Commission or the National\nCommission, as the case may be, or by any other mode of transmission of documents\nincluding electronic means.\n(2) Without prejudice to the provisions contained in sub-section (1), the notice required\nby this Act may be served on an electronic service provider at the address provided by it on\nthe electronic platform from where it provides its services as such and for this purpose, the\nelectronic service provider shall designate a nodal officer to accept and process such notices.\n(3) When an acknowledgment or any other receipt purporting to be signed by the\nopposite party or his agent or, as the case may be, by the complainant is received by the\nDistrict Commission, the State Commission or the National Commission, as the case may be,\nor postal article containing the notice is received back by such District Commission, State\nCommission or the National Commission, with an endorsement purporting to have been\nmade by a postal employee or by any person authorised by the courier service to the effect\nthat the opposite party or his agent or complainant had refused to take delivery of the postal\narticle containing the notice or had refused to accept the notice by any other means specified\nin sub-section (1) when tendered or transmitted to him, the District Commission or the State\nCommission or the National Commission, as the case may be, shall declare that the notice\nhas been duly served on the opposite party or to the complainant, as the case may be:\nProvided that where the notice was properly addressed, pre-paid and duly sent by\nregistered post acknowledgment due, a declaration referred to in this sub-section shall be\nmade notwithstanding the fact that the acknowledgment has been lost or misplaced, or for\nany other reason, has not been received by the District Commission, the State Commission\nor the National Commission, as the case may be, within thirty days from the date of issue of\nnotice.\n(4) All notices required to be served on an opposite party or to complainant, as the\ncase may be, shall be deemed to be sufficiently served, if addressed in the case of the\nopposite party, to the place where business or profession is carried on, and in case of the\ncomplainant, the place where such person actually and voluntarily resides.",
+        "url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf",
+        "tag": "law"
+      },
+      "CPA2019:s35": {
+        "act": "Consumer Protection Act, 2019",
+        "heading": "Manner in which complaint shall be made",
+        "text": "35. (1) A complaint, in relation to any goods sold or delivered or agreed to be sold or\ndelivered or any service provided or agreed to be provided, may be filed with a District\nCommission by—\n(a) the consumer,—\n(i) to whom such goods are sold or delivered or agreed to be sold or\ndelivered or such service is provided or agreed to be provided; or\n(ii) who alleges unfair trade practice in respect of such goods or service;\n(b) any recognised consumer association, whether the consumer to whom such\ngoods are sold or delivered or agreed to be sold or delivered or such service is provided\nor agreed to be provided, or who alleges unfair trade practice in respect of such goods\nor service, is a member of such association or not;\n(c) one or more consumers, where there are numerous consumers having the\nsame interest, with the permission of the District Commission, on behalf of, or for the\nbenefit of, all consumers so interested; or\n(d) the Central Government, the Central Authority or the State Government, as\nthe case may be:\nProvided that the complaint under this sub-section may be filed electronically in such\nmanner as may be prescribed.\nExplanation. —For the purposes of this sub-section, \"recognised consumer\nassociation\" means any voluntary consumer association registered under any law for the\ntime being in force.\n(2) Every complaint filed under sub-section (1) shall be accompanied with s",
+        "full_text": "35. (1) A complaint, in relation to any goods sold or delivered or agreed to be sold or\ndelivered or any service provided or agreed to be provided, may be filed with a District\nCommission by—\n(a) the consumer,—\n(i) to whom such goods are sold or delivered or agreed to be sold or\ndelivered or such service is provided or agreed to be provided; or\n(ii) who alleges unfair trade practice in respect of such goods or service;\n(b) any recognised consumer association, whether the consumer to whom such\ngoods are sold or delivered or agreed to be sold or delivered or such service is provided\nor agreed to be provided, or who alleges unfair trade practice in respect of such goods\nor service, is a member of such association or not;\n(c) one or more consumers, where there are numerous consumers having the\nsame interest, with the permission of the District Commission, on behalf of, or for the\nbenefit of, all consumers so interested; or\n(d) the Central Government, the Central Authority or the State Government, as\nthe case may be:\nProvided that the complaint under this sub-section may be filed electronically in such\nmanner as may be prescribed.\nExplanation. —For the purposes of this sub-section, \"recognised consumer\nassociation\" means any voluntary consumer association registered under any law for the\ntime being in force.\n(2) Every complaint filed under sub-section (1) shall be accompanied with such fee\nand payable in such manner, including electronic form, as may be prescribed.",
+        "url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf",
+        "tag": "law"
+      },
+      "CPA2019:s17": {
+        "act": "Consumer Protection Act, 2019",
+        "heading": "Complaints to authorities",
+        "text": "17. A complaint relating to violation of consumer rights or unfair trade practices or\nfalse or misleading advertisements which are prejudicial to the interests of consumers as a\nclass, may be forwarded either in writing or in electronic mode, to any one of the authorities,\nnamely, the District Collector or the Commissioner of regional office or the Central Authority.",
+        "full_text": "17. A complaint relating to violation of consumer rights or unfair trade practices or\nfalse or misleading advertisements which are prejudicial to the interests of consumers as a\nclass, may be forwarded either in writing or in electronic mode, to any one of the authorities,\nnamely, the District Collector or the Commissioner of regional office or the Central Authority.",
+        "url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art122": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART I.—APPLICATIONS IN SPECIFIED CASES",
+        "text": "122. To restore a suit or appeal or \napplication for review or \nrevision dismissed for default \nof appearance or for want of \nprosecution or for failure to \npay costs of service of process \nor to furnish security for costs. \nThirty days. The date of dismissal. \n \n1. Subs. by Act 104 of 1976, s. 98, for “Thirty days” (w.e.f. 9-9-1976).",
+        "full_text": "122. To restore a suit or appeal or \napplication for review or \nrevision dismissed for default \nof appearance or for want of \nprosecution or for failure to \npay costs of service of process \nor to furnish security for costs. \nThirty days. The date of dismissal. \n \n1. Subs. by Act 104 of 1976, s. 98, for “Thirty days” (w.e.f. 9-9-1976).",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art46": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "46. Under the Indian Succession Act, \n1925 (39 of 1925), section 360 \nor section 361, to compel a \nrefund by a person to whom an \nexecutor or administrator has \npaid a legacy or distributed \nassets. \nThree years. The date of the payment or distribution.",
+        "full_text": "46. Under the Indian Succession Act, \n1925 (39 of 1925), section 360 \nor section 361, to compel a \nrefund by a person to whom an \nexecutor or administrator has \npaid a legacy or distributed \nassets. \nThree years. The date of the payment or distribution.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "CPA2019:s69": {
+        "act": "Consumer Protection Act, 2019",
+        "heading": "Limitation period",
+        "text": "69. (1) The District Commission, the State Commission or the National Commission\nshall not admit a complaint unless it is filed within two years from the date on which the\ncause of action has arisen.\n(2) Notwithstanding anything contained in sub-section ( 1), a complaint may be\nentertained after the period specified in sub-section ( 1), if the complainant satisfies the\nDistrict Commission, the State Commission or the National Commission, as the case may be,\nthat he had sufficient cause for not filing the complaint within such period:\nProvided that no such complaint shall be entertained unless the District Commission\nor the State Commission or the National Commission, as the case may be, records its reasons\nfor condoning such delay.",
+        "full_text": "69. (1) The District Commission, the State Commission or the National Commission\nshall not admit a complaint unless it is filed within two years from the date on which the\ncause of action has arisen.\n(2) Notwithstanding anything contained in sub-section ( 1), a complaint may be\nentertained after the period specified in sub-section ( 1), if the complainant satisfies the\nDistrict Commission, the State Commission or the National Commission, as the case may be,\nthat he had sufficient cause for not filing the complaint within such period:\nProvided that no such complaint shall be entertained unless the District Commission\nor the State Commission or the National Commission, as the case may be, records its reasons\nfor condoning such delay.",
+        "url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf",
+        "tag": "law"
+      },
+      "LSAA1987:s19": {
+        "act": "Legal Services Authorities Act, 1987",
+        "heading": "Organisation of Lok Adalats",
+        "text": "[19. Organisation of Lok Adalats.—(1) Every State Authority or District Authority or the Supreme \nCourt Legal Services Committee or every High Court Legal Services Committee or, as the case may be, \n \n \nTaluk Legal Services Committee may organise Lok Adalats at such intervals and places and for \nexercising such jurisdiction and for such areas as it thinks fit. \n(2) Every Lok Adalat organised for an area shall consist of such number of— \n(a) serving or retired judicial officers; and \n(b) other persons, \nof the area as may be specified by the State Autho rity or the District Authority or the Supreme Court \nLegal Services Committee or the High Court Legal Services Committee, or as the case may be, the Taluk \nLegal Services Committee, organising such Lok Adalat. \n(3) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s organised by the Supreme Court Legal Services Committee shall be such as may be \nprescribed by the Central Government in consultation with the Chief Justice of India. \n(4) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s other than referred to in sub -section (3) shall be such as may be prescribed by the State \nGovernment in consultation with the Chief Justice of the High Court. \n(5) A Lok Adalat shall have jurisdiction to determine and to arr",
+        "full_text": "[19. Organisation of Lok Adalats.—(1) Every State Authority or District Authority or the Supreme \nCourt Legal Services Committee or every High Court Legal Services Committee or, as the case may be, \n \n \nTaluk Legal Services Committee may organise Lok Adalats at such intervals and places and for \nexercising such jurisdiction and for such areas as it thinks fit. \n(2) Every Lok Adalat organised for an area shall consist of such number of— \n(a) serving or retired judicial officers; and \n(b) other persons, \nof the area as may be specified by the State Autho rity or the District Authority or the Supreme Court \nLegal Services Committee or the High Court Legal Services Committee, or as the case may be, the Taluk \nLegal Services Committee, organising such Lok Adalat. \n(3) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s organised by the Supreme Court Legal Services Committee shall be such as may be \nprescribed by the Central Government in consultation with the Chief Justice of India. \n(4) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s other than referred to in sub -section (3) shall be such as may be prescribed by the State \nGovernment in consultation with the Chief Justice of the High Court. \n(5) A Lok Adalat shall have jurisdiction to determine and to arrive at a compromise or settlement \nbetween the parties to a dispute in respect of— \n(i) any case pending before; or \n(ii) any matter which is falling within the jurisdiction of, and is not brought before, \nany Court for which the Lok Adalat is organised: \nProvided that the Lok Adalat shall have no jurisdiction in respect of any case or matter relating to an \noffence not compoundable under any law.",
+        "url": "https://patnahighcourt.gov.in/BSLSA/pdf/ActsRules/1.pdf",
+        "tag": "law"
+      }
+    },
+    "gate": {
+      "passed": true,
+      "top_similarity": 0.806,
+      "threshold": 0.7
+    },
+    "advice": {
+      "plain_summary": "You bought a phone for ₹15,999, got a defective screen, returned it on 9 Oct 2026, and still haven’t received the refund. The law treats the defect as a deficiency and you can ask the consumer commission to order a refund.",
+      "claims": [
+        {
+          "section": "law",
+          "tag": "Law",
+          "text": "The District Commission can order the seller to return the price you paid, with interest.",
+          "cites": [
+            "CPA2019:s39"
+          ],
+          "quote": "to return to the complainant the price, or, as the case may be, the charges paid by the complainant along with such interest"
+        },
+        {
+          "section": "law",
+          "tag": "Law",
+          "text": "A complaint must be filed within two years from the date the cause of action arose.",
+          "cites": [
+            "CPA2019:s69"
+          ],
+          "quote": "The District Commission, the State Commission or the National Commission shall not admit a complaint unless it is filed within two years from the date on which the cause of action has arisen."
+        },
+        {
+          "section": "where_you_stand",
+          "tag": "Practical",
+          "text": "You have proof of purchase and a return confirmation, which are strong evidence of your claim.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Send a written demand (WhatsApp, email or letter) to the online platform asking for the refund within 7 days.",
+          "cites": [],
+          "quote": null
+        }
+      ],
+      "cannot_assess": [],
+      "lawyer_needed_when": [
+        "If the seller refuses to respond to your written demand",
+        "If the District Commission requires a legal notice or you need representation at the hearing",
+        "If you want to claim interest or compensation beyond the basic refund"
+      ]
+    },
+    "verifier_log": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "issues": [
+          "claim 0: quote not found verbatim in ['CPA2019:s2(11)']: 'deficiency means any fault, imperfection, shortcoming or inadequacy in the quali'",
+          "claim 2: quote not found verbatim in ['CPA2019:s69']: 'the District Commission shall not admit a complaint unless it is filed within tw'"
+        ],
+        "verdicts": [
+          {
+            "id": 1,
+            "verdict": "supported",
+            "reason": "The source text explicitly states that the District Commission may order the opposite party to return the price paid along with interest."
+          },
+          {
+            "id": 3,
+            "verdict": "supported",
+            "reason": "The proviso in the source text states that a complaint may be filed electronically in such manner as may be prescribed."
+          },
+          {
+            "id": 4,
+            "verdict": "supported",
+            "reason": "Sub-section (2) of the source text states that notices may be served on an electronic service provider at the address provided, and the provider shall designate a nodal officer to accept and process such notices."
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "passed": false,
+        "issues": [
+          "claim 5: legal/procedure statement without a citation",
+          "claim 6: legal/procedure statement without a citation",
+          "claim 0: verifier: unsupported (The source text defines 'deficiency' specifically in relation to 'any service', whereas the statement applies it to a 'sold product' (goods), which is a different legal category not covered by this specific definition.)"
+        ],
+        "verdicts": [
+          {
+            "id": 0,
+            "verdict": "unsupported",
+            "reason": "The source text defines 'deficiency' specifically in relation to 'any service', whereas the statement applies it to a 'sold product' (goods), which is a different legal category not covered by this specific definition."
+          },
+          {
+            "id": 1,
+            "verdict": "supported",
+            "reason": "The source text explicitly states that the District Commission shall direct the opposite party to return the price paid along with interest."
+          },
+          {
+            "id": 2,
+            "verdict": "partially_supported",
+            "reason": "The source text states that a complaint shall not be admitted unless filed within two years, but it also provides an exception allowing it to be entertained after that period if there is sufficient cause, making the absolute statement 'must be filed' inaccurate."
+          }
+        ]
+      }
+    ],
+    "dropped_claims": 3,
+    "partial_claims": [
+      2
+    ],
+    "result": {
+      "context": {
+        "id": "online_purchase",
+        "category": "consumer",
+        "when": {
+          "other_party_type": [
+            "online_platform"
+          ]
+        },
+        "label": "online purchase"
+      },
+      "evidence": [
+        {
+          "item": "Invoice or order confirmation",
+          "required": true,
+          "how_to_get": "Email, app order history, or the shop bill.",
+          "why": "Proves the purchase, date and price.",
+          "status": "need"
+        },
+        {
+          "item": "Payment proof (UPI/card/bank)",
+          "required": true,
+          "how_to_get": "Bank or UPI app history.",
+          "why": "Proves you paid.",
+          "status": "need"
+        },
+        {
+          "item": "Complaint messages, ticket numbers and replies",
+          "required": true,
+          "how_to_get": "Screenshot chats/emails; note call dates.",
+          "why": "Shows you complained and how they responded.",
+          "status": "need"
+        },
+        {
+          "item": "Photos/video of the defect or problem",
+          "required": false,
+          "how_to_get": "Take clear dated photos/video now.",
+          "why": "Shows the defect or deficiency.",
+          "status": "need"
+        },
+        {
+          "item": "Return/pickup confirmation and refund status screenshots",
+          "required": true,
+          "how_to_get": "Order page → return details; screenshot every status.",
+          "why": "Shows the item went back and the refund is pending.",
+          "status": "need"
+        },
+        {
+          "item": "Seller name as shown on the invoice (not just the platform)",
+          "required": false,
+          "how_to_get": "Invoice PDF in the order page.",
+          "why": "The seller and the platform may be different parties.",
+          "status": "need"
+        }
+      ],
+      "pathways": [
+        {
+          "id": "written_demand",
+          "name": "Ask in writing (WhatsApp, email or letter)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0–₹50",
+          "time": "1–2 weeks for a reply",
+          "emotional": "Low to moderate",
+          "risk": "They may ignore it, but it creates a dated record you will need later.",
+          "how": "State what is owed, from when, and a date by which you expect it. Keep it polite and factual."
+        },
+        {
+          "id": "consumer_helpline",
+          "name": "Register a complaint with the National Consumer Helpline",
+          "categories": [
+            "consumer"
+          ],
+          "contexts": "all",
+          "money": "₹0",
+          "time": "Weeks",
+          "emotional": "Low",
+          "risk": "The helpline mediates; it cannot force a refund.",
+          "procedure_ref": "PROC:consumer_helpline"
+        },
+        {
+          "id": "consumer_commission",
+          "name": "File a complaint before the District Consumer Commission",
+          "categories": [
+            "consumer"
+          ],
+          "contexts": "all",
+          "money": "Filing fee as prescribed (not in this corpus) + copies; advocate optional",
+          "time": "Months to years; Practical estimate",
+          "emotional": "Moderate to high: hearings, follow-ups",
+          "risk": "Takes time; outcome depends on your evidence.",
+          "law": {
+            "ref": "CPA2019:s35",
+            "quote": "may be filed electronically"
+          },
+          "note": "Complaints \"may be filed electronically\" [CPA2019:s35]. The District Commission hears complaints where the value paid \"does not exceed fifty lakh rupees\" [CPJR2021:s3]."
+        },
+        {
+          "id": "legal_notice",
+          "name": "Send a legal notice (yourself or through an advocate)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0 if you send it; roughly ₹2,000–₹10,000 through an advocate (Practical estimate, varies by city)",
+          "time": "2–4 weeks including the reply period",
+          "emotional": "Moderate: it feels formal",
+          "risk": "It may harden the other side. Anything you write can be used later, so stick to facts."
+        },
+        {
+          "id": "do_nothing",
+          "name": "Do nothing for now",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0",
+          "time": "None",
+          "emotional": "Low now; the loss stays",
+          "risk": "Time limits keep running. Waiting too long can end your claim."
+        },
+        {
+          "id": "lok_adalat",
+          "name": "Settle through a Lok Adalat (via the DLSA)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0",
+          "time": "Depends on when your DLSA holds one",
+          "emotional": "Low to moderate: it is a settlement, both sides must agree",
+          "risk": "Works only if the other side is willing to settle.",
+          "law": {
+            "ref": "LSAA1987:s19",
+            "quote": "arrive at a compromise or settlement between the parties"
+          }
+        },
+        {
+          "id": "hire_advocate",
+          "name": "Hire an advocate for full representation",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "Varies widely; often ₹10,000–₹50,000+ (Practical estimate)",
+          "time": "Depends on the forum",
+          "emotional": "Lower day-to-day stress; higher cost",
+          "risk": "Cost may exceed small claims."
+        }
+      ],
+      "coverage_notes": [],
+      "limitation": null,
+      "strength": {
+        "band": "moderate",
+        "inputs": {
+          "work_or_purchase_proven": true,
+          "amount_documented": true,
+          "other_side_acknowledged": null,
+          "prior_demand_made": true,
+          "within_limitation": null
+        },
+        "for": [
+          "proof that you did the work / made the purchase",
+          "the amount owed is written down somewhere",
+          "you have already asked for the money in writing"
+        ],
+        "against": [],
+        "unknown": [
+          "the other side has accepted (in any message) that they owe you",
+          "you appear to be within the time limit"
+        ]
+      },
+      "drafts": [
+        "demand_letter",
+        "consumer_complaint",
+        "legal_aid_application"
+      ],
+      "wages_state_rules_note": false
+    },
+    "_turns": [
+      {
+        "turn": 0,
+        "outcome": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "case_id": "notice_consumer_demand",
+  "case_name": "Consumer demand notice from company",
+  "type": "decoder",
+  "input": "LEGAL NOTICE\n\nDate: 15.10.2026\n\nTo: Mr. Ramesh Kumar, Bangalore\n\nFrom: M/s ABC Electronics Pvt Ltd, through their advocate\n\nSubject: Recovery of outstanding amount\n\nUnder instructions from my client M/s ABC Electronics Pvt Ltd,\nI hereby serve upon you this Legal Notice demanding payment of\nRs. 45,000 (Rupees Forty Five Thousand Only) being the outstanding\nbalance for goods supplied vide Invoice No. 2345 dated 01.08.2026.\n\nDespite repeated reminders, you have failed to make the said\npayment. Under the Indian Contract Act, 1872, Section 73, my\nclient is entitled to claim damages and interest on the\noutstanding amount.\n\nYou are hereby called upon to pay the said amount within 15 days\nof receipt of this notice, failing which my client shall be\nconstrained to initiate appropriate legal proceedings against you,\nat your risk and cost, without further notice.\n",
+  "elapsed_seconds": 0.01,
+  "response": "## What This Is\nThis is a formal demand notice alleging an outstanding liability [Practical].\n\n## What This Is Not\n• A legal notice is NOT a court order. You are not required to pay or comply immediately [Practical].\n• Receiving a legal notice does not mean you have been sued or that a case is filed against you [Practical].\n• A legal notice is essentially a formal letter — it carries no legal force by itself [Practical].\n\n## What They Want and By When\nThe sender demands payment within 15 days of receipt of the notice [Practical].\n\n## What They Say the Law Is\n• Indian Contract Act, 1872, Section 73: Verified in corpus [ICA1872:s73] [Law]. The section entitles compensation for losses naturally arising from a breach of contract.\n\n## Your Options\n• Direct negotiation or send a formal written reply denying disputed amounts [Practical].\n• Consult an advocate or approach free legal aid through the DLSA [Practical].\n\n## What to Gather Now\n• Copy of the notice and postal envelope with tracking records [Practical].\n• All invoices, order confirmations, and related correspondence [Practical].\n\n---\n📋 *Analysis based on central Indian law as of 2026-11-01. Not legal advice. Consider consulting an advocate before replying.*",
+  "triage_result": "continue",
+  "triage_message": "",
+  "escalated": false,
+  "provisions_cited": [
+    {
+      "provision": "Indian Contract Act, 1872, Section 73",
+      "snippet": "Under the Indian Contract Act, 1872, Section 73, my client is entitled to claim damages and interest on the outstanding amount.",
+      "span_check": "partial_match"
+    }
+  ],
+  "provision_checks": [
+    {
+      "provision": "Indian Contract Act, 1872, Section 73",
+      "status": "in_corpus",
+      "chunk_id": "ICA1872:s73",
+      "chunk_text": "Section 73. Compensation for loss or damage caused by breach of contract.\nWhen a contract has been broken, the party who suffers by such breach is entitled to receive, from the party who has broken the contract, compensation for any loss or damage caused to him thereby, which naturally arose in the usual course of things from such breach, or which the parties knew, when they made the contract, to be likely to result from the breach of it.\nSuch compensation is not to be given for any remote and i",
+      "rrf_score": 0.0162876784769963
+    }
+  ],
+  "deadline_info": null,
+  "verifier_log": [
+    {
+      "layer_a": [],
+      "layer_b": [],
+      "passed": true
+    }
+  ],
+  "run_log": [
+    {
+      "ts": 1795185763.7837381,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.3
+    },
+    {
+      "ts": 1795185763.793956,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.966478,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9700449,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9709928,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.979423,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9982238,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185764.9992042,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0000908,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0086012,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.023255,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0241659,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.024966,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0332968,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048003,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.048943,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.05022,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.1
+    },
+    {
+      "ts": 1795185765.0593212,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.072947,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 500,
+      "completion_tokens": 350,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0738418,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.074666,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.083329,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.086019,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0886881,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.0913332,
+      "role": "fast",
+      "model": "mock-offline",
+      "prompt_tokens": 150,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.099953,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 200,
+      "completion_tokens": 100,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1072378,
+      "role": "generator",
+      "model": "mock-offline",
+      "prompt_tokens": 400,
+      "completion_tokens": 250,
+      "latency_ms": 0.0
+    },
+    {
+      "ts": 1795185765.1081018,
+      "role": "verifier",
+      "model": "mock-offline",
+      "prompt_tokens": 300,
+      "completion_tokens": 80,
+      "latency_ms": 0.0
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.DS_Store
+*.log
+run_log.jsonl
+.streamlit/secrets.toml
+.claude/
+eval/outputs/_dev_runs/*/run_log*

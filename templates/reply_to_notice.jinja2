@@ -1,0 +1,22 @@
+DRAFT REPLY — CHECK EVERY FACT. A reply can create admissions: keep it short, deny what is wrong, admit nothing you are unsure of. Have the DLSA or an advocate check it if the amount matters to you.
+
+Date: {{ today }}
+
+To,
+{{ other_name or "[Sender of the notice / their advocate]" }}
+{{ other_address or "[Their address]" }}
+
+Subject: Reply to your notice dated {{ notice_date or "[date]" }}
+
+Sir/Madam,
+
+I received your notice on {{ received or "[date received]" }}.
+
+{{ facts or "[Write 2-3 lines in your own words: what happened, when, and what is unpaid or wrong]" }}
+
+{% if disputed %}I do not accept the following statements in your notice: {{ disputed }}.{% endif %}
+Please send me copies of the documents you rely on.
+This reply is without prejudice to my rights.
+
+{{ user_name or "[Your name]" }}
+{{ user_address or "[Your address]" }}

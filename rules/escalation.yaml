@@ -1,0 +1,77 @@
+# ESCALATION — hard triggers that stop substantive advice. Code (keywords/regex) and the
+# intake LLM's fact flags can each fire; the LLM can add flags but never remove them.
+# Matching: English/Hinglish use word boundaries; Devanagari uses substring match.
+
+crisis:   # checked first; replaces legal help with a supportive message
+  keywords:
+    english: ["suicide", "kill myself", "end my life", "want to die", "no point living", "better off dead", "end it all"]
+    hinglish: ["suicide kar", "mar jaunga", "mar jaungi", "marna chahta", "marna chahti", "jeena nahi", "jaan de dunga", "jaan de dungi", "khudkushi"]
+    hindi: ["आत्महत्या", "जीना नहीं चाहता", "जीना नहीं चाहती", "मर जाना चाहता", "मर जाना चाहती", "जान दे दूंगा", "खुदकुशी"]
+  message: |
+    I'm really sorry you're feeling this way. You don't have to deal with this alone, and your safety matters more than any legal problem.
+    Please talk to someone right now: Tele-MANAS, the government's free mental health helpline, at **14416** or **1-800-891-4416** [PROC:tele_manas].
+    If you are in immediate danger, please contact local emergency services or go to the nearest hospital.
+    When you feel ready, I'm here to help with the legal problem too.
+
+triggers:
+  # id -> scope message key. `keywords` match the user's text; `flags` are intake LLM booleans.
+  criminal:
+    flags: [arrest_or_police, criminal_allegation_against_user]
+    keywords:
+      english: ["arrest", "arrested", "FIR", "police station", "police case", "bail", "custody", "warrant", "chargesheet", "charge sheet", "criminal case"]
+      hinglish: ["police aayi", "police aaya", "police ne bulaya", "giraftar", "thane bulaya", "FIR kar", "FIR karwa", "jail bhej"]
+      hindi: ["गिरफ्तार", "एफआईआर", "थाने", "पुलिस ने", "जमानत", "हिरासत", "वारंट"]
+    regex: ["\\b(?:IPC|BNS|BNSS|CrPC)\\b", "\\b(?:section|dhara|धारा)\\s*(?:302|304|306|307|323|354|376|379|406|420|498A?|506)\\b"]
+  safety:
+    flags: [violence_or_threat_to_safety]
+    keywords:
+      english: ["domestic violence", "beats me", "hit me", "threatened to kill", "threat to my life", "assault", "sexual harassment", "molest"]
+      hinglish: ["maarta hai", "maarti hai", "maar dega", "jaan se maar", "dhamki di", "haath uthaya"]
+      hindi: ["घरेलू हिंसा", "मारता है", "जान से मार", "धमकी", "छेड़छाड़"]
+  family_property:
+    flags: [family_or_property_matter]
+    keywords:
+      english: ["divorce", "custody of my child", "maintenance case", "inheritance", "ancestral property", "property title", "succession", "will dispute", "partition", "dowry", "land dispute"]
+      hinglish: ["talaq", "zameen ka", "property ka case", "jaydad", "virasat", "dahej"]
+      hindi: ["तलाक", "संपत्ति", "विरासत", "दहेज", "ज़मीन", "जमीन", "बंटवारा"]
+  court:
+    flags: [court_summons_or_case_filed]
+    keywords:
+      english: ["summons", "court notice", "court date", "case has been filed", "next hearing", "ex parte"]
+      hinglish: ["court se notice", "court ka notice", "case file ho gaya", "court mein case", "summon aaya"]
+      hindi: ["समन", "अदालत", "कोर्ट से", "मुकदमा"]
+  cheque_bounce:
+    flags: [cheque_bounce]
+    keywords:
+      english: ["cheque bounce", "cheque bounced", "cheque dishonour", "cheque dishonor", "cheque returned", "check bounce"]
+      hinglish: ["cheque bounce ho", "cheque wapas aa"]
+      hindi: ["चेक बाउंस"]
+    regex: ["\\b(?:NI|N\\.I\\.)\\s*Act\\b", "Negotiable\\s+Instruments", "\\bsection\\s*138\\b"]
+  state_rent:
+    flags: [rent_or_tenancy]
+    keywords:
+      english: ["landlord", "tenant", "security deposit", "rent agreement", "eviction", "evict", "rent deposit", "pg owner"]
+      hinglish: ["makaan malik", "makan malik", "kirayedar", "kiraya", "deposit wapas nahi", "room khali"]
+      hindi: ["मकान मालिक", "किराया", "किरायेदार", "बेदखली"]
+
+# Amount threshold is in config (CLAIM_THRESHOLD), a product choice set by the deployer.
+
+messages:
+  criminal: "This involves police or criminal law. That is outside what I can safely help with, and mistakes here can be serious."
+  safety: "Your safety comes first. This is not something to handle with a letter or a complaint form."
+  family_property: "Family, inheritance and property matters depend on personal and state laws that I don't cover."
+  court: "A court has already been involved. Court dates and replies have strict timelines, so you need a lawyer looking at the actual papers."
+  cheque_bounce: "Cheque-bounce matters run on short, strict deadlines under a law I don't cover (the Negotiable Instruments Act). Don't wait. See an advocate or the DLSA now."
+  state_rent: "Rent and security-deposit disputes are decided by your state's rent and tenancy law, which I don't cover. An advocate who knows your state's rent law can tell you where you stand."
+  amount: "The amount involved is large enough that a mistake could be costly. Please get an advocate to look at it."
+  out_of_corpus: "I couldn't find the law for this in the five central Acts I cover, so I won't guess."
+
+safe_steps:   # Practical; shown on every escalation
+  - "Keep every document, message and envelope. Don't delete anything."
+  - "Write down the important dates: what happened when, and any date given in a notice or by the police/court."
+  - "Don't ignore any notice, summons or police communication, and don't sign anything you don't understand."
+  - "Get help: free legal aid is available through your District Legal Services Authority (NALSA helpline 15100) [PROC:nalsa_helpline]."
+extra_steps:
+  safety: ["If you are in danger now, call 112 (national emergency number) [PROC:erss_112] or go somewhere safe first."]
+  state_rent: ["Gather the rent agreement, rent and deposit receipts, and messages with the landlord, and note the date you vacated."]
+  cheque_bounce: ["Note the date you received any notice about the cheque; the deadlines run from such dates."]

@@ -1,0 +1,570 @@
+{
+  "case_id": "A06_freelancer_unpaid",
+  "bucket": "A",
+  "flow": "advisor",
+  "started": "2026-11-20T22:05:31.300780",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 48.48,
+  "llm_calls": [
+    {
+      "ts": 1795192532.789,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 1808,
+      "completion_tokens": 595,
+      "latency_ms": 1481.1,
+      "note": ""
+    },
+    {
+      "ts": 1795192533.36,
+      "role": "fast",
+      "model": "openai/gpt-oss-20b",
+      "ok": true,
+      "prompt_tokens": 334,
+      "completion_tokens": 44,
+      "latency_ms": 566.3,
+      "note": ""
+    },
+    {
+      "ts": 1795192533.502,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 99.5,
+      "note": "429, waiting 14.5s"
+    },
+    {
+      "ts": 1795192550.607,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 2782,
+      "completion_tokens": 785,
+      "latency_ms": 2599.6,
+      "note": ""
+    },
+    {
+      "ts": 1795192551.411,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 1160,
+      "completion_tokens": 196,
+      "latency_ms": 799.3,
+      "note": ""
+    },
+    {
+      "ts": 1795192552.141,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 1457,
+      "completion_tokens": 192,
+      "latency_ms": 728.5,
+      "note": ""
+    },
+    {
+      "ts": 1795192552.26,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 117.0,
+      "note": "429, waiting 23.5s"
+    },
+    {
+      "ts": 1795192578.709,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 2969,
+      "completion_tokens": 884,
+      "latency_ms": 2947.5,
+      "note": ""
+    },
+    {
+      "ts": 1795192579.78,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 905,
+      "completion_tokens": 135,
+      "latency_ms": 1069.3,
+      "note": ""
+    }
+  ],
+  "state": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'm a freelance graphic designer. A startup agreed over email to pay ₹40,000 for a logo and website mockups. I delivered on 20 July 2026. They used the logo on their site but stopped replying. I've sent 3 reminder emails."
+      }
+    ],
+    "clarify_rounds": 0,
+    "audit": [
+      {
+        "step": "intake_span_check",
+        "notes": []
+      }
+    ],
+    "blocked": null,
+    "outcome": null,
+    "facts": {
+      "summary": "You delivered a logo and website mockups to a startup that agreed to pay ₹40,000, but they stopped replying after you sent reminders.",
+      "category": "contract_payment",
+      "category_reason": "",
+      "user_goal": null,
+      "other_party_name": null,
+      "other_party_type": "company",
+      "employer_type": "company",
+      "has_written_terms": false,
+      "consumer_subject": null,
+      "contract_subject": null,
+      "amount": 40000.0,
+      "amount_text": "₹40,000",
+      "events": [
+        {
+          "date": "2026-07-20",
+          "date_text": "20 July 2026",
+          "event": "Delivered logo and website mockups"
+        },
+        {
+          "date": null,
+          "date_text": null,
+          "event": "Sent reminder email"
+        },
+        {
+          "date": null,
+          "date_text": null,
+          "event": "Sent reminder email"
+        },
+        {
+          "date": null,
+          "date_text": null,
+          "event": "Sent reminder email"
+        }
+      ],
+      "due_date": null,
+      "due_date_text": null,
+      "evidence_have": [],
+      "prior_steps": [
+        "Sent 3 reminder emails"
+      ],
+      "user_state": null,
+      "work_or_purchase_proven": null,
+      "amount_documented": null,
+      "other_side_acknowledged": null,
+      "prior_demand_made": true,
+      "arrest_or_police": false,
+      "criminal_allegation_against_user": false,
+      "violence_or_threat_to_safety": false,
+      "family_or_property_matter": false,
+      "court_summons_or_case_filed": false,
+      "cheque_bounce": false,
+      "rent_or_tenancy": false,
+      "distress": false,
+      "missing_questions": []
+    },
+    "context": {
+      "id": "freelancer_client",
+      "category": "contract_payment",
+      "when": {
+        "other_party_type": [
+          "company",
+          "individual",
+          "small_business",
+          "online_platform"
+        ]
+      },
+      "label": "freelance / service work not paid"
+    },
+    "distress": false,
+    "lang": "en",
+    "queries": [
+      "compensation for breach of contract",
+      "time limit for payment of wages",
+      "deficiency in service"
+    ],
+    "sources": {
+      "COW2019:s17": {
+        "act": "Code on Wages, 2019",
+        "heading": "Time limit for payment of wages",
+        "text": "17. Time limit for payment of wages.—(1) The employer shall pay or cause to be paid wages to the \nemployees, engaged on— \n(i) daily basis, at the end of the shift; \n(ii) weekly basis, on the last working day of the week, that is to say, before the weekly holiday; \n(iii) fortnightly basis, before the end of the second day after the end of the fortnight; \n(iv) monthly basis, before the expiry of the seventh day of the succeeding month. \n(2) Where an employee has been— \n(i) removed or dismissed from service; or \n(ii) retrenched or has resigned from service, or became unemployed due to closure of the \nestablishment, \nthe wages payable to him shall be paid within two working days of his removal, dismissal, retrenchment \nor, as the case may be, his resignation. \n(3) Notwithstanding anything contained in sub -section ( 1) or sub -section ( 2), the appropriate \nGovernment may, provide any other time limit for payment of wages where it considers reasonable \nhaving regard to the circumstances under which the wages are to be paid. \n(4) Nothing contained in sub -section (1) or sub-section (2) shall affect any time limit for payment of \nwages provided in any other law for the time being in force.",
+        "full_text": "17. Time limit for payment of wages.—(1) The employer shall pay or cause to be paid wages to the \nemployees, engaged on— \n(i) daily basis, at the end of the shift; \n(ii) weekly basis, on the last working day of the week, that is to say, before the weekly holiday; \n(iii) fortnightly basis, before the end of the second day after the end of the fortnight; \n(iv) monthly basis, before the expiry of the seventh day of the succeeding month. \n(2) Where an employee has been— \n(i) removed or dismissed from service; or \n(ii) retrenched or has resigned from service, or became unemployed due to closure of the \nestablishment, \nthe wages payable to him shall be paid within two working days of his removal, dismissal, retrenchment \nor, as the case may be, his resignation. \n(3) Notwithstanding anything contained in sub -section ( 1) or sub -section ( 2), the appropriate \nGovernment may, provide any other time limit for payment of wages where it considers reasonable \nhaving regard to the circumstances under which the wages are to be paid. \n(4) Nothing contained in sub -section (1) or sub-section (2) shall affect any time limit for payment of \nwages provided in any other law for the time being in force.",
+        "url": "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf",
+        "tag": "law"
+      },
+      "COW2019:s39": {
+        "act": "Code on Wages, 2019",
+        "heading": "Time limit for payment of bonus",
+        "text": "39 .Time limit for payment of bonus .—(1) All amounts payable to an employee by way of bonus \nunder this Code shall be paid by crediting it in the bank account of the employee by his employer within a \nperiod of eight months from the close of the accounting year: \nProvided that the appropriate Government or such authority as the appropriate Government may \nspecify in this behalf may, upon an application made to it by the employer and for sufficient reasons, by \norder, extend the said period of eight months to such further period or periods as it thinks fit; so, however, \nthat the total period so extended shall not in any case exceed two years. \n(2) Notwithstanding anything contained in sub -section ( 1), where there is a dispute regarding \npayment of bonus pending before any authority, such bonus shall be paid, within a period of one month \nfrom the date on which the award becomes enforceable or the settlement comes into operation, in respect \nof such dispute: \nProvided that if, there is a dispute for payment at the higher rate, the employer shall pay eight and \none-third per cent. of the wages earned by the employee as per the provisions of this Code within a period \nof eight months from the close of the accounting year.",
+        "full_text": "39 .Time limit for payment of bonus .—(1) All amounts payable to an employee by way of bonus \nunder this Code shall be paid by crediting it in the bank account of the employee by his employer within a \nperiod of eight months from the close of the accounting year: \nProvided that the appropriate Government or such authority as the appropriate Government may \nspecify in this behalf may, upon an application made to it by the employer and for sufficient reasons, by \norder, extend the said period of eight months to such further period or periods as it thinks fit; so, however, \nthat the total period so extended shall not in any case exceed two years. \n(2) Notwithstanding anything contained in sub -section ( 1), where there is a dispute regarding \npayment of bonus pending before any authority, such bonus shall be paid, within a period of one month \nfrom the date on which the award becomes enforceable or the settlement comes into operation, in respect \nof such dispute: \nProvided that if, there is a dispute for payment at the higher rate, the employer shall pay eight and \none-third per cent. of the wages earned by the employee as per the provisions of this Code within a period \nof eight months from the close of the accounting year.",
+        "url": "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf",
+        "tag": "law"
+      },
+      "ICA1872:s73": {
+        "act": "Indian Contract Act, 1872",
+        "heading": "Compensation of loss or damage caused by breach of contract",
+        "text": "73. Compensation of loss or damage caused by breach of contract \n \nWhen a contract has been broken, the party who suffers by such breach is entitled to \nreceive, form the party who has broken the contract, compensation for any loss or \ndamage caused to him thereby, which naturally arose in the usual course of things \nfrom such breach, or which the parties knew, when they made the contract, to be \nlikely to result from the breach of it. \n \nSuch compensation is not to be given for any remote and indirect loss of damage \nsustained by reason of the breach. \n \nCompensation for failure to discharge obligation resembling those created by \ncontract : When an obligation resembling those created by contract has been \nincurred and has not been discharged, any person injured by the failure to discharge \nit is entitled to receive the same compensation from the party in default, as if such \nperson had contracted to discharge it and had broken his contract. \n \nExplanation : In estimating the loss or damage arising from a breach of contract, the \nmeans which existed of remedying the inconvenience caused by non-performance of \nthe contract must be taken into account.",
+        "full_text": "73. Compensation of loss or damage caused by breach of contract \n \nWhen a contract has been broken, the party who suffers by such breach is entitled to \nreceive, form the party who has broken the contract, compensation for any loss or \ndamage caused to him thereby, which naturally arose in the usual course of things \nfrom such breach, or which the parties knew, when they made the contract, to be \nlikely to result from the breach of it. \n \nSuch compensation is not to be given for any remote and indirect loss of damage \nsustained by reason of the breach. \n \nCompensation for failure to discharge obligation resembling those created by \ncontract : When an obligation resembling those created by contract has been \nincurred and has not been discharged, any person injured by the failure to discharge \nit is entitled to receive the same compensation from the party in default, as if such \nperson had contracted to discharge it and had broken his contract. \n \nExplanation : In estimating the loss or damage arising from a breach of contract, the \nmeans which existed of remedying the inconvenience caused by non-performance of \nthe contract must be taken into account.",
+        "url": "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art55": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "55. For compensation for the breach of \nany contract, express or implied \nnot herein specially provided \nfor. \nThree years. When the contract is broken or (where \nthere are successive breaches) when \nthe breach in respect of which the \nsuit is instituted occurs or (where the \nbreach is continuing) when it ceases.",
+        "full_text": "55. For compensation for the breach of \nany contract, express or implied \nnot herein specially provided \nfor. \nThree years. When the contract is broken or (where \nthere are successive breaches) when \nthe breach in respect of which the \nsuit is instituted occurs or (where the \nbreach is continuing) when it ceases.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "ICA1872:s74": {
+        "act": "Indian Contract Act, 1872",
+        "heading": "Compensation of breach of contract where penalty stipulated for",
+        "text": "74. Compensation of breach of contract where penalty stipulated for \n \nWhen a contract has been broken, if a sum is named in the contract as the amount \nbe paid in case of such breach, or if the contract contains any other stipulation by \nway of penalty, the party complaining of the breach is entitled, whether or not actual \ndamage or loss or proved to have been caused thereby, to receive from the party \nwho has broken the contract reasonable compensation not exceeding the amount so \nnamed or, as the case may be, the penalty stipulated for. \n \nExplanation : A stipulation for increased interest from the date of default may be a \nstipulation by way of penalty. \n \nExplanation : When any person enters into any bail bond, recognisance or other \ninstrument of the same nature or, under the provisions of any law, or under the \norders of the Central Government or of any State Government, gives any bond for \nthe performance of any public duty or act in which the public are interested, he shall \nbe liable, upon breach of the condition of any such instrument, to pay the whole sum \nmentioned therein.",
+        "full_text": "74. Compensation of breach of contract where penalty stipulated for \n \nWhen a contract has been broken, if a sum is named in the contract as the amount \nbe paid in case of such breach, or if the contract contains any other stipulation by \nway of penalty, the party complaining of the breach is entitled, whether or not actual \ndamage or loss or proved to have been caused thereby, to receive from the party \nwho has broken the contract reasonable compensation not exceeding the amount so \nnamed or, as the case may be, the penalty stipulated for. \n \nExplanation : A stipulation for increased interest from the date of default may be a \nstipulation by way of penalty. \n \nExplanation : When any person enters into any bail bond, recognisance or other \ninstrument of the same nature or, under the provisions of any law, or under the \norders of the Central Government or of any State Government, gives any bond for \nthe performance of any public duty or act in which the public are interested, he shall \nbe liable, upon breach of the condition of any such instrument, to pay the whole sum \nmentioned therein.",
+        "url": "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art27": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "27. For compensation for breach of a \npromise to do anything at a \nspecified time, or upon the \nhappening of a specified \ncontingency. \nThree years. When the time specified arrives or the \ncontingency happens.",
+        "full_text": "27. For compensation for breach of a \npromise to do anything at a \nspecified time, or upon the \nhappening of a specified \ncontingency. \nThree years. When the time specified arrives or the \ncontingency happens.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art7": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "7. For wages in the case of any other \nperson. \nThree years. When the wages accrue due.",
+        "full_text": "7. For wages in the case of any other \nperson. \nThree years. When the wages accrue due.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "LA1963:schedule_art22": {
+        "act": "Limitation Act, 1963",
+        "heading": "PART II.—SUITS RELATING TO CONTRACTS",
+        "text": "22. For money deposited under an \nagreement that it shall be \npayable on demand, including \nmoney of a customer in the \nhands of his banker so payable. \nThree years. When the demand is made.",
+        "full_text": "22. For money deposited under an \nagreement that it shall be \npayable on demand, including \nmoney of a customer in the \nhands of his banker so payable. \nThree years. When the demand is made.",
+        "url": "https://www.thc.nic.in/Central%20Governmental%20Acts/Limitation%20Act,%202019.pdf",
+        "tag": "law"
+      },
+      "LSAA1987:s19": {
+        "act": "Legal Services Authorities Act, 1987",
+        "heading": "Organisation of Lok Adalats",
+        "text": "[19. Organisation of Lok Adalats.—(1) Every State Authority or District Authority or the Supreme \nCourt Legal Services Committee or every High Court Legal Services Committee or, as the case may be, \n \n \nTaluk Legal Services Committee may organise Lok Adalats at such intervals and places and for \nexercising such jurisdiction and for such areas as it thinks fit. \n(2) Every Lok Adalat organised for an area shall consist of such number of— \n(a) serving or retired judicial officers; and \n(b) other persons, \nof the area as may be specified by the State Autho rity or the District Authority or the Supreme Court \nLegal Services Committee or the High Court Legal Services Committee, or as the case may be, the Taluk \nLegal Services Committee, organising such Lok Adalat. \n(3) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s organised by the Supreme Court Legal Services Committee shall be such as may be \nprescribed by the Central Government in consultation with the Chief Justice of India. \n(4) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s other than referred to in sub -section (3) shall be such as may be prescribed by the State \nGovernment in consultation with the Chief Justice of the High Court. \n(5) A Lok Adalat shall have jurisdiction to determine and to arr",
+        "full_text": "[19. Organisation of Lok Adalats.—(1) Every State Authority or District Authority or the Supreme \nCourt Legal Services Committee or every High Court Legal Services Committee or, as the case may be, \n \n \nTaluk Legal Services Committee may organise Lok Adalats at such intervals and places and for \nexercising such jurisdiction and for such areas as it thinks fit. \n(2) Every Lok Adalat organised for an area shall consist of such number of— \n(a) serving or retired judicial officers; and \n(b) other persons, \nof the area as may be specified by the State Autho rity or the District Authority or the Supreme Court \nLegal Services Committee or the High Court Legal Services Committee, or as the case may be, the Taluk \nLegal Services Committee, organising such Lok Adalat. \n(3) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s organised by the Supreme Court Legal Services Committee shall be such as may be \nprescribed by the Central Government in consultation with the Chief Justice of India. \n(4) The experience and qualifications of other persons referred to in clause (b) of sub-section (2) for \nLok Adalat s other than referred to in sub -section (3) shall be such as may be prescribed by the State \nGovernment in consultation with the Chief Justice of the High Court. \n(5) A Lok Adalat shall have jurisdiction to determine and to arrive at a compromise or settlement \nbetween the parties to a dispute in respect of— \n(i) any case pending before; or \n(ii) any matter which is falling within the jurisdiction of, and is not brought before, \nany Court for which the Lok Adalat is organised: \nProvided that the Lok Adalat shall have no jurisdiction in respect of any case or matter relating to an \noffence not compoundable under any law.",
+        "url": "https://patnahighcourt.gov.in/BSLSA/pdf/ActsRules/1.pdf",
+        "tag": "law"
+      }
+    },
+    "gate": {
+      "passed": true,
+      "top_similarity": 0.868,
+      "threshold": 0.7
+    },
+    "advice": {
+      "plain_summary": "You gave a startup a logo and website mockups and they promised to pay ₹40,000. After you sent three reminder emails they stopped responding. You can claim the money, but you must act within the legal time limit.",
+      "claims": [
+        {
+          "section": "where_you_stand",
+          "tag": "Law",
+          "text": "You can claim compensation because the contract was broken.",
+          "cites": [
+            "ICA1872:s73"
+          ],
+          "quote": "When a contract has been broken, the party who suffers by such breach is entitled to receive ... compensation for any loss or damage caused to him thereby"
+        },
+        {
+          "section": "law",
+          "tag": "Law",
+          "text": "A suit for breach of contract must be filed within three years from the breach.",
+          "cites": [
+            "LA1963:schedule_art55"
+          ],
+          "quote": "Three years. When the contract is broken or (where there are successive breaches) when the breach in respect of which the suit is instituted occurs"
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Gather all proof (emails, designs, delivery confirmations) and send a formal legal notice stating the amount due and a deadline to pay.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "If the notice is ignored, file a civil suit for recovery of the ₹40,000 within the three‑year limitation period.",
+          "cites": [],
+          "quote": null
+        }
+      ],
+      "cannot_assess": [],
+      "lawyer_needed_when": [
+        "If the startup does not respond to your legal notice.",
+        "If you decide to file a civil suit and need help drafting the plaint.",
+        "If you want a lawyer to represent you in a Lok Adalat or court."
+      ]
+    },
+    "verifier_log": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "issues": [
+          "claim 3: quote not found verbatim in ['ICA1872:s74']: 'When a contract has been broken, if a sum is named in the contract as the amount'",
+          "claim 5: legal/procedure statement without a citation",
+          "claim 0: verifier: unsupported (The source text provides for compensation for loss or damage caused by breach, not a right to claim the 'agreed price' itself.)",
+          "claim 1: verifier: unsupported (The source text discusses compensation for breach of contract but does not address the enforceability of promises made without a written agreement.)",
+          "claim 7: verifier: unsupported (The source text describes the organization and jurisdiction of Lok Adalats but does not characterize them as a 'quicker, low-cost settlement' option.)"
+        ],
+        "verdicts": [
+          {
+            "id": 0,
+            "verdict": "unsupported",
+            "reason": "The source text provides for compensation for loss or damage caused by breach, not a right to claim the 'agreed price' itself."
+          },
+          {
+            "id": 1,
+            "verdict": "unsupported",
+            "reason": "The source text discusses compensation for breach of contract but does not address the enforceability of promises made without a written agreement."
+          },
+          {
+            "id": 2,
+            "verdict": "partially_supported",
+            "reason": "The source confirms a three-year limit for money payable on demand, but the statement applies this to a general 'unpaid amount' rather than specifically money payable on demand."
+          },
+          {
+            "id": 7,
+            "verdict": "unsupported",
+            "reason": "The source text describes the organization and jurisdiction of Lok Adalats but does not characterize them as a 'quicker, low-cost settlement' option."
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "passed": false,
+        "issues": [
+          "claim 2: verifier: unsupported (The provided source text is cut off before specifying the jurisdiction of the Lok Adalat, so it does not confirm that it can be approached for civil disputes like unpaid fees.)"
+        ],
+        "verdicts": [
+          {
+            "id": 0,
+            "verdict": "supported",
+            "reason": "The source text states that the party who suffers by the breach is entitled to receive compensation, which supports the statement."
+          },
+          {
+            "id": 1,
+            "verdict": "supported",
+            "reason": "The source text explicitly states the limitation period is three years for compensation for the breach of any contract."
+          },
+          {
+            "id": 2,
+            "verdict": "unsupported",
+            "reason": "The provided source text is cut off before specifying the jurisdiction of the Lok Adalat, so it does not confirm that it can be approached for civil disputes like unpaid fees."
+          }
+        ]
+      }
+    ],
+    "dropped_claims": 1,
+    "partial_claims": [],
+    "result": {
+      "context": {
+        "id": "freelancer_client",
+        "category": "contract_payment",
+        "when": {
+          "other_party_type": [
+            "company",
+            "individual",
+            "small_business",
+            "online_platform"
+          ]
+        },
+        "label": "freelance / service work not paid"
+      },
+      "evidence": [
+        {
+          "item": "The agreement in any form (contract, email, WhatsApp chat agreeing terms)",
+          "required": true,
+          "how_to_get": "Export the chat or email thread.",
+          "why": "Shows what was agreed.",
+          "status": "need"
+        },
+        {
+          "item": "Proof of the work done or money given",
+          "required": true,
+          "how_to_get": "Deliverables, invoices, bank/UPI records.",
+          "why": "Shows you performed your side.",
+          "status": "need"
+        },
+        {
+          "item": "Messages where they accept they owe you",
+          "required": false,
+          "how_to_get": "Screenshot them with dates.",
+          "why": "An acknowledgment strengthens your position and can matter for time limits.",
+          "status": "need"
+        },
+        {
+          "item": "Your written demand for payment",
+          "required": false,
+          "how_to_get": "Send one by email/WhatsApp if you have not.",
+          "why": "Shows you asked before taking any formal step.",
+          "status": "need"
+        }
+      ],
+      "pathways": [
+        {
+          "id": "do_nothing",
+          "name": "Do nothing for now",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0",
+          "time": "None",
+          "emotional": "Low now; the loss stays",
+          "risk": "Time limits keep running. Waiting too long can end your claim."
+        },
+        {
+          "id": "written_demand",
+          "name": "Ask in writing (WhatsApp, email or letter)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0–₹50",
+          "time": "1–2 weeks for a reply",
+          "emotional": "Low to moderate",
+          "risk": "They may ignore it, but it creates a dated record you will need later.",
+          "how": "State what is owed, from when, and a date by which you expect it. Keep it polite and factual."
+        },
+        {
+          "id": "civil_recovery",
+          "name": "Recover the money through a civil suit (with an advocate)",
+          "categories": [
+            "contract_payment",
+            "wages"
+          ],
+          "contexts": [
+            "freelancer_client",
+            "personal_loan",
+            "general_contract",
+            "household_worker",
+            "informal_worker",
+            "unknown_employer"
+          ],
+          "money": "Court fee (state-specific, not in this corpus) + advocate fees, often ₹10,000+; Practical estimate",
+          "time": "Often a year or more; Practical estimate",
+          "emotional": "High",
+          "risk": "Costly relative to small amounts; outcome uncertain."
+        },
+        {
+          "id": "legal_notice",
+          "name": "Send a legal notice (yourself or through an advocate)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0 if you send it; roughly ₹2,000–₹10,000 through an advocate (Practical estimate, varies by city)",
+          "time": "2–4 weeks including the reply period",
+          "emotional": "Moderate: it feels formal",
+          "risk": "It may harden the other side. Anything you write can be used later, so stick to facts."
+        },
+        {
+          "id": "lok_adalat",
+          "name": "Settle through a Lok Adalat (via the DLSA)",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "₹0",
+          "time": "Depends on when your DLSA holds one",
+          "emotional": "Low to moderate: it is a settlement, both sides must agree",
+          "risk": "Works only if the other side is willing to settle.",
+          "law": {
+            "ref": "LSAA1987:s19",
+            "quote": "arrive at a compromise or settlement between the parties"
+          }
+        },
+        {
+          "id": "hire_advocate",
+          "name": "Hire an advocate for full representation",
+          "categories": [
+            "consumer",
+            "wages",
+            "contract_payment"
+          ],
+          "contexts": "all",
+          "money": "Varies widely; often ₹10,000–₹50,000+ (Practical estimate)",
+          "time": "Depends on the forum",
+          "emotional": "Lower day-to-day stress; higher cost",
+          "risk": "Cost may exceed small claims."
+        }
+      ],
+      "coverage_notes": [],
+      "limitation": {
+        "period_id": "contract_breach_suit",
+        "ref": "LA1963:schedule_art55",
+        "quote": "For compensation for the breach of any contract",
+        "trigger": "when the contract is broken",
+        "trigger_date": "2026-07-20",
+        "deadline": "2029-07-20",
+        "days_left": 973,
+        "status": "ok",
+        "message": "About 32 months left (deadline 20 Jul 2029)."
+      },
+      "strength": {
+        "band": "cannot_assess",
+        "inputs": {
+          "work_or_purchase_proven": null,
+          "amount_documented": null,
+          "other_side_acknowledged": null,
+          "prior_demand_made": true,
+          "within_limitation": true
+        },
+        "for": [
+          "you have already asked for the money in writing",
+          "you appear to be within the time limit"
+        ],
+        "against": [],
+        "unknown": [
+          "proof that you did the work / made the purchase",
+          "the amount owed is written down somewhere",
+          "the other side has accepted (in any message) that they owe you"
+        ]
+      },
+      "drafts": [
+        "demand_letter",
+        "legal_aid_application"
+      ],
+      "wages_state_rules_note": false
+    },
+    "_turns": [
+      {
+        "turn": 0,
+        "outcome": null
+      }
+    ]
+  }
+}

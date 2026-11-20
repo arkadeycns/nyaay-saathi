@@ -1,0 +1,42 @@
+# Hand-written retrieval test. `gold` = any of these chunk IDs in the top 5 counts as a hit.
+# `raw` queries are what a user might type; `kw` are the English keyword queries the
+# query-transform step is meant to produce. Out-of-scope queries have gold: [] and
+# should be blocked by the retrieval gate.
+queries:
+  - {id: q01, raw: "Who counts as a consumer under the law?", kw: "definition of consumer buys goods hires services", gold: ["CPA2019:s2(7)"]}
+  - {id: q02, raw: "where do I file a consumer complaint, which district?", kw: "jurisdiction District Commission complaint instituted where complainant resides", gold: ["CPA2019:s34", "CPJR2021:s3"]}
+  - {id: q03, raw: "how to file complaint in consumer court online", kw: "manner in which complaint shall be made filed electronically fee", gold: ["CPA2019:s35"]}
+  - {id: q04, raw: "time limit to file consumer case", kw: "limitation period complaint two years cause of action consumer commission", gold: ["CPA2019:s69"]}
+  - {id: q05, raw: "refund nahi mila online order ka, product kharab tha", kw: "defect deficiency goods consumer complaint refund", gold: ["CPA2019:s2(10)", "CPA2019:s2(11)", "CPA2019:s35", "CPA2019:s39"]}
+  - {id: q06, raw: "what can consumer commission order the seller to do", kw: "findings of District Commission order refund replace remove defect compensation", gold: ["CPA2019:s39"]}
+  - {id: q07, raw: "unfair trade practice fake discount misleading", kw: "unfair trade practice definition false representation", gold: ["CPA2019:s2(47)"]}
+  - {id: q08, raw: "can consumer case go to mediation", kw: "reference to mediation consent settlement consumer", gold: ["CPA2019:s37", "CPA2019:s74", "CPA2019:s79", "CPA2019:s80"]}
+  - {id: q09, raw: "claim value 80 lakh which consumer commission", kw: "pecuniary jurisdiction State Commission exceeds fifty lakh two crore", gold: ["CPJR2021:s4", "CPA2019:s47"]}
+  - {id: q10, raw: "e-commerce platform liability seller", kw: "e-commerce unfair trade practices measures product seller liability", gold: ["CPA2019:s94", "CPA2019:s86", "CPA2019:s2(16)", "CPA2019:s2(17)"]}
+  - {id: q11, raw: "client ne freelance kaam ka paisa nahi diya", kw: "breach of contract compensation loss damage payment", gold: ["ICA1872:s73"]}
+  - {id: q12, raw: "is a WhatsApp agreement a valid contract", kw: "what agreements are contracts free consent lawful consideration", gold: ["ICA1872:s10"]}
+  - {id: q13, raw: "penalty clause in agreement, they want to deduct", kw: "compensation for breach where penalty stipulated", gold: ["ICA1872:s74"]}
+  - {id: q14, raw: "advance diya tha kaam nahi hua paisa wapas", kw: "money paid by mistake or under coercion; benefit of non-gratuitous act; restitution void agreement", gold: ["ICA1872:s65", "ICA1872:s70", "ICA1872:s72"]}
+  - {id: q15, raw: "how long do I have to sue for unpaid contract money", kw: "limitation period suit compensation breach of contract three years", gold: ["LA1963:schedule_art55"]}
+  - {id: q16, raw: "money lent to friend, how many years to recover", kw: "limitation suit for money lent loan three years", gold: ["LA1963:schedule_art19", "LA1963:schedule_art21"]}
+  - {id: q17, raw: "they acknowledged debt in writing does time restart", kw: "effect of acknowledgment in writing fresh period limitation", gold: ["LA1963:s18"]}
+  - {id: q18, raw: "I missed the deadline, can delay be condoned", kw: "extension of prescribed period sufficient cause delay", gold: ["LA1963:s5"]}
+  - {id: q19, raw: "salary nahi mili 3 mahine se", kw: "time limit for payment of wages employer", gold: ["COW2019:s17", "COW2019:s43", "COW2019:s45"]}
+  - {id: q20, raw: "where do I complain about unpaid wages", kw: "claims under Code authority unpaid wages compensation", gold: ["COW2019:s45"]}
+  - {id: q21, raw: "employer deducted money from salary for breakage", kw: "deductions which may be made from wages damage or loss", gold: ["COW2019:s18", "COW2019:s21"]}
+  - {id: q22, raw: "who is an employee under wages law", kw: "definition employee employed on wages establishment", gold: ["COW2019:s2(k)"]}
+  - {id: q23, raw: "final settlement after resignation kab tak milega", kw: "wages payable resigned removed dismissed two working days", gold: ["COW2019:s17"]}
+  - {id: q24, raw: "minimum wage kam diya", kw: "payment of minimum rate of wages", gold: ["COW2019:s5", "COW2019:s6"]}
+  - {id: q25, raw: "ladies ko kam salary di same kaam ke liye", kw: "prohibition of discrimination on ground of gender wages", gold: ["COW2019:s3"]}
+  - {id: q26, raw: "free lawyer kaise milega", kw: "criteria for giving legal services entitlement free legal aid", gold: ["LSAA1987:s12", "LSAA1987:s13"]}
+  - {id: q27, raw: "what is lok adalat and is its decision final", kw: "award of Lok Adalat final binding decree", gold: ["LSAA1987:s21", "LSAA1987:s19", "LSAA1987:s20"]}
+  - {id: q28, raw: "permanent lok adalat for public utility services", kw: "permanent Lok Adalat public utility service cognizance", gold: ["LSAA1987:s22B", "LSAA1987:s22C", "LSAA1987:s22A"]}
+  - {id: q29, raw: "नौकरी से निकाल दिया और तनख्वाह नहीं दी", kw: "unpaid wages after termination time limit payment", gold: ["COW2019:s17"]}
+  - {id: q30, raw: "मुफ्त कानूनी सहायता कौन ले सकता है", kw: "entitlement free legal services criteria", gold: ["LSAA1987:s12"]}
+  # Out of scope: gate should block (no gold section exists in this corpus)
+  - {id: x01, raw: "how to get bail after arrest", kw: "bail arrest police custody criminal procedure", gold: []}
+  - {id: x02, raw: "my landlord is not returning my security deposit", kw: "landlord tenant security deposit rent agreement eviction", gold: []}
+  - {id: x03, raw: "divorce and child custody", kw: "divorce maintenance child custody marriage", gold: []}
+  - {id: x04, raw: "property inheritance dispute between brothers", kw: "inheritance succession ancestral property partition", gold: []}
+  - {id: x05, raw: "cheque bounce notice section 138", kw: "dishonour of cheque Negotiable Instruments Act 138 notice", gold: []}
+  - {id: x06, raw: "income tax return filing", kw: "income tax return filing deadline", gold: []}

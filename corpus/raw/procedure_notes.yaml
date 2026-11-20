@@ -1,0 +1,54 @@
+# Official procedure notes. Every sentence is a short verbatim quote from the
+# official page named in official_url, fetched on retrieved_on. Nothing here is
+# written from memory. Pages that could not be fetched (e-Daakhil, Samadhan,
+# consumeraffairs.nic.in) have NO note; add one only after reading the page.
+notes:
+  - id: nalsa_legal_aid
+    topic: "How to apply for free legal aid (NALSA)"
+    text: |
+      "You can apply for free legal aid either offline or online."
+      "A person can also apply online for getting Legal Aid to any Legal Services Institution in the country by filling up the Legal Aid Application."
+      Documents mentioned: "identity proofs, requisite certificates/affidavit as proof of belonging to a particular category".
+      "No, there is absolutely no charge for getting an application form for free legal aid."
+      "a decision on the application for free legal aid is to be taken immediately and not more than 7 days"
+      Income-based eligibility applies to "a person in receipt of annual income less than the amount mentioned in the following schedule" (the schedule is state-wise; check your state's row on the page).
+    official_url: "https://nalsa.gov.in/legal-aid/"
+    retrieved_on: "2026-11-20"
+    verified: true
+
+  - id: nalsa_helpline
+    topic: "NALSA legal aid helpline"
+    text: |
+      The NALSA website lists "NALSA Helpline Toll-Free Number" 15100.
+      Online legal aid applications are made through the Legal Services Management System linked from the NALSA site (https://scourtapp.nic.in/lsams/).
+    official_url: "https://nalsa.gov.in/"
+    retrieved_on: "2026-11-20"
+    verified: true
+
+  - id: consumer_helpline
+    topic: "National Consumer Helpline (pre-litigation grievance)"
+    text: |
+      "Toll Free 1915 (8AM to 8PM)".
+      "Need help with your grievance? Call National Consumer Helpline at 1915 or 1800114000".
+      "Register your consumer grievance through the NCH Web Portal, Mobile App, UMANG, WhatsApp or Call Centre."
+      WhatsApp: +918800001915.
+    official_url: "https://consumerhelpline.gov.in/"
+    retrieved_on: "2026-11-20"
+    verified: true
+
+  - id: tele_manas
+    topic: "Mental health crisis support (Tele-MANAS)"
+    text: |
+      "The Tele MANAS toll-free helpline numbers 14416 or 1-800-891-4416 offer multi-language support"
+    official_url: "https://pib.gov.in/PressReleasePage.aspx?PRID=2022057"
+    retrieved_on: "2026-11-20"
+    verified: true
+
+  - id: erss_112
+    topic: "Emergency help (police, fire, ambulance) — 112"
+    text: |
+      The Ministry of Home Affairs describes the Emergency Response Support System as a unified emergency response system with a "single emergency number '112'".
+      112 India: the service is accessible "through call, SMS, e-mail, panic button and a 112 India mobile app" (Lok Sabha answer, 2019).
+    official_url: "https://www.mha.gov.in/en/commoncontent/emergency-response-support-system-erss"
+    retrieved_on: "2026-11-20"
+    verified: true

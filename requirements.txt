@@ -1,0 +1,15 @@
+# Pinned to the versions this was built and tested with (2026-11-20). Each line says why it is here.
+streamlit==1.41.1          # UI (st.audio_input for voice exists since 1.39)
+langgraph==0.4.10          # explicit state graphs for advisor/decoder (no LangChain model wrappers)
+langsmith==0.15.1          # opt-in tracing/eval (off unless LANGSMITH_TRACING=true)
+openai==1.109.1            # generic OpenAI-compatible client for Groq / Gemini / OpenRouter
+pydantic==2.14.4           # structured output validation
+PyYAML==6.0.3              # rules files
+Jinja2==3.1.6              # document drafts
+rank-bm25==0.2.2           # keyword half of hybrid search
+chromadb==0.6.3            # persistent vector index (committed in corpus/index)
+fastembed==0.5.1           # ONNX embeddings (bge-small-en-v1.5), no PyTorch
+pypdf==5.9.0               # text-PDF extraction (corpus build, notice upload)
+python-dotenv==1.2.4       # .env loading
+reportlab==5.1.0           # builds docs/solution.pdf
+pytest==9.1.1              # tests for deterministic code

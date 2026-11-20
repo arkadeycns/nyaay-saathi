@@ -1,0 +1,330 @@
+{
+  "case_id": "A08_decoder_repealed_section",
+  "bucket": "A",
+  "flow": "decoder",
+  "started": "2026-11-20T22:07:09.576693",
+  "run_id": "20261120_220100_groq",
+  "provider": "groq",
+  "models": {
+    "generator": "openai/gpt-oss-120b",
+    "verifier": "qwen/qwen3.8-27b",
+    "fast": "openai/gpt-oss-20b"
+  },
+  "corpus_hash": "55918536b552b336",
+  "as_of": "2026-11-01",
+  "gate_threshold": 0.7,
+  "elapsed_s": 41.44,
+  "llm_calls": [
+    {
+      "ts": 1795192629.804,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 223.0,
+      "note": "429, waiting 3.0s"
+    },
+    {
+      "ts": 1795192634.753,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 874,
+      "completion_tokens": 773,
+      "latency_ms": 1946.7,
+      "note": ""
+    },
+    {
+      "ts": 1795192634.898,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 105.8,
+      "note": "429, waiting 13.5s"
+    },
+    {
+      "ts": 1795192651.545,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 1540,
+      "completion_tokens": 919,
+      "latency_ms": 3141.0,
+      "note": ""
+    },
+    {
+      "ts": 1795192652.13,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 1128,
+      "completion_tokens": 162,
+      "latency_ms": 578.3,
+      "note": ""
+    },
+    {
+      "ts": 1795192652.232,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "latency_ms": 100.6,
+      "note": "429, waiting 15.5s"
+    },
+    {
+      "ts": 1795192670.515,
+      "role": "generator",
+      "model": "openai/gpt-oss-120b",
+      "ok": true,
+      "prompt_tokens": 1645,
+      "completion_tokens": 834,
+      "latency_ms": 2778.1,
+      "note": ""
+    },
+    {
+      "ts": 1795192671.013,
+      "role": "verifier",
+      "model": "qwen/qwen3.8-27b",
+      "ok": true,
+      "prompt_tokens": 509,
+      "completion_tokens": 79,
+      "latency_ms": 493.7,
+      "note": ""
+    }
+  ],
+  "state": {
+    "notice_text": "NOTICE\nTo, Ms. Anjali Mehta\nYou were employed with our firm and left without serving notice. As per Section 13 of the Consumer Protection Act, 1986 and Section 7 of the Payment of Wages Act, 1936, you are liable to pay us Rs. 30,000 as compensation for leaving without notice. Pay within 7 days of receipt of this notice, otherwise we will take strict legal action.\nHR Department, Nexa Solutions Pvt Ltd, 5 November 2026\n",
+    "received_date": "2026-11-12",
+    "audit": [],
+    "notice": {
+      "sender_type": "employer",
+      "sender": {
+        "value": "HR Department, Nexa Solutions Pvt Ltd",
+        "snippet": "HR Department, Nexa Solutions Pvt Ltd"
+      },
+      "recipient": {
+        "value": "Ms. Anjali Mehta",
+        "snippet": "Ms. Anjali Mehta"
+      },
+      "notice_date": {
+        "value": "5 November 2026",
+        "snippet": "5 November 2026"
+      },
+      "demand_amount": {
+        "value": "Rs. 30,000",
+        "snippet": "Rs. 30,000"
+      },
+      "demand_action": {
+        "value": "Pay the compensation",
+        "snippet": "Pay within 7 days of receipt of this notice, otherwise we will take strict legal action."
+      },
+      "deadline": {
+        "value": "within 7 days of receipt of this notice",
+        "snippet": "Pay within 7 days of receipt of this notice"
+      },
+      "deadline_days": 7,
+      "threatened_consequences": [
+        {
+          "value": "strict legal action",
+          "snippet": "we will take strict legal action."
+        }
+      ],
+      "provisions": [
+        {
+          "act": "Consumer Protection Act, 1986",
+          "section": "13",
+          "snippet": "Section 13 of the Consumer Protection Act, 1986"
+        },
+        {
+          "act": "Payment of Wages Act, 1936",
+          "section": "7",
+          "snippet": "Section 7 of the Payment of Wages Act, 1936"
+        }
+      ],
+      "subject": "employment",
+      "plain_summary": "The notice demands that Ms. Anjali Mehta pay Rs. 30,000 as compensation for leaving the firm without notice. It gives her 7 days to pay, failing which legal action will be taken."
+    },
+    "span_issues": [],
+    "outcome": null,
+    "triage": {
+      "cleared": true
+    },
+    "provisions": [
+      {
+        "cited": "Section 13 of the Consumer Protection Act, 1986",
+        "status": "repealed",
+        "detail": "Consumer Protection Act, 2019",
+        "ref": "CPA2019:s107"
+      },
+      {
+        "cited": "Section 7 of the Payment of Wages Act, 1936",
+        "status": "repealed",
+        "detail": "Code on Wages, 2019",
+        "ref": "COW2019:s69"
+      }
+    ],
+    "sources": {
+      "CPA2019:s107": {
+        "act": "Consumer Protection Act, 2019",
+        "heading": "Repeal and savings",
+        "text": "107. (1) The Consumer Protection Act, 1986 is hereby repealed.\n(2) Notwithstanding such repeal, anything done or any action taken or purported to\nhave been done or taken under the Act hereby repealed shall, in so far as it is not inconsistent\nwith the provisions of this Act, be deemed to have been done or taken under the corresponding\nprovisions of this Act.\n(3) The mention of particular matters in sub-section (2) shall not be held to prejudice\nor affect the general application of section 6 of the General Clauses Act, 1897 with regard to\nthe effect of repeal.\n10 of 1897.\n————\nDR. G. NARAYANA RAJU,\nSecretary to the Govt. of India.\nMGIPMRND—2606GI(S3)—09-08-2019.\nUPLOADED BY THE MANAGER, GOVERNMENT OF INDIA PRESS, MINTO ROAD, NEW DELHI–110002\nAND PUBLISHED BY THE CONTROLLER OF PUBLICATIONS, DELHI–110054.",
+        "full_text": "107. (1) The Consumer Protection Act, 1986 is hereby repealed.\n(2) Notwithstanding such repeal, anything done or any action taken or purported to\nhave been done or taken under the Act hereby repealed shall, in so far as it is not inconsistent\nwith the provisions of this Act, be deemed to have been done or taken under the corresponding\nprovisions of this Act.\n(3) The mention of particular matters in sub-section (2) shall not be held to prejudice\nor affect the general application of section 6 of the General Clauses Act, 1897 with regard to\nthe effect of repeal.\n10 of 1897.\n————\nDR. G. NARAYANA RAJU,\nSecretary to the Govt. of India.\nMGIPMRND—2606GI(S3)—09-08-2019.\nUPLOADED BY THE MANAGER, GOVERNMENT OF INDIA PRESS, MINTO ROAD, NEW DELHI–110002\nAND PUBLISHED BY THE CONTROLLER OF PUBLICATIONS, DELHI–110054.",
+        "url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Consumer%20Protection%20Act%202019.pdf",
+        "tag": "law"
+      },
+      "COW2019:s69": {
+        "act": "Code on Wages, 2019",
+        "heading": "Repeal and savings",
+        "text": "69. Repeal and savings .—(1) The Payment of Wages Act, 1936 (4 of 1936), the Minimum Wages \nAct, 1948 (11 of 1948), the Payment of Bonus Act, 1965 (21 of 1965) and the Equal Remuneration Act, \n1976 (25 of 1976) are hereby repealed. \n(2) Notwithstanding such repeal, anything done or any action taken under the enactments so repealed \nincluding any notification, nomination, appointment, order or direction made there under or any amount \nof wages provided in any provision of such enactments for any purpose shall be deemed to have been \ndone or taken or provided for such purpose under the corresponding provisions of this Code and shall be \nin force to the extent they are not contrary to the provisions of this Code till they are repealed under t he \ncorresponding provisions of this Code or by the notification to that effect by the Central Government. \n(3) Without prejudice to the provisions of sub -section (2), the provisions of section 6 of the General \nClauses Act, 1897 (10 of 1897) shall apply to the repeal of such enactments.",
+        "full_text": "69. Repeal and savings .—(1) The Payment of Wages Act, 1936 (4 of 1936), the Minimum Wages \nAct, 1948 (11 of 1948), the Payment of Bonus Act, 1965 (21 of 1965) and the Equal Remuneration Act, \n1976 (25 of 1976) are hereby repealed. \n(2) Notwithstanding such repeal, anything done or any action taken under the enactments so repealed \nincluding any notification, nomination, appointment, order or direction made there under or any amount \nof wages provided in any provision of such enactments for any purpose shall be deemed to have been \ndone or taken or provided for such purpose under the corresponding provisions of this Code and shall be \nin force to the extent they are not contrary to the provisions of this Code till they are repealed under t he \ncorresponding provisions of this Code or by the notification to that effect by the Central Government. \n(3) Without prejudice to the provisions of sub -section (2), the provisions of section 6 of the General \nClauses Act, 1897 (10 of 1897) shall apply to the repeal of such enactments.",
+        "url": "https://newmangaloreport.gov.in/sites/default/files/2025-11/Code%20on%20Wages,2019.pdf",
+        "tag": "law"
+      }
+    },
+    "explanation": {
+      "plain_summary": "Ms. Anjali Mehta has received a notice from her former employer demanding Rs. 30,000 as compensation for leaving without notice, with a 7‑day deadline for payment. The notice cites sections of the Consumer Protection Act, 1986 and the Payment of Wages Act, 1936, but both of those statutes have been repealed and replaced by newer laws.",
+      "claims": [
+        {
+          "section": "law",
+          "tag": "Law",
+          "text": "Section 13 of the Consumer Protection Act, 1986 no longer exists because the entire Act was repealed by the Consumer Protection Act, 2019 (see CPA2019:s107).",
+          "cites": [
+            "CPA2019:s107"
+          ],
+          "quote": "The Consumer Protection Act, 1986 is hereby repealed."
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Do not panic; note the date you actually received the notice (not the notice’s own date).",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Gather any employment contract, resignation letter, salary slips, and any prior correspondence with the HR department.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Consider contacting free legal aid services (e.g., Legal Services Authorities) to review the notice and advise on any possible remedies.",
+          "cites": [],
+          "quote": null
+        },
+        {
+          "section": "next_steps",
+          "tag": "Practical",
+          "text": "Because the cited statutes are repealed, the legal basis the employer relies on is doubtful; a lawyer can help assess whether any other law or contract term applies.",
+          "cites": [],
+          "quote": null
+        }
+      ],
+      "cannot_assess": [
+        "Whether the employer’s demand of Rs. 30,000 is contractually justified, as the employment agreement and any company policies are not provided."
+      ],
+      "lawyer_needed_when": [
+        "You are unsure about the contractual obligations regarding notice period and compensation.",
+        "The employer threatens legal action and you need to understand the possible claims they might bring under current law."
+      ]
+    },
+    "verifier_log": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "issues": [
+          "claim 0: quote not found verbatim in ['CPA2019:s107']: 'Section 13 of the Consumer Protection Act, 1986'",
+          "claim 2: quote not found verbatim in ['COW2019:s69']: 'Section 7 of the Payment of Wages Act, 1936'",
+          "claim 3: states the number 2019 which is not in the cited text or your facts"
+        ],
+        "verdicts": [
+          {
+            "id": 1,
+            "verdict": "supported",
+            "reason": "The source text explicitly states in Section 107(1) that the Consumer Protection Act, 1986 is hereby repealed, which confirms it is no longer in force."
+          },
+          {
+            "id": 4,
+            "verdict": "supported",
+            "reason": "Both provided source texts (CPA2019:s107 and COW2019:s69) contain provisions stating that actions taken under repealed laws are deemed to be under the new law provided they are not inconsistent or contrary to the new law."
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "passed": false,
+        "issues": [
+          "claim 0: Law claim without a supporting quote",
+          "claim 2: Law claim without a supporting quote",
+          "claim 3: states the number 2019 which is not in the cited text or your facts",
+          "claim 3: states the number 2019 which is not in the cited text or your facts"
+        ],
+        "verdicts": [
+          {
+            "id": 1,
+            "verdict": "partially_supported",
+            "reason": "The source text confirms the repeal of the 1986 Act, which logically implies the non-existence of its sections, but the source does not explicitly mention 'Section 13' or state that it 'no longer exists' as a specific fact."
+          }
+        ]
+      }
+    ],
+    "dropped_claims": 3,
+    "result": {
+      "kind": {
+        "is": "A letter from an employer (warning, termination, recovery, or reply to your claim).",
+        "is_not": [
+          "It is not a decision by a labour authority or court."
+        ]
+      },
+      "deadline": {
+        "status": "expired",
+        "days": 7,
+        "due": "2026-11-19",
+        "days_left": -1
+      },
+      "options": [
+        {
+          "id": "ignore",
+          "name": "Ignore it",
+          "risk": "Silence can be read as not disputing their claims, and you lose track of any deadline they set. Not recommended without advice."
+        },
+        {
+          "id": "reply",
+          "name": "Send a short factual reply",
+          "risk": "Anything you write can be used later. Stick to facts, deny what is wrong, admit nothing you are unsure of."
+        },
+        {
+          "id": "negotiate",
+          "name": "Negotiate / ask for documents",
+          "risk": "Asking for the documents they rely on costs little and buys time, but note their deadline."
+        },
+        {
+          "id": "pay",
+          "name": "Pay what they ask",
+          "risk": "Ends the dispute fast but may mean paying something not owed. Get it in writing as full and final settlement."
+        },
+        {
+          "id": "get_help",
+          "name": "Get free legal help first (DLSA / NALSA 15100)",
+          "risk": "Takes a little time; do it well before their deadline."
+        }
+      ],
+      "reply_warning": "A reply to a legal notice can create admissions. Keep it short and factual, do not apologise for things you did not do, and have an advocate or the DLSA check it if the amount matters to you.",
+      "threats": [
+        "we will take strict legal action."
+      ],
+      "gather": [
+        "The notice and its envelope / courier slip (proves when it reached you)",
+        "Any agreement, bill, invoice or messages the notice refers to",
+        "Proof of any payments you already made",
+        "A note of the date you received it and how (post, courier, WhatsApp, email)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+DRAFT — CHECK EVERY FACT. You can also apply online through NALSA's Legal Services Management System or call 15100.
+
+To,
+The Member Secretary / Secretary,
+District Legal Services Authority, {{ district or "[District]" }}
+
+Subject: Request for free legal aid
+
+Sir/Madam,
+
+My name is {{ user_name or "[Your name]" }}, residing at {{ user_address or "[Your address]" }}. Phone: {{ phone or "[phone]" }}.
+
+My problem in brief:
+{{ facts or "[Write 2-3 lines in your own words: what happened, when, and what is unpaid or wrong]" }}
+
+{% if amount %}The amount involved is about ₹{{ amount }}.{% endif %}
+I am unable to afford a lawyer and request free legal aid / advice, and if suitable, settlement through Lok Adalat.
+
+I belong to the following category (tick if true, attach proof): [ ] woman  [ ] SC/ST  [ ] industrial workman  [ ] person with disability  [ ] annual income below the limit for my state  [ ] other: ______
+
+Documents enclosed: [ID proof] [income/category proof] [papers related to the problem]
+
+{{ user_name or "[Your name]" }}
+Date: {{ today }}

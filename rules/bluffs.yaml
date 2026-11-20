@@ -1,0 +1,133 @@
+# OPPONENT BLUFF LIBRARY (Simulator). The LLM only re-voices `bluff` in the persona's tone;
+# it cannot add threats or legal claims. `truth` lines are either Law (ref + exact quote,
+# validator-checked) or Practical. verified: false = drafted by the AI, awaiting human review;
+# those load only with ALLOW_UNVERIFIED=1 and show an "UNVERIFIED DRAFT" tag.
+bluffs:
+  - id: consumer_no_refund_policy
+    category: consumer
+    contexts: all
+    persona: "E-commerce customer-care agent, polite but scripted"
+    bluff: "As per our policy this item is non-returnable, so no refund is possible."
+    truth:
+      - {tag: Law, ref: "CPA2019:s2(10)", quote: "any fault, imperfection or shortcoming in the quality",
+         text: "A \"defect\" under the Act includes \"any fault, imperfection or shortcoming in the quality\" of goods."}
+      - {tag: Law, ref: "CPA2019:s39", quote: "to return to the complainant the price",
+         text: "If a defect is proved, the Commission can order the seller \"to return to the complainant the price\"."}
+      - {tag: Practical, text: "A store policy is their rule; whether it can defeat your claim is for the Commission, not the agent, to decide."}
+    risk_if_you_believe_it: "You give up without testing a claim that may be valid."
+    risk_if_you_call_it: "Low. They may escalate internally or offer a partial remedy."
+    suggested_reply: "I understand the policy, but the item is defective. Please escalate this; otherwise I will pursue my remedies as a consumer, including the Consumer Commission."
+    verified: true
+
+  - id: consumer_wait_more
+    category: consumer
+    contexts: [online_purchase]
+    persona: "Platform support executive"
+    bluff: "Your refund is being processed, please wait another 7–10 working days."
+    truth:
+      - {tag: Practical, text: "Repeated 'please wait' replies are common. Ask for the date the refund was initiated and a reference number, in writing."}
+      - {tag: Law, ref: "CPA2019:s69", quote: "within two years from the date on which the cause of action has arisen",
+         text: "Waiting does not stop the clock: complaints must be filed \"within two years from the date on which the cause of action has arisen\"."}
+    risk_if_you_believe_it: "Weeks pass with nothing in writing."
+    risk_if_you_call_it: "Low."
+    suggested_reply: "Please share the refund reference number and the date it was initiated in writing. If it is not credited by <date>, I will file a complaint."
+    verified: true
+
+  - id: consumer_warranty_over
+    category: consumer
+    contexts: all
+    persona: "Service-centre manager, impatient"
+    bluff: "Warranty is over. Nothing can be done; pay for the repair."
+    truth:
+      - {tag: Law, ref: "CPA2019:s2(10)", quote: "under any contract, express or implied or as is claimed by the trader",
+         text: "A defect is measured against the standard required by law or \"under any contract, express or implied or as is claimed by the trader\"."}
+      - {tag: Practical, text: "Whether a fault that appears after warranty was a defect from the start is a question of evidence. A technician's written report helps."}
+    risk_if_you_believe_it: "You pay for a fault that may be theirs."
+    risk_if_you_call_it: "Moderate: you may need proof the defect existed at sale."
+    suggested_reply: "Please give me in writing the cause of the fault as found by your technician."
+    verified: true
+
+  - id: wages_household_no_contract
+    category: wages
+    contexts: [household_worker, informal_worker]
+    persona: "Household employer, dismissive"
+    bluff: "There's no contract, no paper. You can't prove anything, so I don't owe you."
+    truth:
+      - {tag: Law, ref: "ICA1872:s10", quote: "All agreements are contracts if they are made by the free consent of parties",
+         text: "The Contract Act says \"All agreements are contracts if they are made by the free consent of parties\" competent to contract, for lawful consideration and object; it does not require writing for ordinary agreements."}
+      - {tag: Practical, text: "Proof can be UPI payments, messages, neighbours or the building's guard who saw you work. Collect these calmly."}
+    risk_if_you_believe_it: "You drop a claim you might be able to prove."
+    risk_if_you_call_it: "Moderate. The relationship may end; keep the conversation polite and in writing."
+    suggested_reply: "I worked at your home from <date> to <date> for ₹<amount> a month. ₹<amount> is still unpaid. Please pay by <date>."
+    verified: true
+
+  - id: wages_household_police_threat
+    category: wages
+    contexts: [household_worker, informal_worker]
+    persona: "Household employer, angry"
+    bluff: "If you keep asking, I'll tell the police you stole something."
+    truth:
+      - {tag: Practical, text: "A threat like this is serious. Do not argue. Save the message or note the time and words, and contact the DLSA (15100) or an advocate before you reply."}
+    risk_if_you_believe_it: "Fear stops you from claiming what you are owed."
+    risk_if_you_call_it: "Do not 'call' this yourself. Get help first; this is outside what practice can prepare you for."
+    suggested_reply: "(Do not reply in anger. Speak to the DLSA first.)"
+    escalate: true
+    verified: true
+
+  - id: wages_probation
+    category: wages
+    contexts: [formal_employee]
+    persona: "HR executive, firm"
+    bluff: "You left during probation, so the last month's salary is forfeited."
+    truth:
+      - {tag: Law, ref: "COW2019:s17", quote: "shall be paid within two working days of his removal, dismissal, retrenchment",
+         text: "On resignation or removal, wages payable \"shall be paid within two working days of his removal, dismissal, retrenchment\" or resignation."}
+      - {tag: Law, ref: "COW2019:s60", quote: "shall be null and void in so far as it purports to remove or reduce the liability",
+         text: "An agreement by which an employee gives up amounts due under the Code \"shall be null and void in so far as it purports to remove or reduce the liability\"."}
+    risk_if_you_believe_it: "You lose earned pay."
+    risk_if_you_call_it: "Low to moderate; they may delay the relieving letter."
+    suggested_reply: "Please share in writing the clause and calculation used. My wages for days worked remain payable."
+    verified: true
+
+  - id: wages_deduct_damage
+    category: wages
+    contexts: all
+    persona: "Shop owner"
+    bluff: "You broke the machine, so I'm cutting ₹5,000 from your pay."
+    truth:
+      - {tag: Law, ref: "COW2019:s21", quote: "shall not exceed the amount of the damage or loss caused to the employer by negligence or default of the employee",
+         text: "A deduction for damage \"shall not exceed the amount of the damage or loss caused to the employer by negligence or default of the employee\"."}
+      - {tag: Law, ref: "COW2019:s21", quote: "until the employee has been given an opportunity of showing cause",
+         text: "It cannot be made \"until the employee has been given an opportunity of showing cause\"."}
+    risk_if_you_believe_it: "Unchecked deductions."
+    risk_if_you_call_it: "Moderate."
+    suggested_reply: "Please tell me in writing how the damage was assessed. I would like a chance to explain before any deduction."
+    verified: true
+
+  - id: contract_client_quality
+    category: contract_payment
+    contexts: [freelancer_client, general_contract]
+    persona: "Client who received the work"
+    bluff: "The work wasn't up to the mark, so we won't pay anything."
+    truth:
+      - {tag: Law, ref: "ICA1872:s73", quote: "is entitled to receive, form the party who has broken the contract, compensation",
+         text: "The party who suffers a breach \"is entitled to receive, form the party who has broken the contract, compensation\" for loss that naturally arose (source spelling)."}
+      - {tag: Practical, text: "Ask them to list the specific problems in writing. Vague quality complaints raised only after delivery are weaker than issues raised during the work."}
+    risk_if_you_believe_it: "You accept nothing for work delivered."
+    risk_if_you_call_it: "Moderate: there may be a genuine dispute on quality."
+    suggested_reply: "Please list the specific issues in writing. I'm open to fixing genuine issues, but the agreed amount for delivered work is due."
+    verified: true
+
+  - id: loan_friend_later
+    category: contract_payment
+    contexts: [personal_loan]
+    persona: "Friend who borrowed money"
+    bluff: "I'll return it when I can. Don't make this a big deal."
+    truth:
+      - {tag: Law, ref: "LA1963:schedule_art19", quote: "For money payable for money lent",
+         text: "A suit \"For money payable for money lent\" has a limitation period that runs from when the loan is made."}
+      - {tag: Practical, text: "A written acknowledgment of the debt is valuable. Ask them to confirm the amount by message."}
+    risk_if_you_believe_it: "Time limits keep running."
+    risk_if_you_call_it: "Strain on the friendship."
+    suggested_reply: "No problem, can you just confirm by message that you owe me ₹<amount> and when you'll repay?"
+    verified: false   # practical framing drafted by AI; review before relying on it
