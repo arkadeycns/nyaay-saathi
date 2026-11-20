@@ -25,7 +25,7 @@ st.set_page_config(page_title="Nyaya Saathi", page_icon="⚖️", layout="wide")
 
 CSS = """
 <style>
-.block-container{max-width:1100px;padding-top:1.2rem}
+.block-container{max-width:1100px;padding-top:4.5rem}  /* clears Streamlit's fixed top bar (~3.75rem) */
 .tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:.72rem;font-weight:600;margin-right:6px;vertical-align:middle}
 .tag-Law{background:#e3edff;color:#1c3f94}.tag-Official{background:#e5f6ec;color:#17643a}.tag-Practical{background:#f1efe9;color:#5c5240}
 .tag-unv{background:#fde8e8;color:#9b1c1c}
